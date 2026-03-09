@@ -5,84 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Privacy Vault</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        }
+        body {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
             background-color: #f9f9f9;
         }
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #1a1a1a;
-            color: #D4AF37;
-            border-radius: 8px 8px 0 0;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 30px 0 15px;
+            color: #222;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        ul {
+            margin: 10px 0 20px 30px;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .updated {
+            font-style: italic;
+            color: #666;
             margin-bottom: 30px;
         }
-        h1 { margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { color: #1a1a1a; border-left: 4px solid #D4AF37; padding-left: 10px; margin-top: 30px; }
-        section { background: white; padding: 25px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        p { margin-bottom: 15px; }
-        ul { margin-bottom: 15px; padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        .highlight { font-weight: bold; color: #1a1a1a; }
-        footer { text-align: center; margin-top: 40px; font-size: 12px; color: #888; }
+        .critical {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Privacy Policy</h1>
-        <p>Last Updated: March 9, 2026</p>
-    </header>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last Updated: March 9, 2026</p>
 
-    <section>
-        <p>Privacy Vault ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how your information is handled when you use the Privacy Vault mobile application.</p>
+    <p>Privacy Vault ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how your information is handled when you use the Privacy Vault mobile application (the "App"), a local-only privacy tool for storing photos, videos and documents.</p>
 
-        <h2>1. Local-Only Storage Policy</h2>
-        <p class="highlight">CRITICAL NOTICE: Privacy Vault is a "Local-Only" utility. Your photos, videos, and documents are stored exclusively on your device's local storage.</p>
-        <ul>
-            <li>We do NOT use cloud storage.</li>
-            <li>We do NOT transmit your private library to any external servers.</li>
-            <li>We do NOT have access to the data you store within the vault.</li>
-        </ul>
-        <p>Because your data is stored locally, deleting the app will result in the permanent loss of all data stored within it. We recommend using the "Export" feature before uninstalling the application.</p>
+    <p>This Privacy Policy is publicly available at: <a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy" target="_blank">https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy</a></p>
 
-        <h2>2. Information We Collect</h2>
-        <p>We believe in minimal data collection. We do not require account registration.</p>
-        <ul>
-            <li><span class="highlight">Biometric Data:</span> If you enable Face ID or Touch ID, the authentication is handled entirely by the iOS/Android system. We do not receive or store your actual biometric data.</li>
-            <li><span class="highlight">Camera Access:</span> The camera is used for the "Intruder Capture" feature. Captured photos are stored locally within the app and are never shared.</li>
-            <li><span class="highlight">Photo Library Access:</span> We require permission to import photos into the vault and export them back to your system gallery.</li>
-            <li><span class="highlight">Usage Data:</span> We may collect anonymous, non-identifiable technical information (e.g., device model, OS version) to improve app stability and performance.</li>
-        </ul>
+    <h2>1. Local-Only Storage Policy</h2>
+    <p class="critical">CRITICAL NOTICE</p>
+    <p>Privacy Vault is a strictly "Local-Only" utility. Your photos, videos, documents and all other personal media stored in the App are saved <strong>exclusively on your mobile device's local storage</strong>.</p>
+    <ul>
+        <li>We do NOT use any form of cloud storage for your personal data.</li>
+        <li>We do NOT transmit, upload or share your private media library to any external servers, third parties or our own systems.</li>
+        <li>We have <strong>no access whatsoever</strong> to the data you store within the App.</li>
+    </ul>
+    <p>Due to the local-only storage mechanism, deleting or uninstalling the App from your device will result in the <strong>permanent loss</strong> of all data stored in it. We strongly recommend using the App's "Export" feature to back up your data before any uninstallation or device reset.</p>
 
-        <h2>3. Third-Party Services</h2>
-        <p>Our app integrates with certain third-party services to provide core functionality:</p>
-        <ul>
-            <li><span class="highlight">App Store / Google Play:</span> For handling "Pro" subscriptions and payments.</li>
-            <li><span class="highlight">Local Authentication Support:</span> System-level frameworks for PIN and Biometric security.</li>
-        </ul>
+    <h2>2. Information We Collect</h2>
+    <p>We adhere to a <strong>minimal data collection principle</strong> and do <strong>not require any account registration, login or personal information submission</strong> to use the App. All collected data is anonymous, non-identifiable and only used to improve App stability and performance:</p>
+    <ul>
+        <li><strong>Biometric Data</strong>: If you enable Face ID (iOS) or Touch ID/Fingerprint ID (Android) for App authentication, the entire biometric verification process is handled <strong>exclusively by your device's native system</strong>. We do not receive, process or store any of your actual biometric data (e.g., facial features, fingerprint information).</li>
+        <li><strong>Camera Access</strong>: Camera permission is only required for the App's "Intruder Capture" feature. All photos captured by this feature are stored locally within the App and are never transmitted, shared or uploaded to any external party.</li>
+        <li><strong>Photo Library Access</strong>: Photo library permission is only used to import your photos/videos into the App and export them back to your device's native gallery. We do not access, view or store any unselected media in your photo library.</li>
+        <li><strong>Anonymous Usage Data</strong>: We may collect non-identifiable technical information (e.g., device model, operating system version, App crash logs) in an anonymous form. This data is used solely to fix bugs, optimize App performance and improve user experience, and cannot be used to identify individual users.</li>
+    </ul>
 
-        <h2>4. Data Security</h2>
-        <p>We implement industry-standard security measures, including file-level encryption for "Pro" users, to protect your data from unauthorized access on your device. However, you are responsible for maintaining the secrecy of your PIN code.</p>
+    <h2>3. Third-Party Services</h2>
+    <p>The App integrates with limited third-party services only to provide core payment and system-level functionality, and these services do not have access to your personal media data stored in the App. All third-party services have their own independent privacy policies:</p>
+    <ul>
+        <li><strong>App Store (iOS) / Google Play (Android)</strong>: These platforms are only used to process the <strong>one-time purchase payment</strong> for the App (no recurring subscriptions or auto-renewals). The payment process and your payment information are managed exclusively by Apple/Google, and we do not receive or store any of your payment details (e.g., credit card information, account balance).
+            <ul>
+                <li>Apple App Store Privacy Policy: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">https://www.apple.com/legal/privacy/en-ww/</a></li>
+                <li>Google Play Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+            </ul>
+        </li>
+        <li><strong>Local Authentication Frameworks (iOS/Android)</strong>: Native system-level frameworks used for PIN code and biometric authentication. These frameworks only run on your local device and do not transmit any authentication data externally.</li>
+    </ul>
 
-        <h2>5. Your Rights</h2>
-        <p>Since all data is on your device, you have full control. You can access, modify, or delete your data at any time through the app interface. To withdraw all permissions, you can adjust your device settings or uninstall the app.</p>
+    <h2>4. Data Security</h2>
+    <p>We implement <strong>industry-standard security measures</strong> to protect your local data from unauthorized access on your device:</p>
+    <ul>
+        <li>File-level encryption is applied to all data stored in the App for all users (no Pro/paid tier restriction).</li>
+        <li>All authentication methods (PIN code, biometrics) are tied to your local device only.</li>
+    </ul>
+    <p>You are solely responsible for maintaining the secrecy of your App PIN code and protecting your mobile device from unauthorized physical access. We cannot retrieve or reset your PIN code, and any loss of PIN code may result in inability to access your data stored in the App.</p>
 
-        <h2>6. Children's Privacy</h2>
-        <p>Our application does not knowingly collect any personal information from children under the age of 13. If you are a parent or guardian and believe your child has used the app to store sensitive data, please contact us.</p>
+    <h2>5. Your Rights</h2>
+    <p>Since all your data is stored <strong>exclusively on your local device</strong>, you have <strong>full and complete control</strong> over all data in the App. Your rights include:</p>
+    <ul>
+        <li>Access, view, edit, export or delete your data stored in the App at any time through the App's native interface.</li>
+        <li>Revoke any App permissions (e.g., camera, photo library) at any time in your device's system settings, without affecting the normal use of other App functions (where applicable).</li>
+        <li>Uninstall the App at any time, which will permanently remove all local data stored in the App (please back up data first).</li>
+    </ul>
+    <p>We do not store any of your data on external servers, so there is no need for data deletion requests to our team—all data management is completed on your local device.</p>
 
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-        <p><span class="highlight">Email:</span> luoyi9932@gmail.com</p>
-        <p><span class="highlight">Team:</span> Privacy Vault Team</p>
-    </section>
+    <h2>6. Children's Privacy</h2>
+    <p>The App is not intended for use by children under the age of 13, and we do <strong>not knowingly collect, process or store any personal information</strong> from children under 13. If you are a parent or guardian and believe your child has used the App to store sensitive data, please contact us using the information in Section 7.</p>
+
+    <h2>7. Changes to This Privacy Policy</h2>
+    <p>We may occasionally update this Privacy Policy to reflect changes in our practices or legal requirements. Any material changes will be posted within the App and on the public Privacy Policy webpage (the link above) with an updated "Last Updated" date. Your continued use of the App after the changes take effect constitutes your acceptance of the revised Privacy Policy.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>If you have any questions, concerns or requests regarding this Privacy Policy or the App's privacy practices, please contact us at:</p>
+    <ul>
+        <li>Email: <a href="mailto:luoyi9932@gmail.com">luoyi9932@gmail.com</a></li>
+        <li>Team: Privacy Vault Team</li>
+    </ul>
 
     <footer>
-        &copy; 2026 Privacy Vault Team. All rights reserved.
+        <p>© 2026 Privacy Vault Team. All rights reserved.</p>
     </footer>
 </body>
 </html>
