@@ -8,67 +8,96 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            line-height: 1.8;
+            color: #2d2d2d;
+            max-width: 850px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
         }
 
         header {
             text-align: center;
-            padding: 40px 0;
-            background-color: #1a1a1a;
-            color: #D4AF37;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 30px;
+            padding: 30px 0;
+            background-color: #2c3e50;
+            color: #ffffff;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 20px;
         }
 
         h1 {
             margin: 0;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .update-date {
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.8;
         }
 
         h2 {
-            color: #1a1a1a;
-            border-left: 4px solid #D4AF37;
-            padding-left: 10px;
-            margin-top: 30px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            font-size: 18px;
         }
 
         section {
             background: white;
-            padding: 25px;
-            border-radius: 0 0 8px 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            font-size: 15px;
         }
 
         ul {
-            margin-bottom: 15px;
-            padding-left: 20px;
+            margin-bottom: 20px;
+            padding-left: 25px;
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 15px;
         }
 
         .highlight {
-            font-weight: bold;
-            color: #1a1a1a;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         footer {
             text-align: center;
             margin-top: 40px;
             font-size: 12px;
-            color: #888;
+            color: #777;
+            padding-bottom: 20px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            p,
+            li {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -76,71 +105,75 @@
 <body>
     <header>
         <h1>Terms of Service</h1>
-        <p>Last Updated: March 9, 2026</p>
+        <p class="update-date">Last Updated: March 15, 2026</p>
     </header>
 
     <section>
-        <p>Welcome to Pic Safe: Private Vault. By downloading or using the app, these terms will automatically apply to you – you
-            should make sure therefore that you read them carefully before using the app.</p>
+        <p>Welcome to Pic Safe: Private Vault (the "App"). By downloading, installing, or using the App, you agree to be bound by these Terms of Service ("Terms"). Please read these Terms carefully before using the App.</p>
 
-        <h2>1. Use of the App</h2>
-        <p>Pic Safe: Private Vault provides a secure local environment to store and manage your personal media. You are
-            responsible for any activity that occurs through your use of the app and for maintaining the confidentiality
-            of your PIN code.</p>
-
-        <h2>2. Data Responsibility & Loss</h2>
-        <p class="highlight">WARNING: DATA IS STORED LOCALLY ONLY.</p>
+        <h2>1. App Usage Rules</h2>
+        <p>Pic Safe provides a secure local storage environment for managing your private photos, videos, and other media files. You are solely responsible for:
         <ul>
-            <li>We do not backup your data to any remote server.</li>
-            <li>We are NOT responsible for any data loss caused by app deletion, device damage, OS updates, or
-                forgetting your PIN/Master Password.</li>
-            <li>Users are strongly advised to maintain their own backups using the "Export" function or system-level
-                device backups.</li>
+            <li>All activities conducted through your use of the App</li>
+            <li>Maintaining the confidentiality of your PIN code or biometric authentication (Face ID/Touch ID)</li>
+            <li>Complying with all applicable laws and regulations when using the App</li>
         </ul>
 
-        <h2>3. Pro Subscription</h2>
-        <p>Certain features, such as file encryption and intruder capture, require a "Lifetime Pro" purchase. All
-            transactions are handled by the Apple App Store or Google Play Store. We do NOT handle your payment
-            information directly.</p>
+        <h2>2. Local Data Responsibility & Risk</h2>
+        <p class="highlight">CRITICAL NOTICE: ALL DATA IS STORED LOCALLY ON YOUR DEVICE ONLY.</p>
         <ul>
-            <li>Subscriptions or one-time purchases are tied to your App Store account.</li>
-            <li>Refunds are governed by the policies of the respective app stores.</li>
+            <li>We do not store, backup, or sync your data to any remote servers or cloud storage.</li>
+            <li>We are NOT liable for any data loss resulting from: App uninstallation, device damage/loss, operating system updates, forgotten PIN codes, or device factory resets.</li>
+            <li>You are strongly advised to regularly export and backup your data using the App's "Export" feature or your device's system backup tools.</li>
         </ul>
 
-        <h2>4. Prohibited Conduct</h2>
-        <p>You agree not to use the app for any illegal or unauthorized purpose. You must not use the app to store
-            content that violates any laws in your jurisdiction.</p>
+        <h2>3. Pro Version & Payments</h2>
+        <p>Certain premium features (e.g., AES-256 file encryption, intruder photo capture) require a one-time "Lifetime Pro" purchase. All payments are processed exclusively through the Apple App Store or Google Play Store:</p>
+        <ul>
+            <li>We do not collect, store, or process your payment information (e.g., credit card details) directly.</li>
+            <li>Pro version access is tied to your App Store/Google Play account.</li>
+            <li>Refund requests are subject to the refund policies of the Apple App Store or Google Play Store.</li>
+        </ul>
 
-        <h2>5. Intellectual Property</h2>
-        <p>The app itself, including all code, UI design, and brand assets, is the intellectual property of the Pic Safe: Private Vault Team. You may not attempt to extract the source code or translate the app into other languages without
-            our permission.</p>
+        <h2>4. Prohibited Uses</h2>
+        <p>You agree not to use the App for any illegal, unethical, or unauthorized purposes, including but not limited to:
+        <ul>
+            <li>Storing content that violates local, national, or international laws (e.g., copyrighted material, explicit/illegal content).</li>
+            <li>Attempting to hack, modify, or reverse-engineer the App's code or bypass security features.</li>
+            <li>Using the App to infringe on the privacy or rights of third parties.</li>
+        </ul>
+
+        <h2>5. Intellectual Property Rights</h2>
+        <p>The App (including all source code, UI/UX design, logos, and brand assets) is the exclusive intellectual property of the Pic Safe Team. You may not:
+        <ul>
+            <li>Copy, modify, distribute, or reverse-engineer any part of the App without written permission.</li>
+            <li>Use the App's brand assets (e.g., logo, name) for commercial purposes or unauthorized promotion.</li>
+        </ul>
 
         <h2>6. Disclaimer of Warranties</h2>
-        <p>The app is provided "as is" and "as available" without any warranties of any kind, either express or implied.
-            We do not guarantee that the app will be error-free or that access to it will be continuous or
-            uninterrupted.</p>
+        <p>The App is provided "as is" and "as available" without any express or implied warranties, including but not limited to warranties of merchantability, fitness for a specific purpose, or non-infringement. We do not guarantee:
+        <ul>
+            <li>Uninterrupted, error-free, or secure access to the App.</li>
+            <li>That the App will meet all your specific requirements.</li>
+        </ul>
 
         <h2>7. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, the Pic Safe: Private Vault Team shall not be liable for any indirect,
-            incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether
-            incurred directly or indirectly, or any loss of data.</p>
+        <p>To the maximum extent permitted by applicable law, the Pic Safe Team shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, arising from your use of the App.</p>
 
-        <h2>8. Termination</h2>
-        <p>We reserve the right to modify or terminate the app or your access to the app for any reason, without notice,
-            at any time. Upon termination, all licenses and other rights granted to you in these terms will immediately
-            cease.</p>
+        <h2>8. Termination of Service</h2>
+        <p>We reserve the right to modify, suspend, or terminate the App (or any part of it) at any time, with or without notice. Upon termination, your right to use the App ceases immediately, and all local data remains on your device (subject to your responsibility for backup).</p>
 
         <h2>9. Changes to These Terms</h2>
-        <p>We may update our Terms of Service from time to time. Thus, you are advised to review this page periodically
-            for any changes.</p>
+        <p>We may update these Terms from time to time to reflect changes in the App or legal requirements. We will notify you of material changes by updating the "Last Updated" date on this page. Your continued use of the App after changes constitutes acceptance of the updated Terms.</p>
 
         <h2>10. Contact Us</h2>
-        <p>If you have any questions or suggestions about our Terms of Service, do not hesitate to contact us at:</p>
+        <p>If you have any questions, concerns, or requests regarding these Terms, please contact us:</p>
         <p><span class="highlight">Email:</span> luoyi9932@gmail.com</p>
+        <p><span class="highlight">Support Team:</span> Pic Safe Team</p>
     </section>
 
     <footer>
-        &copy; 2026 Pic Safe: Private Vault Team. All rights reserved.
+        &copy; 2026 Pic Safe Team. All rights reserved.
     </footer>
 </body>
 
