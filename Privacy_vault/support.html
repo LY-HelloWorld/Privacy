@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Pic Safe: Private Vault</title>
+    <title>Support - Privacy Vault</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -19,10 +19,14 @@
         header {
             text-align: center;
             padding: 30px 0;
-            background-color: #2c3e50;
+            background-color: #0A0A0A;
             color: #ffffff;
             border-radius: 10px 10px 0 0;
             margin-bottom: 20px;
+        }
+
+        header .accent {
+            color: #D4AF37;
         }
 
         h1 {
@@ -34,19 +38,19 @@
         .subtitle {
             font-size: 14px;
             margin-top: 10px;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+            color: #0A0A0A;
+            border-bottom: 2px solid #D4AF37;
             padding-bottom: 8px;
             margin-top: 35px;
             font-size: 18px;
         }
 
         h3 {
-            color: #3498db;
+            color: #D4AF37;
             font-size: 16px;
             margin-top: 25px;
         }
@@ -68,6 +72,11 @@
             margin-bottom: 20px;
         }
 
+        ol {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
         .faq-item {
             margin-bottom: 20px;
             border-left: 3px solid #e0e0e0;
@@ -84,7 +93,7 @@
 
         .highlight {
             font-weight: 600;
-            color: #2c3e50;
+            color: #0A0A0A;
         }
 
         footer {
@@ -93,6 +102,11 @@
             font-size: 12px;
             color: #777;
             padding-bottom: 20px;
+        }
+
+        footer a {
+            color: #D4AF37;
+            text-decoration: none;
         }
 
         /* 移动端适配 */
@@ -122,106 +136,110 @@
 
 <body>
     <header>
-        <h1>Pic Safe Support Center</h1>
-        <p class="subtitle">Your go-to guide for using Pic Safe: Private Vault</p>
+        <h1>Privacy Vault <span class="accent">Support Center</span></h1>
+        <p class="subtitle">Your guide to using Privacy Vault – local encrypted photo vault for iOS</p>
     </header>
 
     <section>
         <!-- 快速入门 -->
         <h2>1. Quick Start Guide</h2>
-        <h3>How to Set Up Pic Safe</h3>
+        <h3>How to Set Up Privacy Vault</h3>
         <ol>
-            <li>Download and open the Pic Safe app.</li>
-            <li>Set a 4-6 digit PIN code (this is your main access password).</li>
-            <li>Optional: Enable Face ID/Touch ID for quick access (Settings > Biometric Authentication).</li>
-            <li>Tap the "+" button to import photos/videos from your device's gallery.</li>
-            <li>All imported files are automatically encrypted and stored locally on your device.</li>
+            <li>Download and open the Privacy Vault app on your iPhone/iPad.</li>
+            <li>On first launch, tap <strong>GET STARTED</strong> and set a <strong>6-digit main PIN</strong> (enter twice to confirm).</li>
+            <li>Optionally set a <strong>Decoy PIN</strong> (or tap Skip). Entering the decoy PIN opens a separate, empty vault – useful for privacy (Pro feature).</li>
+            <li>Enable <strong>Face ID / Touch ID</strong> in Settings &gt; Security &gt; Biometrics for quick unlock.</li>
+            <li>From the gallery, tap the <strong>+</strong> button to import photos/videos from your device. All files are encrypted locally with AES-256.</li>
         </ol>
 
         <h3>How to Use Core Features</h3>
         <ul>
-            <li><strong>Import Media:</strong> Tap "+" > Select "Import Photos/Videos" > Choose files > Confirm.</li>
-            <li><strong>Export Media:</strong> Long-press a file > Select "Export" > Choose destination (gallery).</li>
-            <li><strong>Intruder Photo Capture:</strong> Enable in Settings > The app will take a photo when someone enters the wrong PIN 3 times.</li>
-            <li><strong>Fake Passcode (Pro):</strong> Set a secondary PIN in Settings > Entering this PIN shows an empty vault.</li>
+            <li><strong>Import media:</strong> In the vault gallery, tap <strong>+</strong> &gt; choose photos/videos from your library &gt; confirm. Files are copied into the vault and encrypted.</li>
+            <li><strong>Export media:</strong> Open a photo/video &gt; use the share button to save to your device gallery; or use <strong>Select</strong> mode to multi-select and export in batch (Pro).</li>
+            <li><strong>Albums:</strong> Tap the album icon in the top left to switch or create albums. Creating multiple albums requires Pro.</li>
+            <li><strong>Intruder Capture (Pro):</strong> In Settings &gt; VIP Features, enable Intruder Capture. After <strong>1 wrong PIN</strong> attempt, the app takes a photo with the front camera. View entries in <strong>Intrusion Logs</strong>.</li>
+            <li><strong>Decoy Vault (Pro):</strong> Set a Decoy PIN in Settings. When someone enters the decoy PIN at unlock, they see an empty vault instead of your real one.</li>
+            <li><strong>Backup &amp; Restore:</strong> Settings &gt; Data Management &gt; Export Backup (ZIP) to create an encrypted backup; use Restore from Backup to restore from a ZIP file (password required).</li>
         </ul>
 
         <!-- 常见问题 -->
         <h2>2. Frequently Asked Questions (FAQ)</h2>
-        
+
         <div class="faq-item">
-            <h3>Q: I forgot my PIN code. How can I recover it?</h3>
-            <p>A: We cannot recover your PIN code (all data is stored locally). If you forget your PIN:
+            <h3>Q: I forgot my main PIN. How can I recover it?</h3>
+            <p>A: We cannot recover your PIN – all data is stored and encrypted locally on your device. If you forget your main PIN:</p>
             <ul>
-                <li>Uninstall and reinstall the app (note: all stored data will be permanently deleted).</li>
-                <li>We strongly recommend writing down your PIN in a secure place.</li>
+                <li>You will not be able to access your vault. Uninstalling and reinstalling the app will permanently delete all vault data.</li>
+                <li>We strongly recommend writing down your PIN and keeping it in a secure place.</li>
             </ul>
         </div>
 
         <div class="faq-item">
-            <h3>Q: My data disappeared after updating the app/device. What should I do?</h3>
-            <p>A: Pic Safe stores all data locally on your device. Data loss may occur if:
+            <h3>Q: My data disappeared after updating the app or my device. What should I do?</h3>
+            <p>A: Privacy Vault keeps all data only on your device. Data loss can happen if:</p>
             <ul>
-                <li>You uninstalled the app accidentally.</li>
-                <li>Your device was reset or updated (without backup).</li>
-                <li>We recommend exporting all important files to your gallery before updating the app/OS.</li>
+                <li>You uninstalled the app without exporting or backing up first.</li>
+                <li>Your device was reset or restored without a backup that included the app data.</li>
             </ul>
+            <p>We recommend using <strong>Export Backup (ZIP)</strong> in Settings before any major update or restore, and keeping that backup in a safe place.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Q: Does Pic Safe sync my data to the cloud?</h3>
-            <p>A: No. Pic Safe is a 100% local storage app – we do not sync, backup, or upload your data to any cloud servers or our databases. Your data stays only on your device.</p>
+            <h3>Q: Does Privacy Vault sync my data to the cloud?</h3>
+            <p>A: No. Privacy Vault is 100% local – we do not sync, backup, or upload your data to any server. Everything stays on your iPhone or iPad.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Q: How to activate the Pro version?</h3>
-            <p>A: Tap "Upgrade to Pro" in the app > Select "Lifetime Pro" > Complete payment via App Store/Google Play > Restart the app to unlock all Pro features (AES-256 encryption, intruder capture, fake passcode).</p>
+            <h3>Q: How do I activate the Pro version?</h3>
+            <p>A: When a Pro feature is locked (e.g. Decoy Vault, Intruder Capture), tap it to open the paywall. Choose <strong>Buy Lifetime Pro ($4.99)</strong> and complete the purchase in the App Store. You can also tap <strong>Restore Purchases</strong> if you already bought Pro on another device or after reinstall. Pro includes: unlimited storage, unlimited albums, Decoy Vault, AES-256 encryption, and batch management.</p>
         </div>
 
         <div class="faq-item">
             <h3>Q: Can I get a refund for the Pro version?</h3>
-            <p>A: Refunds are handled by Apple App Store or Google Play Store. Please submit a refund request through your app store account (usually within 14 days of purchase).</p>
+            <p>A: Refunds are handled by the Apple App Store. Please submit a refund request through your Apple ID account (typically within the period allowed by Apple’s policy).</p>
         </div>
 
         <!-- 故障排除 -->
         <h2>3. Troubleshooting</h2>
         <h3>App Crashes When Opening</h3>
         <ul>
-            <li>Close all background apps and restart Pic Safe.</li>
-            <li>Update your device's operating system to the latest version.</li>
-            <li>Reinstall the app (backup your data first if possible).</li>
+            <li>Close other apps and restart Privacy Vault.</li>
+            <li>Update iOS to the latest version.</li>
+            <li>If the problem continues, reinstall the app (export or back up your data first if you can still access the vault).</li>
         </ul>
 
-        <h3>Cannot Import Photos/Videos</h3>
+        <h3>Cannot Import Photos or Videos</h3>
         <ul>
-            <li>Check if Pic Safe has permission to access your photo library (Device Settings > Pic Safe > Photos > Allow Full Access).</li>
-            <li>Make sure the files are not corrupted or in an unsupported format (supported: JPG, PNG, MP4, MOV).</li>
+            <li>Grant full access to your photo library: <strong>Settings &gt; Privacy &amp; Security &gt; Photos &gt; Privacy Vault &gt; All Photos</strong> (or Limited with the albums you need).</li>
+            <li>Ensure files are in supported formats (e.g. JPG, PNG, HEIC, MP4, MOV) and not corrupted.</li>
         </ul>
 
         <h3>Intruder Capture Not Working</h3>
         <ul>
-            <li>Ensure Pic Safe has camera permission (Device Settings > Pic Safe > Camera > Allow).</li>
-            <li>Verify the feature is enabled in the app's Settings > Intruder Capture.</li>
-            <li>The feature triggers only after 3 consecutive wrong PIN attempts.</li>
+            <li>Confirm Privacy Vault has camera permission: <strong>Settings &gt; Privacy &amp; Security &gt; Camera &gt; Privacy Vault &gt; On</strong>.</li>
+            <li>In the app, go to <strong>Settings &gt; VIP Features &gt; Intruder Capture</strong> and turn it on (Pro required).</li>
+            <li>The photo is taken after <strong>1 wrong PIN</strong> attempt on the unlock screen.</li>
         </ul>
 
         <!-- 联系支持 -->
         <div class="contact-box">
             <h2>4. Contact Support</h2>
-            <p>If you cannot find an answer to your question, please reach out to our support team:</p>
+            <p>If your question isn’t answered here, contact us:</p>
             <p><span class="highlight">Email:</span> luoyi9932@gmail.com</p>
-            <p><span class="highlight">Response Time:</span> 1-3 business days</p>
-            <p><span class="highlight">What to include in your email:</span></p>
+            <p><span class="highlight">Response time:</span> 1–3 business days</p>
+            <p><span class="highlight">Please include in your email:</span></p>
             <ul>
-                <li>Your device model and OS version (e.g., iPhone 15, iOS 17.2).</li>
-                <li>Pic Safe app version (Settings > About > Version).</li>
-                <li>Detailed description of the issue (with screenshots if possible).</li>
+                <li>Device model and iOS version (e.g. iPhone 15, iOS 18).</li>
+                <li>Privacy Vault version (in the app: Settings &gt; About Privacy Vault).</li>
+                <li>A clear description of the issue; screenshots are helpful when possible.</li>
             </ul>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Pic Safe Team. All rights reserved. | <a href="privacy.html" style="color: #3498db; text-decoration: none;">Privacy Policy</a> | <a href="terms.html" style="color: #3498db; text-decoration: none;">Terms of Service</a>
+        &copy; 2026 Privacy Vault. All rights reserved. |
+        <a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy">Privacy Policy</a> |
+        <a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/terms_of_service">Terms of Service</a>
     </footer>
 </body>
 
