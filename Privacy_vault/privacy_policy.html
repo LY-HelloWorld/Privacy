@@ -3,140 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Pic Safe: Private Vault</title>
+    <title>Privacy Policy - Pic Safe</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
         body {
-            max-width: 800px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8;
+            color: #2d2d2d;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            padding: 20px;
+            background-color: #f5f5f5;
         }
-        h1 {
-            font-size: 28px;
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #2c3e50;
+            color: #ffffff;
+            border-radius: 10px 10px 0 0;
             margin-bottom: 20px;
-            color: #1a1a1a;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
         }
-        h2 {
-            font-size: 20px;
-            margin: 30px 0 15px;
-            color: #222;
+        h1 { 
+            margin: 0; 
+            font-size: 26px; 
+            font-weight: 600;
         }
-        p {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-        ul {
-            margin: 10px 0 20px 30px;
-        }
-        li {
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-        .updated {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .critical {
-            font-weight: bold;
-            color: #d32f2f;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
+        .update-date {
             font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        h2 { 
+            color: #2c3e50; 
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            font-size: 18px;
+        }
+        section { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 0 0 10px 10px; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        p { 
+            margin-bottom: 18px; 
+            font-size: 15px;
+        }
+        ul { 
+            margin-bottom: 20px; 
+            padding-left: 25px; 
+        }
+        li { 
+            margin-bottom: 10px; 
+            font-size: 15px;
+        }
+        .highlight { 
+            font-weight: 600; 
+            color: #2c3e50; 
+        }
+        footer { 
+            text-align: center; 
+            margin-top: 40px; 
+            font-size: 12px; 
+            color: #777;
+            padding-bottom: 20px;
+        }
+        /* 适配移动端 */
+        @media (max-width: 600px) {
+            section { padding: 20px; }
+            h1 { font-size: 22px; }
+            h2 { font-size: 16px; }
+            p, li { font-size: 14px; }
         }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last Updated: March 9, 2026</p>
+    <header>
+        <h1>Privacy Policy</h1>
+        <p class="update-date">Last Updated: March 15, 2026</p>
+    </header>
 
-    <p>Pic Safe: Private Vault ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how your information is handled when you use the Pic Safe: Private Vault mobile application (the "App"), a local-only privacy tool for storing photos, videos and documents on iOS devices.</p>
+    <section>
+        <p>Pic Safe (referred to as "we", "our", or "us") is dedicated to protecting your privacy. This Privacy Policy explains how we handle your information when you use the Pic Safe mobile application (the "App"), which is designed as a local photo vault for secure storage of your private media.</p>
 
-    <p>This Privacy Policy is publicly available at: <a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy" target="_blank">https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy</a></p>
+        <h2>1. Core Principle: Local-Only Data Storage</h2>
+        <p class="highlight">IMPORTANT: All data stored in Pic Safe (including photos, videos, and captured intruder images) is saved <strong>exclusively on your device</strong>. We do NOT:</p>
+        <ul>
+            <li>Upload your private media to cloud servers or our databases</li>
+            <li>Transmit your vault data to any third-party servers</li>
+            <li>Access or view any content you store in the App</li>
+        </ul>
+        <p>Note: Deleting the App will permanently remove all data stored in it. We recommend exporting important files before uninstalling Pic Safe.</p>
 
-    <h2>1. Local-Only Storage Policy</h2>
-    <p class="critical">CRITICAL NOTICE</p>
-    <p>Pic Safe: Private Vault is a strictly "Local-Only" utility. Your photos, videos, documents and all other personal media stored in the App are saved <strong>exclusively on your iOS device's local storage</strong>.</p>
-    <ul>
-        <li>We do NOT use any form of cloud storage for your personal data.</li>
-        <li>We do NOT transmit, upload or share your private media library to any external servers, third parties or our own systems.</li>
-        <li>We have <strong>no access whatsoever</strong> to the data you store within the App.</li>
-    </ul>
-    <p>Due to the local-only storage mechanism, deleting or uninstalling the App from your iOS device will result in the <strong>permanent loss</strong> of all data stored in it. We strongly recommend using the App's "Export" feature to back up your data before any uninstallation or device reset.</p>
+        <h2>2. Information We May Access (Local Only)</h2>
+        <p>We collect no personal data that leaves your device. The App only accesses the following information for core functionality, all processed locally:</p>
+        <ul>
+            <li><span class="highlight">Biometric Data (Face ID/Touch ID):</span> Authentication is managed entirely by your device's operating system (iOS/Android). We do not store or access your biometric information.</li>
+            <li><span class="highlight">Camera Access:</span> Used solely for the "Intruder Photo Capture" feature (photos taken when wrong PIN is entered). All captured images are stored locally in the App and never shared.</li>
+            <li><span class="highlight">Photo Library Access:</span> Required to import/export photos/videos between the App and your device's gallery (only with your explicit permission).</li>
+            <li><span class="highlight">Anonymous Technical Data:</span> We may collect non-identifiable data (e.g., device model, OS version) locally to improve App stability (no data is sent to external servers).</li>
+        </ul>
 
-    <h2>2. Information We Collect</h2>
-    <p>We adhere to a <strong>minimal data collection principle</strong> and do <strong>not require any account registration, login or personal information submission</strong> to use the App. All collected data is anonymous, non-identifiable and only used to improve App stability and performance:</p>
-    <ul>
-        <li><strong>Biometric Data</strong>: If you enable Face ID or Touch ID for App authentication, the entire biometric verification process is handled <strong>exclusively by your iOS device's native system</strong>. We do not receive, process or store any of your actual biometric data (e.g., facial features, fingerprint information).</li>
-        <li><strong>Camera Access</strong>: Camera permission is only required for the App's "Intruder Capture" feature. All photos captured by this feature are stored locally within the App and are never transmitted, shared or uploaded to any external party.</li>
-        <li><strong>Photo Library Access</strong>: Photo library permission is only used to import your photos/videos into the App and export them back to your iOS device's native gallery. We do not access, view or store any unselected media in your photo library.</li>
-        <li><strong>Anonymous Usage Data</strong>: We may collect non-identifiable technical information (e.g., iOS device model, iOS version, App crash logs) in an anonymous form. This data is used solely to fix bugs, optimize App performance and improve user experience, and cannot be used to identify individual users.</li>
-    </ul>
+        <h2>3. Third-Party Integration</h2>
+        <p>The App integrates with the following third-party services, which follow their own privacy policies:</p>
+        <ul>
+            <li><span class="highlight">App Store / Google Play:</span> For payment processing (if applicable) and App distribution (no access to your vault data).</li>
+            <li><span class="highlight">System-Level Frameworks:</span> For PIN/biometric authentication (managed by your device's OS, no data shared with us).</li>
+        </ul>
 
-    <h2>3. Third-Party Services</h2>
-    <p>The App integrates with limited third-party services only to provide core payment and system-level functionality, and these services do not have access to your personal media data stored in the App. All third-party services have their own independent privacy policies:</p>
-    <ul>
-        <li><strong>App Store (iOS)</strong>: This platform is only used to process the <strong>one-time purchase payment</strong> for the App (no recurring subscriptions or auto-renewals). The payment process and your payment information are managed exclusively by Apple, and we do not receive or store any of your payment details (e.g., credit card information, account balance).
-            <ul>
-                <li>Apple App Store Privacy Policy: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">https://www.apple.com/legal/privacy/en-ww/</a></li>
-            </ul>
-        </li>
-        <li><strong>iOS Local Authentication Frameworks</strong>: Native system-level frameworks used for PIN code and biometric authentication. These frameworks only run on your local iOS device and do not transmit any authentication data externally.</li>
-    </ul>
+        <h2>4. Data Security</h2>
+        <p>We use industry-standard AES-256 encryption to protect files stored in the App on your device. However, you are responsible for keeping your PIN code confidential—we cannot recover lost PINs or data stored locally on your device.</p>
 
-    <h2>4. Data Security</h2>
-    <p>We implement <strong>industry-standard security measures</strong> to protect your local data from unauthorized access on your iOS device:</p>
-    <ul>
-        <li>File-level encryption is applied to all data stored in the App for all users (no Pro/paid tier restriction).</li>
-        <li>All authentication methods (PIN code, biometrics) are tied to your local iOS device only.</li>
-    </ul>
-    <p>You are solely responsible for maintaining the secrecy of your App PIN code and protecting your iOS device from unauthorized physical access. We cannot retrieve or reset your PIN code, and any loss of PIN code may result in inability to access your data stored in the App.</p>
+        <h2>5. Your Rights Over Your Data</h2>
+        <p>Since all data is stored locally, you have full control:
+        <ul>
+            <li>Access, edit, or delete your data at any time via the App interface</li>
+            <li>Revoke App permissions (e.g., photo library access) in your device settings</li>
+            <li>Uninstall the App to remove all associated data from your device</li>
+        </ul>
 
-    <h2>5. Your Rights</h2>
-    <p>Since all your data is stored <strong>exclusively on your local iOS device</strong>, you have <strong>full and complete control</strong> over all data in the App. Your rights include:</p>
-    <ul>
-        <li>Access, view, edit, export or delete your data stored in the App at any time through the App's native interface.</li>
-        <li>Revoke any App permissions (e.g., camera, photo library) at any time in your iOS device's system settings, without affecting the normal use of other App functions (where applicable).</li>
-        <li>Uninstall the App at any time, which will permanently remove all local data stored in the App (please back up data first).</li>
-    </ul>
-    <p>We do not store any of your data on external servers, so there is no need for data deletion requests to our team—all data management is completed on your local iOS device.</p>
+        <h2>6. Children's Privacy</h2>
+        <p>Pic Safe is not intended for use by children under 13 years of age. We do not knowingly collect any personal information from children. If you are a parent/guardian and believe your child has used the App, please contact us to address any concerns.</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>The App is not intended for use by children under the age of 13, and we do <strong>not knowingly collect, process or store any personal information</strong> from children under 13. If you are a parent or guardian and believe your child has used the App to store sensitive data, please contact us using the information in Section 7.</p>
-
-    <h2>7. Changes to This Privacy Policy</h2>
-    <p>We may occasionally update this Privacy Policy to reflect changes in our practices or legal requirements. Any material changes will be posted within the App and on the public Privacy Policy webpage (the link above) with an updated "Last Updated" date. Your continued use of the App after the changes take effect constitutes your acceptance of the revised Privacy Policy.</p>
-
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions, concerns or requests regarding this Privacy Policy or the App's privacy practices, please contact us at:</p>
-    <ul>
-        <li>Email: <a href="mailto:luoyi9932@gmail.com">luoyi9932@gmail.com</a></li>
-        <li>Team: Pic Safe: Private Vault Team</li>
-    </ul>
+        <h2>7. Contact Us</h2>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
+        <p><span class="highlight">Email:</span> luoyi9932@gmail.com</p>
+        <p><span class="highlight">App Support:</span> Pic Safe Team</p>
+    </section>
 
     <footer>
-        <p>© 2026 Pic Safe: Private Vault Team. All rights reserved.</p>
+        &copy; 2026 Pic Safe Team. All rights reserved.
     </footer>
 </body>
 </html>
