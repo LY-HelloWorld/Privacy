@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Download ClearPix for iPhone to fix blurry photos, reduce grain, sharpen detail, and compare before saving. Photos are processed privately on device with AI.">
+    <meta name="keywords"
+        content="ClearPix, AI photo enhancer, unblur photo, fix blurry photos, photo enhancer app, image upscaler, sharpen photo">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <!-- SEO entry: consolidate Search Console signals on the published GitHub Pages URL for this app page. -->
+    <link rel="canonical" href="https://ly-helloworld.github.io/Privacy/clearpix-web/">
+    <meta name="apple-itunes-app"
+        content="app-id=6760017305, app-argument=https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ly-helloworld.github.io/Privacy/clearpix-web/">
+    <meta property="og:title" content="ClearPix - Fix Blurry Photos on iPhone">
+    <meta property="og:description"
+        content="Repair soft photos, reduce grain, and compare the result before saving. Download ClearPix on the App Store.">
+    <meta property="og:image" content="https://ly-helloworld.github.io/Privacy/clearpix-web/app-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ClearPix - Fix Blurry Photos on iPhone">
+    <meta name="twitter:description"
+        content="Unblur, sharpen, denoise, and review photos directly on your iPhone.">
+    <meta name="twitter:image" content="https://ly-helloworld.github.io/Privacy/clearpix-web/app-icon.png">
+    <meta name="theme-color" content="#f6f7f2">
+    <title>ClearPix - Fix Blurry Photos on iPhone</title>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "ClearPix: AI Photo Enhancer",
+            "url": "https://ly-helloworld.github.io/Privacy/clearpix-web/",
+            "image": "https://ly-helloworld.github.io/Privacy/clearpix-web/app-icon.png",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "iOS 13.0 or later",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "downloadUrl": "https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305",
+            "description": "ClearPix is an iPhone photo repair app for sharper, clearer images. Unblur soft shots, reduce grain, and compare before and after before you export."
+        }
+    </script>
+    <style>
+        /* Visual entry: these tokens keep the page close to the current iPhone photo utility, not a generic AI splash page. */
+        :root {
+            --paper: #f6f7f2;
+            --surface: #ffffff;
+            --surface-muted: #eef2ed;
+            --ink: #151817;
+            --muted: #59645f;
+            --line: #d7ddd5;
+            --accent: #0c746d;
+            --accent-ink: #083f3b;
+            --accent-soft: #dcefeb;
+            --warm: #a35f17;
+            --charcoal: #222826;
+            --shadow: 0 22px 60px rgba(31, 38, 35, 0.12);
+            --small-shadow: 0 10px 24px rgba(31, 38, 35, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            line-height: 1.55;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(246, 247, 242, 0.9);
+            border-bottom: 1px solid rgba(215, 221, 213, 0.9);
+            backdrop-filter: blur(18px);
+        }
+
+        .topbar-inner,
+        .hero,
+        .section-inner,
+        .download-panel,
+        footer {
+            width: min(1160px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.78rem 0;
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            gap: 0.72rem;
+            text-decoration: none;
+        }
+
+        .brand-lockup img {
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(21, 24, 23, 0.08);
+            border-radius: 9px;
+            box-shadow: var(--small-shadow);
+        }
+
+        .brand-text {
+            display: grid;
+            min-width: 0;
+        }
+
+        .brand-name {
+            font-size: 0.98rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .brand-note {
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 650;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 720;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            color: var(--accent-ink);
+        }
+
+        .hero {
+            min-height: calc(88vh - 70px);
+            padding: clamp(2.3rem, 4.5vw, 4.8rem) 0 1.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+            align-items: center;
+            gap: clamp(2rem, 5vw, 5rem);
+        }
+
+        .hero-copy {
+            max-width: 620px;
+            min-width: 0;
+        }
+
+        .product-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.34rem 0.68rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--accent-ink);
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .product-kicker::before {
+            width: 0.56rem;
+            height: 0.56rem;
+            border-radius: 50%;
+            background: var(--accent);
+            content: "";
+        }
+
+        h1 {
+            max-width: 660px;
+            margin: 1.08rem 0 0.98rem;
+            font-size: clamp(2.55rem, 6vw, 5.15rem);
+            line-height: 1;
+            letter-spacing: 0;
+            overflow-wrap: break-word;
+        }
+
+        .hero-subtitle {
+            max-width: 610px;
+            margin: 0;
+            color: var(--muted);
+            font-size: clamp(1.04rem, 1.7vw, 1.26rem);
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.85rem;
+            margin-top: 1.6rem;
+            max-width: 100%;
+        }
+
+        .app-store-cta,
+        .secondary-link {
+            min-height: 52px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .app-store-cta {
+            gap: 0.65rem;
+            padding: 0.9rem 1.18rem;
+            background: var(--ink);
+            color: #fff;
+            box-shadow: 0 14px 28px rgba(21, 24, 23, 0.2);
+        }
+
+        .app-store-cta svg {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 auto;
+        }
+
+        .secondary-link {
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.78);
+            color: var(--accent-ink);
+        }
+
+        .product-meta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.68rem;
+            margin-top: 1.15rem;
+        }
+
+        .meta-item {
+            min-width: 0;
+            padding: 0.72rem;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.62);
+        }
+
+        .meta-item strong {
+            display: block;
+            color: var(--ink);
+            font-size: 0.92rem;
+        }
+
+        .meta-item span {
+            display: block;
+            margin-top: 0.16rem;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 650;
+        }
+
+        .hero-media {
+            position: relative;
+            display: grid;
+            align-items: center;
+        }
+
+        .screenshot-board {
+            display: grid;
+            grid-template-columns: minmax(0, 0.62fr) minmax(160px, 0.38fr);
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: var(--shadow);
+        }
+
+        .phone-frame {
+            overflow: hidden;
+            border: 8px solid #111615;
+            border-radius: 30px;
+            background: #111615;
+            box-shadow: var(--small-shadow);
+        }
+
+        .phone-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 72%;
+        }
+
+        .phone-frame.featured {
+            height: min(64vh, 610px);
+        }
+
+        .side-gallery {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .side-shot {
+            display: grid;
+            gap: 0.48rem;
+        }
+
+        .side-shot .phone-frame {
+            height: 224px;
+            border-width: 6px;
+            border-radius: 24px;
+        }
+
+        .side-shot .phone-frame img {
+            object-position: center 64%;
+        }
+
+        .shot-caption {
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 720;
+        }
+
+        .result-note {
+            margin-top: 0.95rem;
+            padding: 0.9rem 1rem;
+            border-left: 3px solid var(--accent);
+            background: var(--accent-soft);
+            color: var(--accent-ink);
+            font-size: 0.92rem;
+            font-weight: 720;
+        }
+
+        .content-band {
+            border-top: 1px solid var(--line);
+            background: var(--surface);
+        }
+
+        .section-inner {
+            padding: clamp(2.8rem, 6vw, 5rem) 0;
+        }
+
+        .section-heading {
+            max-width: 740px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 0.7rem;
+            font-size: clamp(1.9rem, 4vw, 3.05rem);
+            line-height: 1.06;
+            letter-spacing: 0;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.04rem;
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .workflow-card,
+        .use-case {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fbfcfa;
+        }
+
+        .workflow-card {
+            padding: 1.2rem;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            background: var(--charcoal);
+            color: #fff;
+            font-size: 0.86rem;
+            font-weight: 850;
+        }
+
+        .workflow-card h3,
+        .use-case h3 {
+            margin: 0 0 0.45rem;
+            font-size: 1.04rem;
+        }
+
+        .workflow-card p,
+        .use-case p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .proof-band {
+            background: var(--surface-muted);
+            border-top: 1px solid var(--line);
+        }
+
+        .proof-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+            gap: clamp(1.5rem, 4vw, 3rem);
+            align-items: center;
+        }
+
+        .use-case-list {
+            display: grid;
+            gap: 0.78rem;
+            margin-top: 1.3rem;
+        }
+
+        .use-case {
+            padding: 1rem;
+        }
+
+        .compare-preview {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.9rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: var(--small-shadow);
+        }
+
+        .compare-preview figure {
+            margin: 0;
+        }
+
+        .compare-preview img {
+            width: 100%;
+            height: 430px;
+            border: 6px solid #111615;
+            border-radius: 24px;
+            object-fit: cover;
+            object-position: center 68%;
+            background: #111615;
+        }
+
+        .compare-preview figcaption {
+            margin-top: 0.55rem;
+            color: var(--muted);
+            font-size: 0.84rem;
+            font-weight: 720;
+        }
+
+        .download-band {
+            background: var(--charcoal);
+            color: #fff;
+        }
+
+        .download-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 1.5rem;
+            align-items: center;
+            padding: clamp(2.5rem, 5.5vw, 3.8rem) 0;
+        }
+
+        .download-lockup {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .download-lockup img {
+            width: 68px;
+            height: 68px;
+            border-radius: 14px;
+        }
+
+        .download-panel h2 {
+            margin: 0 0 0.4rem;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .download-panel p {
+            margin: 0;
+            color: #cbd6d0;
+            max-width: 680px;
+            font-size: 1rem;
+        }
+
+        .download-panel .app-store-cta {
+            background: #fff;
+            color: var(--ink);
+            box-shadow: none;
+            white-space: nowrap;
+        }
+
+        footer {
+            padding: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 650;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media (max-width: 980px) {
+            .hero {
+                min-height: auto;
+                grid-template-columns: 1fr;
+                padding-top: 2.4rem;
+            }
+
+            .hero-copy {
+                max-width: 760px;
+            }
+
+            .phone-frame.featured {
+                height: 520px;
+            }
+
+            .proof-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topbar-inner,
+            .hero,
+            .section-inner,
+            .download-panel,
+            footer {
+                width: calc(100% - 24px);
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .brand-note {
+                display: none;
+            }
+
+            .hero {
+                display: block;
+                padding-top: 1.55rem;
+            }
+
+            .hero-copy,
+            .cta-row,
+            .product-meta {
+                width: min(100%, 21rem);
+            }
+
+            h1 {
+                max-width: 100%;
+                font-size: clamp(1.86rem, 8.6vw, 2.18rem);
+                line-height: 1.07;
+            }
+
+            h1 span {
+                display: block;
+            }
+
+            .hero-subtitle {
+                max-width: 100%;
+                font-size: 1rem;
+                overflow-wrap: break-word;
+            }
+
+            .cta-row {
+                align-items: stretch;
+            }
+
+            .app-store-cta,
+            .secondary-link {
+                width: 100%;
+                min-width: 0;
+                padding-right: 0.8rem;
+                padding-left: 0.8rem;
+                text-align: center;
+                white-space: normal;
+            }
+
+            .product-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-media {
+                display: none;
+            }
+
+            .screenshot-board {
+                grid-template-columns: minmax(0, 0.62fr) minmax(112px, 0.38fr);
+                gap: 0.62rem;
+                padding: 0.62rem;
+                border-radius: 20px;
+            }
+
+            .phone-frame {
+                border-width: 5px;
+                border-radius: 22px;
+            }
+
+            .phone-frame.featured {
+                height: 260px;
+            }
+
+            .side-shot .phone-frame {
+                height: 124px;
+                border-width: 4px;
+                border-radius: 16px;
+            }
+
+            .shot-caption {
+                display: none;
+            }
+
+            .result-note {
+                margin-top: 0.7rem;
+            }
+
+            .compare-preview {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-preview img {
+                height: 320px;
+            }
+
+            .download-lockup {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page entry: this self-contained landing page is built for Google Search traffic into the ClearPix App Store listing. -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand-lockup" href="#top" aria-label="ClearPix home">
+                <img src="app-icon.png" alt="ClearPix app icon" width="42" height="42">
+                <span class="brand-text">
+                    <span class="brand-name">ClearPix</span>
+                    <span class="brand-note">Photo Repair for iPhone</span>
+                </span>
+            </a>
+            <nav class="nav-links" aria-label="Page navigation">
+                <a href="#workflow">How it works</a>
+                <a href="https://ly-helloworld.github.io/Privacy/support">Support</a>
+                <a class="nav-cta app-store-link"
+                    href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4">App Store</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <span class="product-kicker">Photo clarity for iPhone</span>
+                <h1 id="hero-title">
+                    <span>Fix blurry photos</span>
+                    <span>before you</span>
+                    <span>share them.</span>
+                </h1>
+                <p class="hero-subtitle">ClearPix repairs soft photos and low-light grain on your iPhone. Compare
+                    before and after, then save the version that looks ready.
+                </p>
+                <div class="cta-row">
+                    <a class="app-store-cta app-store-link"
+                        href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4"
+                        aria-label="Download ClearPix on the App Store">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M17.2 12.2c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.8-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 7 1.1 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.2-2.5 1.2-2.6 0-.1-2.6-1-2.6-3.8ZM15 5.7c.6-.8 1.1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2-.5 2.7-1.3Z" />
+                        </svg>
+                        Download on the App Store
+                    </a>
+                    <a class="secondary-link" href="#workflow">View the workflow</a>
+                </div>
+                <div class="product-meta" aria-label="ClearPix highlights">
+                    <div class="meta-item">
+                        <strong>No cloud photo upload</strong>
+                        <span>Designed for private on-device processing.</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Before and after</strong>
+                        <span>Check the result before saving.</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Free download</strong>
+                        <span>Available for iOS 13.0 or later.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core product evidence: real app screenshots stay in the first viewport so visitors see the current product immediately. -->
+            <div class="hero-media" aria-label="ClearPix App Store screenshots">
+                <div>
+                    <div class="screenshot-board">
+                        <div class="phone-frame featured">
+                            <img src="screenshot-home.png" alt="ClearPix main photo repair screen" loading="eager">
+                        </div>
+                        <div class="side-gallery" aria-label="ClearPix workflow previews">
+                            <figure class="side-shot">
+                                <div class="phone-frame">
+                                    <img src="screenshot-unblur.png" alt="ClearPix unblur workflow screenshot"
+                                        loading="eager">
+                                </div>
+                                <figcaption class="shot-caption">Repair soft photos</figcaption>
+                            </figure>
+                            <figure class="side-shot">
+                                <div class="phone-frame">
+                                    <img src="screenshot-compare.png" alt="ClearPix before and after comparison"
+                                        loading="lazy">
+                                </div>
+                                <figcaption class="shot-caption">Compare before saving</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="result-note">Built for a short photo flow: choose, repair, compare, export.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-band" id="workflow" aria-labelledby="workflow-title">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2 id="workflow-title">A practical repair path for everyday photos.</h2>
+                    <p>ClearPix keeps the path short for people who just want a cleaner photo: pick one image, repair
+                        the detail, review the result, and save it.</p>
+                </div>
+                <div class="workflow-grid">
+                    <article class="workflow-card">
+                        <span class="step-number">1</span>
+                        <h3>Choose one photo</h3>
+                        <p>Start from your library or camera and keep the task focused on the image you want to fix.</p>
+                    </article>
+                    <article class="workflow-card">
+                        <span class="step-number">2</span>
+                        <h3>Repair clarity</h3>
+                        <p>Use a light, standard, or stronger pass for blur, grain, and lost detail.</p>
+                    </article>
+                    <article class="workflow-card">
+                        <span class="step-number">3</span>
+                        <h3>Review the result</h3>
+                        <p>Compare before and after, then save the cleaner export when it looks right.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="proof-band" aria-labelledby="proof-title">
+            <div class="section-inner proof-layout">
+                <div>
+                    <div class="section-heading">
+                        <h2 id="proof-title">Made for blurry, noisy, real-world shots.</h2>
+                        <p>ClearPix works best when the user arrives with a specific photo problem, not when they need a
+                            full editing suite.</p>
+                    </div>
+                    <div class="use-case-list">
+                        <article class="use-case">
+                            <h3>Soft portraits and family photos</h3>
+                            <p>Recover clearer edges before sharing or archiving the image.</p>
+                        </article>
+                        <article class="use-case">
+                            <h3>Low-light indoor photos</h3>
+                            <p>Reduce visible grain and make dark pictures easier to keep.</p>
+                        </article>
+                        <article class="use-case">
+                            <h3>Old screenshots or saved images</h3>
+                            <p>Sharpen low-detail files so they are easier to read and reuse.</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="compare-preview" aria-label="ClearPix result preview screenshots">
+                    <figure>
+                        <img src="screenshot-unblur.png" alt="ClearPix unblur mode screenshot" loading="lazy">
+                        <figcaption>Choose the photo problem.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="screenshot-compare.png" alt="ClearPix comparison mode screenshot" loading="lazy">
+                        <figcaption>Check the final version.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-band" aria-labelledby="download-title">
+            <div class="download-panel">
+                <div class="download-lockup">
+                    <img src="app-icon.png" alt="" width="68" height="68">
+                    <div>
+                        <h2 id="download-title">Get ClearPix on the App Store.</h2>
+                        <p>Install the current iOS app and repair photos directly on your iPhone.</p>
+                    </div>
+                </div>
+                <a class="app-store-cta app-store-link"
+                    href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4"
+                    aria-label="Open the ClearPix App Store listing">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M17.2 12.2c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.8-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.2-1.6 2.8-.4 7 1.1 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.2-2.5 1.2-2.6 0-.1-2.6-1-2.6-3.8ZM15 5.7c.6-.8 1.1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2-.5 2.7-1.3Z" />
+                    </svg>
+                    Download on the App Store
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 ClearPix Studio. All rights reserved.</span>
+        <div class="footer-links">
+            <a href="https://ly-helloworld.github.io/Privacy/privacy">Privacy Policy</a>
+            <a href="https://ly-helloworld.github.io/Privacy/terms">Terms of Use</a>
+            <a href="https://ly-helloworld.github.io/Privacy/support">Support</a>
+        </div>
+    </footer>
+
+    <script>
+        // Core funnel logic: pass Google campaign context into Apple's campaign token for later App Store reporting.
+        (() => {
+            const appStoreUrl = new URL("https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305");
+            appStoreUrl.searchParams.set("uo", "4");
+
+            const inbound = new URLSearchParams(window.location.search);
+            const campaignParts = ["utm_source", "utm_campaign", "utm_term", "utm_content"]
+                .map((key) => inbound.get(key))
+                .filter(Boolean)
+                .join("_")
+                .replace(/[^a-zA-Z0-9_-]/g, "")
+                .slice(0, 40);
+
+            if (campaignParts) {
+                appStoreUrl.searchParams.set("ct", campaignParts);
+            }
+
+            document.querySelectorAll(".app-store-link").forEach((link) => {
+                link.href = appStoreUrl.toString();
+            });
+        })();
+    </script>
+</body>
+
+</html>
