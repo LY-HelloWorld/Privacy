@@ -34,7 +34,7 @@
 
   <main>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: <time datetime="2026-06-04">June 4, 2026</time> · App: <strong>Progress Camera</strong> · Bundle ID: <strong>com.ly.PrivateProgressCamera</strong></p>
+    <p class="meta">Effective date: <time datetime="2026-06-08">June 8, 2026</time> · App: <strong>Progress Camera</strong> · Bundle ID: <strong>com.ly.PrivateProgressCamera</strong></p>
 
     <p>This Privacy Policy explains how <strong>Progress Camera Team</strong> ("we", "us", or "our") handles information when you use <strong>Progress Camera</strong> (the "App"). The App helps you take private progress photos, keep before-and-after series on your device, compare alignment consistency, and export comparison images when you choose.</p>
 
@@ -48,34 +48,41 @@
       <li><strong>Exported images:</strong> When you choose Save, the App writes generated comparison images to your Photos library. When you choose Share, iOS presents the system share sheet and you select the destination.</li>
     </ul>
 
-    <h2>2. Camera, Photos, and Face ID</h2>
-    <p>The App requests Camera access so you can capture progress photos. The App requests add-only Photos permission only when you choose to save exported comparison images to your Photos library. The App does not request permission to read your entire Photos library. If you enable Face ID lock, the App uses Apple's LocalAuthentication framework to unlock private progress photos on your device; we do not receive your biometric data.</p>
+    <h2>2. Camera, Photos, Face ID, and Face Data</h2>
+    <p>The App requests Camera access so you can capture progress photos. The App requests add-only Photos permission only when you choose to save exported comparison images to your Photos library. The App does not request permission to read your entire Photos library.</p>
+    <p><strong>Photos that may include a face:</strong> If you choose to capture a progress photo that includes your face, that photo is stored locally on your device as described in Section 1. We do not upload your progress photos to our servers.</p>
+    <p><strong>On-device face detection for alignment:</strong> The App may use Apple's on-device Vision framework to detect a face rectangle in a previous photo and a current photo. This is used only to estimate photo-alignment consistency, such as whether the subject's position and scale are similar between two progress photos. This processing happens on your device. The detected face rectangle is used transiently for this comparison and is not stored, uploaded, or shared. The App stores only non-identifying consistency labels, such as Good, Close, or Retake suggested, in the local JSON database.</p>
+    <p><strong>No biometric face data:</strong> The App does not collect, create, store, or share biometric identifiers, faceprints, facial templates, facial landmark data, depth maps, or data used to identify a person.</p>
+    <p><strong>Face ID lock:</strong> If you enable Face ID lock, the App uses Apple's LocalAuthentication framework to unlock private progress photos on your device. We do not receive, store, or have access to your Face ID biometric data.</p>
 
     <h2>3. Information We Do Not Collect</h2>
-    <p>The current implementation does not collect account registration data, contact lists, precise location, advertising identifiers, payment card numbers, analytics events on our servers, or health records. The App does not include third-party advertising SDKs, third-party analytics SDKs, or cross-app tracking.</p>
+    <p>The current implementation does not collect account registration data, contact lists, precise location, advertising identifiers, payment card numbers, analytics events on our servers, health records, or biometric face data. The App does not include third-party advertising SDKs, third-party analytics SDKs, or cross-app tracking.</p>
 
-    <h2>4. Apple and System Services</h2>
+    <h2>4. Third-Party Sharing and Storage</h2>
+    <p>We do not sell or share progress photos, face data, face-detection results, project data, or local consistency data with third parties. The current App does not use a developer-operated backend for core features. Progress photos and local metadata are stored on your device. Exported comparison images are saved to your Photos library only when you choose Save, or shared through the iOS system share sheet only when you choose Share and select a destination.</p>
+
+    <h2>5. Apple and System Services</h2>
     <p>When you use iOS Camera, Photos, Face ID or passcode authentication, Share Sheet, App Store review prompts, mail links, or other system services, Apple or the selected destination app may process information under their own terms and privacy policies. If future App Store purchases are offered, billing and payment details will be handled by Apple, not by us.</p>
 
-    <h2>5. Retention and Deletion</h2>
-    <p>Progress photos and local metadata remain on your device until you delete a photo or series, reset local data in the App, uninstall the App, or use iOS storage controls. Because the current core data is local-first, we generally cannot access, restore, or delete data that exists only on your device.</p>
+    <h2>6. Retention and Deletion</h2>
+    <p>Progress photos and local metadata remain on your device until you delete a photo or series, reset local data in the App, uninstall the App, or use iOS storage controls. Transient face rectangle detection results are not retained. Because the current core data is local-first, we generally cannot access, restore, or delete data that exists only on your device.</p>
 
-    <h2>6. Security</h2>
+    <h2>7. Security</h2>
     <p>Progress Camera uses Apple's app sandbox and optional device authentication to help protect local app data. No app or storage method can be guaranteed to be completely secure. You are responsible for controlling access to your device and reviewing exported images before saving or sharing them.</p>
 
-    <h2>7. Sensitive Photos</h2>
-    <p>Progress photos may include body, skin, hair, health, fitness, or other sensitive personal information. You should only capture and store photos when you have the rights and consent needed to do so. Review comparison images carefully before sharing them with other apps or people.</p>
+    <h2>8. Sensitive Photos</h2>
+    <p>Progress photos may include face, body, skin, hair, health, fitness, or other sensitive personal information. You should only capture and store photos when you have the rights and consent needed to do so. Review comparison images carefully before sharing them with other apps or people.</p>
 
-    <h2>8. Children</h2>
+    <h2>9. Children</h2>
     <p>The App is not directed to children under 13 or the minimum age required in your region. We do not knowingly collect personal information from children through developer-operated servers for this App.</p>
 
-    <h2>9. Regional Privacy Rights</h2>
+    <h2>10. Regional Privacy Rights</h2>
     <p>Depending on where you live, including the European Economic Area, United Kingdom, California, China, and other regions, you may have privacy rights such as access, correction, deletion, portability, objection, restriction, or withdrawal of consent. For information stored only on your device, use the App and iOS controls to manage or delete it. You may contact us for privacy questions using the email below.</p>
 
-    <h2>10. Changes</h2>
+    <h2>11. Changes</h2>
     <p>We may update this Privacy Policy when the App changes or legal requirements evolve. The updated version will be posted at this page with a new effective date.</p>
 
-    <h2>11. Contact</h2>
+    <h2>12. Contact</h2>
     <p>For privacy questions, contact <strong>Progress Camera Team</strong> at <a href="mailto:luoyi9932@gmail.com">luoyi9932@gmail.com</a>.</p>
   </main>
 </body>
