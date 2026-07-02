@@ -1,208 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Root sitemap for the GitHub Pages project. Add each new public app page here. -->
+<!-- Sitemap entry: keep the root sitemap focused on the pages that should be indexed first. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/clearpix-web/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/HomeInventory_web/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/contactaudit/content.html</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/contactaudit/privacy.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/contactaudit/terms.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/privacy.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/terms.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/support.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/HomeInventory_web/</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/clearpix-web/</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/home-inventory/content.html</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/home-inventory/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/lock-screen-todo/content.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/lock-screen-todo/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/lock-screen-todo/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/Privacy_vault/support.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/Privacy_vault/terms_of_service.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ly-helloworld.github.io/Privacy/RuneSpire/content.html</loc>
+    <loc>https://ly-helloworld.github.io/Privacy/Privacy_vault/support.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/RuneSpire/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/RuneSpire/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ScreenShot/contact.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ScreenShot/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ScreenShot/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ScrollShot/content.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ScrollShot/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ScrollShot/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ShotMemory/content.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ShotMemory/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/ShotMemory/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/UseSoon/content.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/UseSoon/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/UseSoon/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/watermark-eraser-ai/content.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/watermark-eraser-ai/privacy.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/watermark-eraser-ai/support.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/watermark-eraser-ai/terms.html</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

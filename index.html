@@ -1,46 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Page entry: the root page now acts as the crawlable site hub while preserving the legacy privacy policy content. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <title>App Pages and Privacy Policies | ly-helloworld</title>
+    <meta name="description" content="Browse app landing pages, privacy policies, terms, and support pages for ClearPix, HomeInventory, Private Vault, ContactAudit, and other ly-helloworld apps.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://ly-helloworld.github.io/Privacy/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="App Pages and Privacy Policies | ly-helloworld">
+    <meta property="og:description" content="A public directory for app landing pages, privacy policies, support pages, and terms hosted on ly-helloworld GitHub Pages.">
+    <meta property="og:url" content="https://ly-helloworld.github.io/Privacy/">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
-        h1, h2, h3 { color: #1a1a1a; }
-        .footer { margin-top: 50px; font-size: 0.8em; color: #888; text-align: center; }
+        :root {
+            color-scheme: light;
+            --paper: #f3f5ef;
+            --surface: #ffffff;
+            --surface-soft: #edf2ea;
+            --ink: #18211d;
+            --muted: #5a685f;
+            --line: #d9e0d7;
+            --accent: #126b52;
+            --accent-strong: #0d4d3b;
+            --shadow: 0 18px 40px rgba(24, 33, 29, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ink);
+            background: linear-gradient(180deg, #f7f8f3 0%, #eef3ea 100%);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .shell {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(18px);
+            background: rgba(243, 245, 239, 0.92);
+            border-bottom: 1px solid rgba(217, 224, 215, 0.92);
+        }
+
+        .site-header .shell,
+        .hero,
+        .section,
+        .site-footer {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .site-header .shell {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 72px;
+        }
+
+        .brand {
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 28px;
+            padding: 56px 0 28px;
+            align-items: stretch;
+        }
+
+        .hero-card,
+        .panel,
+        .policy-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card {
+            padding: 34px;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.12;
+        }
+
+        h1 {
+            font-size: clamp(34px, 6vw, 58px);
+            max-width: 10ch;
+        }
+
+        .hero-copy {
+            margin-top: 18px;
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 42rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 20px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .button.primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .button.secondary {
+            background: var(--surface-soft);
+            color: var(--ink);
+        }
+
+        .hero-side {
+            padding: 28px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .hero-side strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .hero-side p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .section {
+            padding: 28px 0;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .section-head p {
+            margin: 8px 0 0;
+            color: var(--muted);
+        }
+
+        /* Core navigation block: these cards create direct crawl paths to the pages that should be indexed first. */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .panel {
+            padding: 24px;
+        }
+
+        .panel p {
+            margin: 12px 0 0;
+            color: var(--muted);
+        }
+
+        .panel ul {
+            margin: 16px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .panel a {
+            color: var(--accent-strong);
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .doc-list {
+            margin: 14px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .doc-list li + li {
+            margin-top: 10px;
+        }
+
+        .doc-list a {
+            text-decoration: none;
+            color: var(--accent-strong);
+        }
+
+        .policy-card {
+            padding: 28px;
+        }
+
+        .policy-card p,
+        .policy-card li {
+            color: var(--muted);
+        }
+
+        .policy-card ul {
+            padding-left: 20px;
+        }
+
+        .site-footer {
+            padding: 24px 0 42px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .site-header .shell {
+                min-height: 64px;
+                align-items: start;
+                padding: 14px 0;
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p><strong>Effective Date: March 1, 2026</strong></p>
+    <header class="site-header">
+        <div class="shell">
+            <a class="brand" href="https://ly-helloworld.github.io/Privacy/">ly-helloworld App Pages</a>
+            <nav class="top-nav" aria-label="Primary navigation">
+                <a href="#apps">Featured Apps</a>
+                <a href="#documents">Documents</a>
+                <a href="#policy">Root Privacy Policy</a>
+            </nav>
+        </div>
+    </header>
 
-    <p>Welcome to AI Photo Enhancer ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.</p>
+    <main>
+        <!-- Main entry: expose the few high-value landing pages first so Google sees clear internal links from the site root. -->
+        <section class="hero shell" aria-labelledby="hero-title">
+            <article class="hero-card">
+                <p class="eyebrow">Public Site Directory</p>
+                <h1 id="hero-title">Landing pages, privacy policies, and support links in one crawlable hub.</h1>
+                <p class="hero-copy">
+                    This site hosts public pages for multiple iPhone apps, including marketing landing pages,
+                    privacy policies, terms, support pages, and content policy documents.
+                </p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#apps">Browse featured apps</a>
+                    <a class="button secondary" href="https://ly-helloworld.github.io/Privacy/sitemap.xml">Open sitemap.xml</a>
+                </div>
+            </article>
+            <aside class="hero-card hero-side" aria-label="Site summary">
+                <div>
+                    <strong>Featured landing pages</strong>
+                    <p>ClearPix, HomeInventory, and Hide Photos: Private Vault each have dedicated public entry pages.</p>
+                </div>
+                <div>
+                    <strong>Legal documents</strong>
+                    <p>Privacy, terms, support, and content policy pages remain available for App Store review and user reference.</p>
+                </div>
+                <div>
+                    <strong>Root page purpose</strong>
+                    <p>This root URL now works as both a site index and the legacy AI Photo Enhancer privacy policy location.</p>
+                </div>
+            </aside>
+        </section>
 
-    <h2>1. No Data Collection (Privacy First)</h2>
-    <p>AI Photo Enhancer is designed with a privacy-first approach. We do not collect, store, or share any personal information.</p>
-    <ul>
-        <li><strong>Photos:</strong> When you enhance a photo, the processing is handled entirely on your device using Apple's Core ML technology. Your photos <strong>NEVER</strong> leave your device and are <strong>NEVER</strong> uploaded to any server or shared with third-party services.</li>
-        <li><strong>Personal Data:</strong> We do not require account registration. We do not collect your name, email address, or phone number.</li>
-        <li><strong>Usage Data:</strong> We do not track your specific usage patterns or location.</li>
-    </ul>
+        <section id="apps" class="section shell" aria-labelledby="apps-title">
+            <div class="section-head">
+                <div>
+                    <h2 id="apps-title">Featured app pages</h2>
+                    <p>These are the highest-value pages to index because they summarize the product and lead users to the App Store.</p>
+                </div>
+            </div>
+            <div class="app-grid">
+                <article class="panel">
+                    <h3><a href="https://ly-helloworld.github.io/Privacy/clearpix-web/">ClearPix</a></h3>
+                    <p>AI photo repair landing page for blurry-photo cleanup, sharpening, denoising, and before/after previews.</p>
+                    <ul>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/clearpix-web/">Landing page</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/privacy.html">Privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/terms.html">Terms of use</a></li>
+                    </ul>
+                </article>
+                <article class="panel">
+                    <h3><a href="https://ly-helloworld.github.io/Privacy/HomeInventory_web/">HomeInventory</a></h3>
+                    <p>Moving-box and storage-box organizer with QR labels, search, item photos, and PDF or CSV export.</p>
+                    <ul>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/HomeInventory_web/">Landing page</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html">Privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/home-inventory/terms.html">Terms of use</a></li>
+                    </ul>
+                </article>
+                <article class="panel">
+                    <h3><a href="https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/">Hide Photos: Private Vault</a></h3>
+                    <p>Private vault landing page for hiding photos, videos, documents, and files with local-first protection.</p>
+                    <ul>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/">Landing page</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy.html">Privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/terms_of_service.html">Terms of service</a></li>
+                    </ul>
+                </article>
+                <article class="panel">
+                    <h3><a href="https://ly-helloworld.github.io/Privacy/contactaudit/content.html">ContactAudit</a></h3>
+                    <p>Contact-cleanup and backup policy pages covering duplicates, exports, restore flows, and acceptable use guidance.</p>
+                    <ul>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/contactaudit/content.html">Content policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/contactaudit/privacy.html">Privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/contactaudit/terms.html">Terms of use</a></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-    <h2>2. Photo Processing</h2>
-    <p>All image enhancement is performed using advanced AI models. Your photos remain your own and are never used to train our models or shared with third parties for marketing purposes.</p>
+        <section id="documents" class="section shell" aria-labelledby="documents-title">
+            <div class="section-head">
+                <div>
+                    <h2 id="documents-title">Direct document links</h2>
+                    <p>These public pages are linked here so crawlers can discover the legal documents without relying only on the sitemap.</p>
+                </div>
+            </div>
+            <div class="doc-grid">
+                <article class="panel">
+                    <h3>Root app documents</h3>
+                    <ul class="doc-list">
+                        <li><a href="https://ly-helloworld.github.io/Privacy/privacy.html">AI Photo Enhancer privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/terms.html">AI Photo Enhancer terms of use</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/support.html">AI Photo Enhancer support</a></li>
+                    </ul>
+                </article>
+                <article class="panel">
+                    <h3>HomeInventory documents</h3>
+                    <ul class="doc-list">
+                        <li><a href="https://ly-helloworld.github.io/Privacy/home-inventory/content.html">Content policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html">Privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/home-inventory/terms.html">Terms of use</a></li>
+                    </ul>
+                </article>
+                <article class="panel">
+                    <h3>Private Vault documents</h3>
+                    <ul class="doc-list">
+                        <li><a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/privacy_policy.html">Privacy policy</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/terms_of_service.html">Terms of service</a></li>
+                        <li><a href="https://ly-helloworld.github.io/Privacy/Privacy_vault/support.html">Support</a></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-    <h2>3. In-App Purchases</h2>
-    <p>All financial transactions (One-time Lifetime Purchase) are processed securely by Apple via the App Store. We do not have access to your credit card information or billing address. We only receive a confirmation from Apple that a purchase was successful to unlock PRO features.</p>
+        <section id="policy" class="section shell" aria-labelledby="policy-title">
+            <!-- Legacy policy block: preserve the original root privacy disclosure for any app store references already pointing at this URL. -->
+            <article class="policy-card">
+                <p class="eyebrow">Legacy Root Document</p>
+                <h2 id="policy-title">AI Photo Enhancer Privacy Policy</h2>
+                <p><strong>Effective Date:</strong> March 1, 2026</p>
+                <p>Welcome to AI Photo Enhancer ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.</p>
 
-    <h2>4. Third-Party Services</h2>
-    <p>We may use basic diagnostic tools (like Apple's built-in crash reporting) to improve app stability. These tools provide anonymous technical data that cannot be used to identify you.</p>
+                <h3>1. No Data Collection (Privacy First)</h3>
+                <p>AI Photo Enhancer is designed with a privacy-first approach. We do not collect, store, or share any personal information.</p>
+                <ul>
+                    <li><strong>Photos:</strong> When you enhance a photo, processing is handled entirely on your device using Apple's Core ML technology. Your photos never leave your device and are never uploaded to any server or shared with third-party services.</li>
+                    <li><strong>Personal Data:</strong> We do not require account registration. We do not collect your name, email address, or phone number.</li>
+                    <li><strong>Usage Data:</strong> We do not track your specific usage patterns or location.</li>
+                </ul>
 
-    <h2>5. Changes to This Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page with a new effective date.</p>
+                <h3>2. Photo Processing</h3>
+                <p>All image enhancement is performed using advanced AI models on-device. Your photos remain your own and are never used to train our models or shared with third parties for marketing purposes.</p>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us via the App Store support link.</p>
+                <h3>3. In-App Purchases</h3>
+                <p>All financial transactions are processed securely by Apple via the App Store. We do not have access to your credit card information or billing address. We only receive a confirmation from Apple that a purchase was successful to unlock paid features.</p>
 
-    <div class="footer">
-        &copy; 2026 AI Photo Enhancer. All rights reserved.
-    </div>
+                <h3>4. Third-Party Services</h3>
+                <p>We may use basic diagnostic tools, such as Apple's built-in crash reporting, to improve app stability. These tools provide anonymous technical data that cannot be used to identify you.</p>
+
+                <h3>5. Changes to This Policy</h3>
+                <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with a new effective date.</p>
+
+                <h3>6. Contact</h3>
+                <p>If you have questions about this Privacy Policy, please use the support link on the App Store product page.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer shell">
+        <p>&copy; 2026 ly-helloworld app pages. Public landing pages, support links, and privacy documents.</p>
+    </footer>
 </body>
 </html>
