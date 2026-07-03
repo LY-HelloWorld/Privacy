@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://ly-helloworld.github.io/Privacy/core-sitemap.xml
 Sitemap: https://ly-helloworld.github.io/Privacy/sitemap.xml
