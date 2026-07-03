@@ -1,0 +1,444 @@
+/* Entry stylesheet: shared layout for App Store companion landing pages in this repository. */
+:root {
+  color-scheme: light;
+  --paper: #f3f5f1;
+  --surface: #ffffff;
+  --surface-soft: #eef3ed;
+  --ink: #17211c;
+  --muted: #5d6b62;
+  --line: #d6ddd7;
+  --accent: #136c56;
+  --accent-strong: #0d4c3d;
+  --accent-soft: #dcece6;
+  --warm: #c56e24;
+  --shadow: 0 24px 60px rgba(23, 33, 28, 0.1);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(19, 108, 86, 0.08), transparent 34%),
+    linear-gradient(180deg, #f7f9f5 0%, #edf2ec 100%);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.58;
+}
+
+body.theme-progress {
+  --accent: #6f5af0;
+  --accent-strong: #4738b8;
+  --accent-soft: #ece9ff;
+  --warm: #de7b37;
+}
+
+body.theme-video {
+  --accent: #c3532c;
+  --accent-strong: #8c3518;
+  --accent-soft: #fde8de;
+  --warm: #2f7f90;
+}
+
+body.theme-watermark {
+  --accent: #0b6d79;
+  --accent-strong: #084752;
+  --accent-soft: #dff1f3;
+  --warm: #c5622e;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.landing-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(243, 245, 241, 0.92);
+  border-bottom: 1px solid rgba(214, 221, 215, 0.92);
+}
+
+.landing-header .shell {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand-link {
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.header-links .store-link {
+  color: #fff;
+  background: var(--accent);
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.hero {
+  padding: 44px 0 24px;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 22px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 20px;
+  box-shadow: 0 18px 38px rgba(23, 33, 28, 0.14);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.08;
+}
+
+h1 {
+  font-size: clamp(34px, 6vw, 62px);
+  max-width: 11ch;
+}
+
+.lede {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 42rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button.secondary {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip-row li {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hero-side {
+  padding: 22px;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 18px;
+}
+
+/* Core content block: keeps the official App Store screenshots visible above the fold for fast human and crawler context. */
+.hero-shot {
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(214, 221, 215, 0.82);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(238, 243, 237, 0.72));
+  padding: 16px;
+}
+
+.hero-shot img {
+  width: 100%;
+  aspect-ratio: 600 / 1300;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.hero-note {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, rgba(19, 108, 86, 0.12), rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(19, 108, 86, 0.12);
+}
+
+.hero-note p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero-note strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.section {
+  padding: 24px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.section-head p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  max-width: 52rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.feature-card,
+.gallery-card,
+.faq-card,
+.legal-card {
+  padding: 22px;
+}
+
+.feature-card {
+  border-top: 4px solid var(--accent);
+}
+
+.feature-card p,
+.legal-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.gallery-card {
+  display: grid;
+  gap: 12px;
+}
+
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 600 / 1300;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(214, 221, 215, 0.8);
+}
+
+.gallery-card strong {
+  font-size: 15px;
+}
+
+.gallery-card span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.detail-card {
+  padding: 22px;
+}
+
+.detail-card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.detail-card li + li {
+  margin-top: 8px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-card summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faq-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.legal-list {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.legal-list a {
+  text-decoration: none;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.footer {
+  padding: 30px 0 44px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer .shell {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+@media (max-width: 920px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-header .shell {
+    padding: 14px 0;
+    align-items: flex-start;
+    min-height: 0;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 24px, 760px);
+  }
+
+  .hero-copy,
+  .hero-side,
+  .feature-card,
+  .gallery-card,
+  .detail-card,
+  .faq-card,
+  .legal-card {
+    padding: 18px;
+  }
+
+  .button,
+  .header-links .store-link {
+    width: 100%;
+  }
+
+  .title-row {
+    align-items: flex-start;
+  }
+
+  .app-icon {
+    width: 66px;
+    height: 66px;
+    border-radius: 18px;
+  }
+}
