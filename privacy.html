@@ -3,44 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for ClearPix, an on-device AI photo enhancer for iPhone.">
+    <title>ClearPix Privacy Policy</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
-        h1, h2, h3 { color: #1a1a1a; }
-        .footer { margin-top: 50px; font-size: 0.8em; color: #888; text-align: center; }
+        :root { color-scheme: light dark; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; color: #252525; max-width: 820px; margin: 0 auto; padding: 24px; background: #fafafa; }
+        main { background: #fff; border: 1px solid #e7e7e7; border-radius: 16px; padding: 28px; }
+        h1, h2 { color: #151515; line-height: 1.25; }
+        h1 { margin-top: 0; }
+        a { color: #1458d4; }
+        .summary { padding: 16px 18px; border-radius: 12px; background: #f1f5ff; }
+        .footer { margin-top: 40px; font-size: 0.9em; color: #666; text-align: center; }
+        @media (prefers-color-scheme: dark) {
+            body { color: #e8e8e8; background: #101114; }
+            main { background: #17191d; border-color: #303238; }
+            h1, h2 { color: #fff; }
+            a { color: #8db5ff; }
+            .summary { background: #202a3d; }
+            .footer { color: #aaa; }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p><strong>Effective Date: March 1, 2026</strong></p>
+<main>
+    <h1>ClearPix Privacy Policy</h1>
+    <p><strong>Effective date: July 22, 2026</strong></p>
+    <p><strong>Bundle identifier:</strong> com.ly.photoEnhancer</p>
 
-    <p>Welcome to AI Photo Enhancer ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.</p>
+    <p class="summary">ClearPix processes your photos on your device. Photos are not uploaded to our servers or sent to Firebase. The App uses Firebase Analytics and Firebase Crashlytics for limited product analytics, purchase-flow measurement, crash reporting, and technical diagnostics.</p>
 
-    <h2>1. No Data Collection (Privacy First)</h2>
-    <p>AI Photo Enhancer is designed with a privacy-first approach. We do not collect, store, or share any personal information.</p>
+    <h2>1. Scope</h2>
+    <p>This Privacy Policy explains how the ClearPix Team ("we," "our," or "us") handles information when you use ClearPix (the "App"). ClearPix does not require an account and does not operate a backend for storing your photos.</p>
+
+    <h2>2. Photos and on-device processing</h2>
+    <p>Photos you select or capture are processed locally on your device using on-device image processing and Apple Core ML technology. We do not upload your photos to our servers, send them to Firebase, use them to train models, or sell or share them for advertising. Saved results are written to your photo library only when you choose to export them and grant the required iOS permission.</p>
+    <p>The App's analytics events do not include photo contents, thumbnails, file names, file paths, image metadata, OCR text, captions, or other user content.</p>
+
+    <h2>3. Firebase Analytics</h2>
+    <p>We use Google Firebase Analytics to understand whether features work as intended and to improve the App. The App may record limited product-interaction events such as:</p>
     <ul>
-        <li><strong>Photos:</strong> When you enhance a photo, the processing is handled entirely on your device using Apple's Core ML technology. Your photos <strong>NEVER</strong> leave your device and are <strong>NEVER</strong> uploaded to any server or shared with third-party services.</li>
-        <li><strong>Personal Data:</strong> We do not require account registration. We do not collect your name, email address, or phone number.</li>
-        <li><strong>Usage Data:</strong> We do not track your specific usage patterns or location.</li>
+        <li>App opens and coarse Pro entitlement status.</li>
+        <li>Successful photo enhancement and export operations, using bounded status values and coarse counts.</li>
+        <li>Pro feature gates, upgrade prompts, paywall exposure, and product-loading results.</li>
+        <li>StoreKit purchase and restore flow states, including started, pending, completed, cancelled, failed, or restored.</li>
+        <li>The App Store product identifier and product type used in a purchase flow.</li>
     </ul>
+    <p>Firebase may also process an app-instance or device-scoped identifier together with general App, device, operating-system, language, and interaction information. We do not set a Firebase user ID based on a name, email address, Apple account, or other personal account information.</p>
 
-    <h2>2. Photo Processing</h2>
-    <p>All image enhancement is performed using advanced AI models. Your photos remain your own and are never used to train our models or shared with third parties for marketing purposes.</p>
+    <h2>4. Firebase Crashlytics and diagnostics</h2>
+    <p>We use Firebase Crashlytics to identify crashes and improve reliability. Crashlytics may collect crash logs, stack traces, process state, timestamps, App version, device model, operating-system information, device or installation identifiers, and other technical diagnostic data associated with a crash or reliability issue.</p>
+    <p>We do not intentionally add photos, file names, file paths, personal contact information, payment details, or raw user-entered content to Crashlytics reports or custom diagnostic fields.</p>
 
-    <h2>3. In-App Purchases</h2>
-    <p>All financial transactions (One-time Lifetime Purchase) are processed securely by Apple via the App Store. We do not have access to your credit card information or billing address. We only receive a confirmation from Apple that a purchase was successful to unlock PRO features.</p>
+    <h2>5. App Store privacy disclosures</h2>
+    <p>To reflect the App's Firebase Analytics, Firebase Crashlytics, and StoreKit funnel measurement, the App Store privacy label may identify the following categories as collected:</p>
+    <ul>
+        <li><strong>Identifiers:</strong> device or app-instance identifiers.</li>
+        <li><strong>Purchases:</strong> purchase history signals and purchase or restore flow outcomes.</li>
+        <li><strong>Usage Data:</strong> product interaction events.</li>
+        <li><strong>Diagnostics:</strong> crash data and other diagnostic data.</li>
+    </ul>
+    <p>These data are used for analytics and App functionality. We do not use them for third-party advertising, data-broker sharing, or tracking you across apps or websites owned by other companies. The App does not request access to the advertising identifier for cross-app tracking.</p>
 
-    <h2>4. Third-Party Services</h2>
-    <p>We may use basic diagnostic tools (like Apple's built-in crash reporting) to improve app stability. These tools provide anonymous technical data that cannot be used to identify you.</p>
+    <h2>6. In-app purchases</h2>
+    <p>ClearPix offers a one-time Pro purchase. Apple processes payments through StoreKit and the App Store. We do not receive your payment card number or billing address. The App receives product and transaction status information needed to start a purchase, verify or finish it, restore prior purchases, and unlock Pro features. Limited purchase-flow status and the App Store product identifier may be sent to Firebase as described above.</p>
 
-    <h2>5. Changes to This Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page with a new effective date.</p>
+    <h2>7. Service providers</h2>
+    <p>Google provides Firebase Analytics and Firebase Crashlytics and processes analytics and diagnostic data on our behalf. Apple provides App Store distribution, StoreKit purchases, photo-library access, camera access, and related iOS services. These providers handle information under their own terms and privacy practices. For more information, see <a href="https://firebase.google.com/support/privacy">Firebase Privacy and Security</a>, <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>, and <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us via the App Store support link.</p>
+    <h2>8. Retention, deletion, and your choices</h2>
+    <p>Photos and generated results remain on your device or in your photo library under your control. You may delete them using the App or Photos app, and you may remove local App data by deleting the App, subject to normal iOS behavior.</p>
+    <p>Firebase retains analytics, crash, and diagnostic information according to the Firebase project settings and Google's applicable retention practices. Removing the App stops future collection from that installation but may not immediately delete information already retained by Firebase. Because ClearPix has no account system that identifies you to us, we may be unable to locate a particular anonymous app-instance record without additional information.</p>
+    <p>You can manage camera and photo-library permissions in iOS Settings. You may also stop future analytics and diagnostic collection by uninstalling the App.</p>
 
-    <div class="footer">
-        &copy; 2026 AI Photo Enhancer. All rights reserved.
-    </div>
+    <h2>9. Data security and international processing</h2>
+    <p>We use reasonable technical and organizational safeguards appropriate to the limited information described in this policy. No transmission or storage system is completely secure. Google and Apple may process information in countries other than your own, subject to their safeguards and legal obligations.</p>
+
+    <h2>10. Children's privacy</h2>
+    <p>ClearPix is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided personal information through the App, contact us so we can review the request.</p>
+
+    <h2>11. Regional privacy rights</h2>
+    <p>Depending on where you live, you may have rights regarding access, correction, deletion, restriction, objection, or portability of personal data. You may contact us to make a request. Because the App does not require an account and analytics data are not linked by us to a named identity, we may need information sufficient to verify and locate the relevant record, and in some cases may be unable to associate an anonymous record with you.</p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>We may update this Privacy Policy when the App, its SDKs, or legal requirements change. We will post the revised policy on this page and update the effective date.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions or privacy requests may be sent to the ClearPix Team at <a href="mailto:luoyi9932@gmail.com">luoyi9932@gmail.com</a>. You may also use the App Store support link.</p>
+
+    <div class="footer">&copy; 2026 ClearPix Team. All rights reserved.</div>
+</main>
 </body>
 </html>
