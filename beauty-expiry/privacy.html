@@ -22,7 +22,7 @@
     </nav>
 
     <h1>Privacy Policy</h1>
-    <p><strong>Effective date:</strong> June 29, 2026</p>
+    <p><strong>Effective date:</strong> July 23, 2026</p>
     <p><strong>Operator:</strong> Beauty Expiry Team</p>
     <p><strong>App:</strong> Beauty Expiry Tracker</p>
     <p><strong>Bundle identifier:</strong> <code>com.ly.find.beautyexpiry.tool</code></p>
@@ -53,14 +53,26 @@
     <h2>Purchases and StoreKit</h2>
     <p>Beauty Expiry Tracker may offer a one-time Premium unlock through Apple StoreKit using product identifier <code>premium_lifetime_v1</code>. Payment processing, purchase history, refunds, and payment account data are handled by Apple. Beauty Expiry Team does not collect or store your payment card details. The app reads StoreKit transaction entitlement status only to unlock paid features.</p>
 
-    <h2>No Account, Server, or Analytics in the Current App</h2>
-    <p>The current app implementation does not create a Beauty Expiry account, does not operate a custom backend service for shelf data, and does not include third-party analytics SDKs. If future versions add sync, account features, cloud services, advertising, or analytics, this policy should be updated before release of those features.</p>
+    <h2>Analytics and Crash Diagnostics</h2>
+    <p>Beauty Expiry Tracker uses Google Firebase Analytics and Firebase Crashlytics to understand feature usage, improve reliability, and diagnose crashes. These services may process:</p>
+    <ul>
+      <li>App interaction events, such as app opens, product creation or editing, Premium limit and paywall views, and backup export or restore outcomes.</li>
+      <li>Purchase-flow status, such as product availability, purchase or restore start, success, cancellation, pending, or failure, together with the App Store product identifier and entitlement state.</li>
+      <li>App version, device model, operating-system information, app-instance or device-scoped identifiers, crash stack traces, and related diagnostic state.</li>
+    </ul>
+    <p>Analytics events use bounded categories and status values. We do not send product names, brand names, notes, product photos, backup file names or contents, local file paths, or raw error messages to Firebase. We do not set a Firebase user ID, and the app does not require a Beauty Expiry account.</p>
+
+    <h2>No Advertising or Cross-App Tracking</h2>
+    <p>Firebase data is used for product analytics, app functionality, reliability, and crash diagnostics. We do not use it for third-party advertising, sell it, or combine it with data from other companies for tracking across apps or websites. The app does not request access to the advertising identifier for these purposes.</p>
 
     <h2>Data Sharing</h2>
-    <p>We do not sell your personal data. We do not share your shelf records, notes, photos, exports, or product history with third parties by default. Data leaves your device only when you choose to share, export, copy, back up, or transmit it, or when Apple processes purchase-related information through StoreKit and App Store services.</p>
+    <p>We do not sell your personal data. We do not share your shelf records, notes, photos, exports, or product history with third parties by default. Limited analytics and diagnostic data is processed by Google Firebase as described above. Other data leaves your device only when you choose to share, export, copy, back up, or transmit it, or when Apple processes purchase-related information through StoreKit and App Store services.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Google processes Firebase Analytics and Crashlytics data under its applicable terms and privacy documentation. Apple processes App Store purchases and related transaction information under Apple's policies. These providers may retain diagnostic and analytics information according to their own service settings and retention rules.</p>
 
     <h2>Data Retention and Deletion</h2>
-    <p>Your local shelf data remains on your device until you edit or delete product records, import replacement data, clear app data, or uninstall the app. Deleting the app generally removes local app data from the device, subject to iOS behavior and any device or iCloud backups you manage.</p>
+    <p>Your local shelf data remains on your device until you edit or delete product records, import replacement data, clear app data, or uninstall the app. Deleting the app generally removes local app data from the device, subject to iOS behavior and any device or iCloud backups you manage. Firebase analytics and crash data is retained according to the Firebase project settings and Google's applicable retention controls.</p>
 
     <h2>Product Safety and Health Information</h2>
     <p>Beauty Expiry Tracker is a personal organization tool. Expiry dates and reminders are calculated from the information you enter and do not constitute medical, dermatological, cosmetic safety, or product quality advice. You remain responsible for checking texture, scent, color, packaging, storage conditions, labels, and professional guidance before using any product.</p>
