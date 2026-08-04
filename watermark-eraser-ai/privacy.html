@@ -27,42 +27,60 @@
   </nav>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: <time datetime="2026-04-21">April 21, 2026</time> · App: <strong>Watermark Eraser AI</strong> · Bundle ID: <strong>com.ly.watermarkremoverai</strong></p>
+  <p class="meta">Effective date: <time datetime="2026-08-04">August 4, 2026</time> · App: <strong>Watermark Eraser AI</strong> · Bundle ID: <strong>com.ly.watermarkremoverai</strong></p>
 
   <p>This Privacy Policy explains how <strong>Watermark Eraser AI Team</strong> ("we", "us") handles information when you use <strong>Watermark Eraser AI</strong> (the "App").</p>
 
   <h2>1. Core processing model</h2>
-  <p>The App is designed for on-device image editing. Watermark removal processing is performed locally on your device using local image processing and on-device ML models when available.</p>
+  <p>The App is designed for on-device photo and video editing. Watermark removal, background removal, date-text recognition, previews, and export preparation are performed locally on your device using local image processing, Apple Vision, and on-device ML models when available. We do not operate a backend that uploads your selected photos, videos, masks, or recognized text for these editing features.</p>
 
   <h2>2. Data we process on your device</h2>
   <ul>
-    <li><strong>Selected Photos</strong>: Images you choose from Photos are used only to provide editing and preview features.</li>
-    <li><strong>Edited Results</strong>: If you tap save, edited images are saved to your photo library via iOS system APIs.</li>
-    <li><strong>Local Preferences</strong>: We store app preferences and feature state on-device (for example free quota counters and visual settings).</li>
+    <li><strong>Selected Photos and Videos</strong>: Media you choose from Photos is used locally to provide editing, preview, and export features.</li>
+    <li><strong>Editing Inputs</strong>: Brush masks, date-text recognition results, and other editing selections remain part of the on-device editing session.</li>
+    <li><strong>Edited Results</strong>: If you tap save, edited photos or videos are saved to your photo library through iOS system APIs. If you tap share, iOS presents the system share sheet and the destination you choose handles the shared file under its own terms.</li>
+    <li><strong>Local Preferences</strong>: We store app preferences, language, export settings, free-use counters, and feature state on your device.</li>
   </ul>
 
-  <h2>3. Data we do not collect for core use</h2>
-  <p>For core editing functionality, we do not require account registration and we do not operate a backend upload flow for your selected photos.</p>
+  <h2>3. Product analytics and diagnostics</h2>
+  <p>We use Google Firebase Analytics to understand feature use and improve the App, and Firebase Crashlytics to diagnose crashes, reliability problems, and selected non-fatal errors. Depending on how you use the App, these services may process:</p>
+  <ul>
+    <li><strong>Product interaction and usage data</strong>, such as app opens; editing, export, Pro-feature, paywall, product-loading, purchase, restore, and resumed-action events; coarse feature context; item counts; result status; and processing duration.</li>
+    <li><strong>Purchase-related status</strong>, such as the App Store product identifier, plan type, purchase or restore stage, and whether Pro access is active. Apple processes the transaction and payment details.</li>
+    <li><strong>Identifiers</strong>, including Firebase app-instance or device-scoped identifiers used for analytics and diagnostics.</li>
+    <li><strong>Diagnostics</strong>, including crash reports, stack traces, app and OS version, device model, relevant application state, and developer-defined non-fatal error categories.</li>
+    <li><strong>App properties</strong>, such as selected app language and whether the App currently recognizes the device as Free or Pro.</li>
+  </ul>
+  <p>Our analytics wrapper is designed not to send selected photo or video contents, filenames, brush strokes, recognized text, transaction identifiers, names, email addresses, or raw error messages. Firebase may generate automatic lifecycle events and diagnostic breadcrumbs as part of the enabled SDKs.</p>
 
-  <h2>4. Purchases and subscriptions</h2>
-  <p>If paid plans or auto-renewable subscriptions are offered, billing and payment are processed by Apple through your App Store account. We do not receive your full payment card number. We may receive limited entitlement status data from Apple to confirm whether premium features are active.</p>
+  <h2>4. How we use and share this data</h2>
+  <p>We use analytics and diagnostic data to measure product performance, understand feature and purchase funnels, improve reliability, troubleshoot errors, and plan improvements. Google acts as our Firebase service provider and processes this data according to its applicable terms and privacy documentation. We do not use this data for third-party advertising, sell it to data brokers, or use it to track you across apps or websites owned by other companies. Advertising-personalization signals are disabled in the App.</p>
 
-  <h2>5. Analytics and ads</h2>
-  <p>As of the effective date above, the app does not include third-party advertising SDKs for personalized advertising. If this changes, we will update this policy and App Store privacy details.</p>
+  <h2>5. Data we do not collect for core use</h2>
+  <p>The App does not require account registration. We do not set a Firebase user ID and do not intentionally send information that directly identifies you. Photos, videos, recognized text, and editing masks processed only on your device are not collected by us through Firebase.</p>
 
-  <h2>6. Retention and deletion</h2>
-  <p>Most image data remains on your device under your control. You can delete exported images from Photos and remove the app to clear app-local data, subject to iOS behavior.</p>
+  <h2>6. Purchases and subscriptions</h2>
+  <p>The App offers monthly and yearly auto-renewable subscriptions and may offer a lifetime purchase for Pro features. Billing and payment are processed by Apple through your App Store account. We do not receive your full payment card number. The App uses StoreKit transaction and entitlement status locally to unlock and restore Pro features, while limited purchase-flow status described above may be sent to Firebase for analytics and diagnostics.</p>
 
-  <h2>7. Children</h2>
+  <h2>7. Your choices</h2>
+  <p>You can control photo-library access in iOS Settings, choose which media to import, decide whether to save or share an edited result, and manage or cancel subscriptions in your Apple ID subscription settings. The current App version does not provide an account-based analytics dashboard or a separate in-app Firebase opt-out control.</p>
+
+  <h2>8. Retention and deletion</h2>
+  <p>Your source media and editing data remain on your device under your control. You can delete exported media from Photos and remove the App to clear app-local data, subject to iOS behavior. Firebase retains analytics and diagnostic data according to our Firebase configuration and Google's applicable retention practices. Because the App has no account system and does not set a Firebase user ID, we may not be able to associate Firebase records with a specific individual. You may contact us with privacy questions or requests.</p>
+
+  <h2>9. Security</h2>
+  <p>We use reasonable technical and organizational measures intended to protect information, but no transmission or storage system can be guaranteed completely secure.</p>
+
+  <h2>10. Children</h2>
   <p>The App is not directed to children under 13 (or the minimum age required by local law). If you believe a child provided personal information to us, contact us and we will review the request.</p>
 
-  <h2>8. International users and rights</h2>
-  <p>Depending on your region, you may have rights to request access, correction, deletion, or restriction of personal information. Contact us to submit requests.</p>
+  <h2>11. International processing and regional rights</h2>
+  <p>Firebase data may be processed in countries other than the country where you live. Depending on your region, you may have rights to request access, correction, deletion, objection, or restriction of personal information. Contact us to submit a request. We will respond as required by applicable law, subject to our ability to identify the relevant records.</p>
 
-  <h2>9. Changes</h2>
+  <h2>12. Changes</h2>
   <p>We may update this policy from time to time. Updated versions will be posted at this URL with a revised effective date.</p>
 
-  <h2>10. Contact</h2>
+  <h2>13. Contact</h2>
   <p>Email: <a href="mailto:luoyi9932@gmail.com">luoyi9932@gmail.com</a></p>
   <p>Related documents: <a href="terms.html">Terms of Use</a> and <a href="content.html">Content Policy</a>.</p>
 </body>
