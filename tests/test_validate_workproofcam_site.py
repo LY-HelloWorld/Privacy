@@ -45,6 +45,38 @@ class WorkProofCamSiteValidatorTests(unittest.TestCase):
             errors = validator.validate_required_pages(root)
         self.assertTrue(any("workproofcam-web/index.html" in error for error in errors), errors)
 
+    def test_publisher_identity_validator_exists(self):
+        """Removing the bilingual publisher contract must break validation."""
+        self.assertTrue(hasattr(validator, "validate_publisher_identity"))
+
+    @unittest.skipUnless(
+        validator is not None and hasattr(validator, "validate_publisher_identity"),
+        "publisher identity validation is not implemented yet",
+    )
+    def test_missing_english_publisher_identity_is_reported(self):
+        """A website that exposes only the Chinese seller label must be rejected."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            page = root / "workproofcam-web" / "index.html"
+            page.parent.mkdir(parents=True)
+            page.write_text(
+                '<p>Published on the App Store by 雪梅 黄</p>'
+                '<script type="application/ld+json">'
+                '{"publisher":{"@type":"Person","name":"雪梅 黄"}}'
+                "</script>",
+                encoding="utf-8",
+            )
+            errors = validator.validate_publisher_identity(root)
+        self.assertTrue(any("Xuemei Huang" in error for error in errors), errors)
+
+    @unittest.skipUnless(
+        validator is not None and hasattr(validator, "validate_publisher_identity"),
+        "publisher identity validation is not implemented yet",
+    )
+    def test_committed_site_has_bilingual_publisher_identity(self):
+        """The rendered identity and JSON-LD must connect the English name to Apple's label."""
+        self.assertEqual([], validator.validate_publisher_identity(ROOT))
+
 
 if __name__ == "__main__":
     unittest.main()

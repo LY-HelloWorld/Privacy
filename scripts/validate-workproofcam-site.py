@@ -161,6 +161,37 @@ def validate_sitemaps(root: Path) -> list[str]:
     return errors
 
 
+def validate_publisher_identity(root: Path) -> list[str]:
+    """Require one readable overseas name while preserving Apple's exact seller label."""
+    relative = "workproofcam-web/index.html"
+    path = root / relative
+    if not path.is_file():
+        return [f"Missing publisher identity page: {relative}"]
+
+    parser, html = parse_page(path)
+    errors: list[str] = []
+    visible_identity = "Published on the App Store by Xuemei Huang (listed on the App Store as 雪梅 黄)"
+    if visible_identity not in html:
+        errors.append(f"{relative} must display Xuemei Huang with the App Store alias 雪梅 黄")
+
+    publisher_matches = []
+    for block in parser.json_ld_blocks:
+        try:
+            data = json.loads(block)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict) and isinstance(data.get("publisher"), dict):
+            publisher_matches.append(data["publisher"])
+
+    # Entity matching depends on retaining both the overseas display name and Apple's exact public label.
+    if not any(
+        publisher.get("name") == "Xuemei Huang" and publisher.get("alternateName") == "雪梅 黄"
+        for publisher in publisher_matches
+    ):
+        errors.append(f"{relative} JSON-LD publisher must name Xuemei Huang with alternateName 雪梅 黄")
+    return errors
+
+
 def local_target(root: Path, source: Path, target: str) -> Path | None:
     parsed = urlparse(target)
     if parsed.scheme in {"mailto", "tel", "javascript", "data"}:
@@ -214,6 +245,7 @@ def validate_site(root: Path) -> list[str]:
         validate_required_pages,
         validate_html_pages,
         validate_sitemaps,
+        validate_publisher_identity,
         validate_internal_targets,
     ):
         errors.extend(validator_function(root))
