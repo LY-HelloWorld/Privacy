@@ -69,6 +69,27 @@ class WorkProofCamSiteValidatorTests(unittest.TestCase):
             errors = validator.validate_publisher_identity(root)
         self.assertTrue(any("Xuemei Huang" in error for error in errors), errors)
 
+    def test_missing_identity_on_secondary_page_is_reported(self):
+        """Dropping publisher identity from an intent page must not be hidden by a valid homepage."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            main = root / "workproofcam-web" / "index.html"
+            main.parent.mkdir(parents=True)
+            main.write_text(
+                '<p>Published on the App Store by Xuemei Huang '
+                '(listed on the App Store as 雪梅 黄)</p>'
+                '<script type="application/ld+json">'
+                '{"publisher":{"@type":"Person","name":"Xuemei Huang",'
+                '"alternateName":"雪梅 黄"}}'
+                "</script>",
+                encoding="utf-8",
+            )
+            secondary = root / "workproofcam-web" / "job-site-photo-report-app" / "index.html"
+            secondary.parent.mkdir(parents=True)
+            secondary.write_text("<p>WorkProofCam job-site photo reports</p>", encoding="utf-8")
+            errors = validator.validate_publisher_identity(root)
+        self.assertTrue(any("job-site-photo-report-app" in error for error in errors), errors)
+
     @unittest.skipUnless(
         validator is not None and hasattr(validator, "validate_publisher_identity"),
         "publisher identity validation is not implemented yet",

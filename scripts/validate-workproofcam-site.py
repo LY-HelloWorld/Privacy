@@ -163,32 +163,44 @@ def validate_sitemaps(root: Path) -> list[str]:
 
 def validate_publisher_identity(root: Path) -> list[str]:
     """Require one readable overseas name while preserving Apple's exact seller label."""
-    relative = "workproofcam-web/index.html"
-    path = root / relative
-    if not path.is_file():
-        return [f"Missing publisher identity page: {relative}"]
-
-    parser, html = parse_page(path)
     errors: list[str] = []
     visible_identity = "Published on the App Store by Xuemei Huang (listed on the App Store as 雪梅 黄)"
-    if visible_identity not in html:
-        errors.append(f"{relative} must display Xuemei Huang with the App Store alias 雪梅 黄")
 
-    publisher_matches = []
-    for block in parser.json_ld_blocks:
-        try:
-            data = json.loads(block)
-        except json.JSONDecodeError:
+    def collect_publishers(value: object) -> list[dict[str, object]]:
+        """Find publisher nodes at any JSON-LD depth, including @graph and mainEntity."""
+        matches: list[dict[str, object]] = []
+        if isinstance(value, dict):
+            publisher = value.get("publisher")
+            if isinstance(publisher, dict):
+                matches.append(publisher)
+            for nested in value.values():
+                matches.extend(collect_publishers(nested))
+        elif isinstance(value, list):
+            for nested in value:
+                matches.extend(collect_publishers(nested))
+        return matches
+
+    # Every crawlable WorkProofCam destination must reinforce the same bilingual publisher entity.
+    for relative in PAGE_SPECS:
+        path = root / relative
+        if not path.is_file():
+            errors.append(f"Missing publisher identity page: {relative}")
             continue
-        if isinstance(data, dict) and isinstance(data.get("publisher"), dict):
-            publisher_matches.append(data["publisher"])
+        parser, html = parse_page(path)
+        if visible_identity not in html:
+            errors.append(f"{relative} must display Xuemei Huang with the App Store alias 雪梅 黄")
 
-    # Entity matching depends on retaining both the overseas display name and Apple's exact public label.
-    if not any(
-        publisher.get("name") == "Xuemei Huang" and publisher.get("alternateName") == "雪梅 黄"
-        for publisher in publisher_matches
-    ):
-        errors.append(f"{relative} JSON-LD publisher must name Xuemei Huang with alternateName 雪梅 黄")
+        publisher_matches: list[dict[str, object]] = []
+        for block in parser.json_ld_blocks:
+            try:
+                publisher_matches.extend(collect_publishers(json.loads(block)))
+            except json.JSONDecodeError:
+                continue
+        if not any(
+            publisher.get("name") == "Xuemei Huang" and publisher.get("alternateName") == "雪梅 黄"
+            for publisher in publisher_matches
+        ):
+            errors.append(f"{relative} JSON-LD publisher must name Xuemei Huang with alternateName 雪梅 黄")
     return errors
 
 
