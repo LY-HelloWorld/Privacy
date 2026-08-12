@@ -152,6 +152,54 @@ h1 { margin-bottom: 24px; font-size: clamp(48px, 7vw, 88px); line-height: 0.98; 
 .fit-list li { padding: 8px 13px; color: var(--green-dark); background: #e4f2eb; border-radius: 999px; font-size: 14px; font-weight: 750; }
 .guide-related { background: var(--wash); }
 
+/* Support entry: keeps urgent contact visible while organizing answers around user problems and next actions. */
+.support-main { background: #fff; }
+.support-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(310px, 0.6fr);
+  gap: clamp(42px, 8vw, 112px);
+  align-items: center;
+  padding: clamp(62px, 9vw, 120px) clamp(20px, 7vw, 104px);
+  background: var(--wash);
+  border-bottom: 1px solid var(--line);
+}
+.support-hero-copy { max-width: 790px; }
+.support-hero h1 { max-width: 900px; font-size: clamp(45px, 6.4vw, 80px); }
+.support-lede { max-width: 720px; margin-bottom: 28px; color: #33423d; font-size: clamp(18px, 2vw, 23px); }
+.support-summary { padding: clamp(26px, 4vw, 38px); color: #e6f4ed; background: var(--green-dark); border-radius: 14px; box-shadow: var(--shadow); }
+.support-summary .problem-label { color: #f5c9ac; }
+.support-summary .answer-label { color: #98ddbd; }
+.support-summary ul { display: grid; gap: 14px; padding: 0; margin: 0 0 30px; list-style: none; }
+.support-summary li { padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+.support-summary p:last-child { margin-bottom: 0; }
+.support-section { padding: clamp(72px, 9vw, 120px) clamp(20px, 7vw, 104px); }
+.support-answer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.support-answer { padding: clamp(24px, 3vw, 34px); background: var(--wash); border: 1px solid var(--line); border-radius: 12px; }
+.support-answer h3 { min-height: 58px; margin-bottom: 24px; font-size: clamp(22px, 2.4vw, 29px); line-height: 1.13; letter-spacing: -0.02em; }
+.support-answer .answer-label { padding-top: 20px; border-top: 1px solid var(--line); }
+.support-answer p:last-child { margin-bottom: 0; color: #33423d; }
+.support-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 34px;
+  align-items: center;
+  margin: 0 clamp(20px, 7vw, 104px);
+  padding: clamp(28px, 5vw, 48px);
+  color: #fff;
+  background: var(--green-dark);
+  border-radius: 14px;
+}
+.support-contact h2 { margin-bottom: 12px; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; letter-spacing: -0.03em; }
+.support-contact p:last-child { max-width: 760px; margin-bottom: 0; color: #dceee6; }
+.support-contact .eyebrow { color: #98ddbd; }
+.support-contact .button.primary { color: var(--green-dark); background: #fff; box-shadow: none; }
+.support-guides { background: var(--wash); }
+.support-links { display: grid; grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1fr); gap: clamp(36px, 8vw, 112px); padding: clamp(72px, 9vw, 112px) clamp(20px, 7vw, 104px); }
+.support-links h2 { margin-bottom: 0; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; letter-spacing: -0.03em; }
+.support-links nav { display: grid; border-top: 1px solid var(--line); }
+.support-links a { display: flex; justify-content: space-between; gap: 20px; padding: 19px 0; border-bottom: 1px solid var(--line); font-weight: 800; }
+.support-links a:hover { color: var(--green); }
+
 .faq { background: #fff; }
 .faq-list { display: grid; gap: 12px; max-width: 900px; }
 details { padding: 18px 20px; background: var(--wash); border: 1px solid var(--line); border-radius: 9px; }
@@ -176,6 +224,9 @@ details p { margin: 12px 0 0; color: var(--muted); }
   .guide-hero { grid-template-columns: 1fr; }
   .guide-shot { width: min(360px, 76vw); }
   .guide-section { grid-template-columns: 1fr; }
+  .support-hero, .support-links { grid-template-columns: 1fr; }
+  .support-answer-grid { grid-template-columns: 1fr; }
+  .support-contact { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .site-header { position: static; align-items: flex-start; }
@@ -193,4 +244,7 @@ details p { margin: 12px 0 0; color: var(--muted); }
   .guide-shot { width: min(340px, 88vw); }
   .guide-figure { grid-template-columns: 1fr; }
   .guide-figure img { width: min(330px, 100%); margin-inline: auto; }
+  .support-hero { padding-top: 52px; }
+  .support-answer h3 { min-height: 0; }
+  .support-contact { margin-inline: 20px; }
 }

@@ -50,6 +50,37 @@ class HomeInventorySiteValidatorTests(unittest.TestCase):
         )
 
     @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_missing_support_page_is_reported(self):
+        """Dropping the public support destination must fail the site contract."""
+        with tempfile.TemporaryDirectory() as directory:
+            errors = validator.validate_required_pages(Path(directory))
+        self.assertTrue(
+            any("HomeInventory_web/support/index.html" in error for error in errors),
+            errors,
+        )
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_incomplete_support_page_reports_every_contact_destination(self):
+        """A support shell without usable contact and policy links must not pass release validation."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            page = root / "HomeInventory_web" / "support" / "index.html"
+            page.parent.mkdir(parents=True)
+            page.write_text("<h1>Support</h1>", encoding="utf-8")
+            errors = validator.validate_support_page(root)
+
+        expected_fragments = (
+            "luoyi9932@gmail.com",
+            "https://ly-helloworld.github.io/Privacy/HomeInventory_web/",
+            "https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html",
+            "https://ly-helloworld.github.io/Privacy/home-inventory/terms.html",
+            "https://apps.apple.com/us/app/moving-boxes-organizer/id6766885651",
+        )
+        for fragment in expected_fragments:
+            with self.subTest(fragment=fragment):
+                self.assertTrue(any(fragment in error for error in errors), errors)
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
     def test_wrong_app_identity_is_reported(self):
         """A page that points to another app must not pass entity validation."""
         with tempfile.TemporaryDirectory() as directory:

@@ -20,12 +20,16 @@ APP_ENTITY_ID = f"{SITE_BASE}#app"
 APP_STORE_ID = "6766885651"
 APP_STORE_URL = "https://apps.apple.com/us/app/moving-boxes-organizer/id6766885651"
 PRODUCT_NAME = "Moving Boxes Organizer by HomeInventory"
+SUPPORT_EMAIL = "luoyi9932@gmail.com"
+PRIVACY_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html"
+TERMS_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/terms.html"
 
 PAGE_SPECS = {
     "HomeInventory_web/index.html": SITE_BASE,
     "HomeInventory_web/how-to-keep-track-of-moving-boxes/index.html": f"{SITE_BASE}how-to-keep-track-of-moving-boxes/",
     "HomeInventory_web/find-items-without-opening-boxes/index.html": f"{SITE_BASE}find-items-without-opening-boxes/",
     "HomeInventory_web/qr-labels-for-storage-boxes/index.html": f"{SITE_BASE}qr-labels-for-storage-boxes/",
+    "HomeInventory_web/support/index.html": f"{SITE_BASE}support/",
 }
 REQUIRED_PAGES = tuple(PAGE_SPECS)
 SITEMAPS = ("sitemap.xml", "HomeInventory_web/sitemap.xml")
@@ -111,7 +115,7 @@ def parse_page(path: Path) -> tuple[PageParser, str]:
 
 
 def validate_required_pages(root: Path) -> list[str]:
-    """Require all four crawlable HomeInventory destinations."""
+    """Require every crawlable HomeInventory product and support destination."""
     return [
         f"Missing required page: {relative}"
         for relative in REQUIRED_PAGES
@@ -127,6 +131,20 @@ def contains_entity_id(value: object) -> bool:
         return any(contains_entity_id(nested) for nested in value.values())
     if isinstance(value, list):
         return any(contains_entity_id(nested) for nested in value)
+    return False
+
+
+def contains_schema_type(value: object, expected_type: str) -> bool:
+    """Find a schema type at any JSON-LD depth so graph-based pages remain supported."""
+    if isinstance(value, dict):
+        schema_type = value.get("@type")
+        if schema_type == expected_type or (
+            isinstance(schema_type, list) and expected_type in schema_type
+        ):
+            return True
+        return any(contains_schema_type(nested, expected_type) for nested in value.values())
+    if isinstance(value, list):
+        return any(contains_schema_type(nested, expected_type) for nested in value)
     return False
 
 
@@ -194,6 +212,39 @@ def validate_screenshot_dimensions(root: Path) -> list[str]:
                 continue
             if image.get("width") != "1260" or image.get("height") != "2736":
                 errors.append(f"{relative} screenshot {source} must declare intrinsic size 1260x2736")
+    return errors
+
+
+def validate_support_page(root: Path) -> list[str]:
+    """Require a usable contact route and the public destinations promised by Support."""
+    relative = "HomeInventory_web/support/index.html"
+    path = root / relative
+    if not path.is_file():
+        return []
+
+    parser, _ = parse_page(path)
+    required_targets = (
+        f"mailto:{SUPPORT_EMAIL}",
+        SITE_BASE,
+        PRIVACY_URL,
+        TERMS_URL,
+        APP_STORE_URL,
+    )
+    errors = [
+        f"{relative} is missing required support destination: {target}"
+        for target in required_targets
+        if target not in parser.targets
+    ]
+
+    # Support must identify itself as a contact destination, not only repeat the app entity.
+    json_values: list[object] = []
+    for block in parser.json_ld_blocks:
+        try:
+            json_values.append(json.loads(block))
+        except json.JSONDecodeError:
+            continue
+    if not any(contains_schema_type(value, "ContactPage") for value in json_values):
+        errors.append(f"{relative} must expose ContactPage structured data")
     return errors
 
 
@@ -276,6 +327,7 @@ def validate_site(root: Path) -> list[str]:
         validate_required_pages,
         validate_html_pages,
         validate_screenshot_dimensions,
+        validate_support_page,
         validate_sitemaps,
         validate_internal_targets,
     ):
