@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Sitemap entry: update the loc value if the final GitHub Pages URL differs. -->
+<!-- Sitemap entry: exposes the product homepage and each problem-focused answer as separate destinations. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ly-helloworld.github.io/Privacy/HomeInventory_web/</loc>
-    <lastmod>2026-05-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/HomeInventory_web/how-to-keep-track-of-moving-boxes/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/HomeInventory_web/find-items-without-opening-boxes/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/HomeInventory_web/qr-labels-for-storage-boxes/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
