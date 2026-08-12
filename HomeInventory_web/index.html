@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Page entry: standalone GitHub Pages marketing page for HomeInventory. -->
+  <!-- Page entry: the standalone marketing page introduces HomeInventory and sends visitors to the App Store. -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Find What's in Every Box | HomeInventory</title>
-  <meta name="description" content="When a label is not enough, HomeInventory lets you record box contents, search for items, scan QR labels, and export your inventory on iPhone." />
-  <meta name="keywords" content="box inventory organizer, moving box inventory, storage box inventory, moving boxes, QR labels, packing list, home inventory app, PDF export, CSV export" />
+  <title>Find What You Packed | HomeInventory</title>
+  <meta name="description" content="HomeInventory helps you remember what is in every moving or storage box, find items quickly, and unpack what matters first." />
+  <meta name="keywords" content="moving box inventory, storage box organizer, find items in boxes, moving app, home inventory app" />
   <meta name="author" content="HomeInventory Team" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://ly-helloworld.github.io/Privacy/HomeInventory_web/" />
@@ -14,31 +14,31 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ly-helloworld.github.io/Privacy/HomeInventory_web/" />
-  <meta property="og:title" content="Find What's in Every Box | HomeInventory" />
-  <meta property="og:description" content="Record what went into each box, then search for the item instead of opening boxes one by one." />
-  <meta property="og:image" content="https://ly-helloworld.github.io/Privacy/HomeInventory_web/assets/app-icon.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Find What's in Every Box | HomeInventory" />
-  <meta name="twitter:description" content="Record what went into each box, then search for the item instead of opening boxes one by one." />
-  <meta name="twitter:image" content="https://ly-helloworld.github.io/Privacy/HomeInventory_web/assets/app-icon.png" />
+  <meta property="og:title" content="Find What You Packed | HomeInventory" />
+  <meta property="og:description" content="Know what is in every box, find items quickly, and unpack what matters first." />
+  <meta property="og:image" content="https://ly-helloworld.github.io/Privacy/HomeInventory_web/assets/screenshots/01_find_without_opening_1260x2736.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Find What You Packed | HomeInventory" />
+  <meta name="twitter:description" content="Know what is in every box, find items quickly, and unpack what matters first." />
+  <meta name="twitter:image" content="https://ly-helloworld.github.io/Privacy/HomeInventory_web/assets/screenshots/01_find_without_opening_1260x2736.png" />
 
   <link rel="icon" href="assets/app-icon.png" />
   <link rel="apple-touch-icon" href="assets/app-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Core SEO data: the landing page keeps its own canonical URL while App Store remains the download target. -->
+  <!-- Structured product data: describes the app without exposing implementation details in the visible page copy. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "HomeInventory",
-    "alternateName": "Box Inventory Organizer",
+    "alternateName": "Moving Box Inventory",
     "operatingSystem": "iOS",
     "applicationCategory": "LifestyleApplication",
     "downloadUrl": "https://apps.apple.com/app/id6766885651",
     "url": "https://ly-helloworld.github.io/Privacy/HomeInventory_web/",
     "image": "https://ly-helloworld.github.io/Privacy/HomeInventory_web/assets/app-icon.png",
-    "description": "HomeInventory lets people record what is inside moving and storage boxes, search for items, scan QR labels, and export their inventory.",
+    "description": "HomeInventory helps people remember what is in moving and storage boxes, find items quickly, and unpack what matters first.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -54,252 +54,137 @@
       <span>HomeInventory</span>
     </a>
     <nav class="nav-links" aria-label="Page sections">
-      <a href="https://ly-helloworld.github.io/Privacy/">App Pages</a>
-      <a href="#features">Features</a>
-      <a href="#workflow">Workflow</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#screenshots">See the app</a>
       <a href="#faq">FAQ</a>
       <a class="nav-cta" href="https://apps.apple.com/app/id6766885651">App Store</a>
     </nav>
   </header>
 
   <main id="top">
-    <!-- Hero entry: the first viewport names the observed find-in-a-box problem and connects it to the install path. -->
+    <!-- Hero entry: states the main user problem in plain language and shows the real product screen immediately. -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">For moving boxes and storage bins</p>
-        <h1 id="hero-title">You labeled the box. You still can't find the thing.</h1>
+        <p class="eyebrow">Moving and storage, made easier</p>
+        <h1 id="hero-title">Find what you packed without opening every box.</h1>
         <p class="hero-lede">
-          Public moving discussions repeatedly describe the same workaround: remember, write a list,
-          or keep opening boxes. HomeInventory lets you record what went into each box, then search
-          for the item and open the matching box record.
+          HomeInventory keeps a simple record of what is inside your boxes, so you can find an item,
+          share the list, and unpack the things you need first.
         </p>
         <div class="hero-actions" aria-label="Download and contact links">
           <a class="button primary" href="https://apps.apple.com/app/id6766885651">Download on the App Store</a>
-          <a class="button secondary" href="mailto:luoyi9932@gmail.com?subject=HomeInventory%20Support">Contact support</a>
+          <a class="button secondary" href="#solutions">See how it works</a>
         </div>
-        <ul class="keyword-row" aria-label="Product highlights">
-          <li>Search by item</li>
-          <li>QR box labels</li>
-          <li>Item photos</li>
-          <li>Local-first inventory</li>
-        </ul>
+        <p class="hero-note">For moving boxes, storage bins, garages, closets, and everyday home organization.</p>
       </div>
-
-      <!-- Core visual: CSS-only preview demonstrates the searchable record without inventing usage metrics. -->
-      <div class="product-visual" aria-label="HomeInventory product preview">
-        <div class="phone" role="img" aria-label="Mock preview of a moving box inventory dashboard">
-          <div class="phone-bar">
-            <span></span>
-            <strong>Find an item</strong>
-            <span></span>
-          </div>
-          <div class="progress-panel">
-            <div>
-              <span class="panel-label">Search inventory</span>
-              <strong>⌕</strong>
-            </div>
-            <div class="search-preview">coffee maker</div>
-          </div>
-          <div class="box-list">
-            <article>
-              <span class="status packed">Match</span>
-              <h2>Kitchen 03</h2>
-              <p>Coffee maker · Mugs · Filters</p>
-            </article>
-            <article>
-              <span class="status open">QR label</span>
-              <h2>Scan to open</h2>
-              <p>See the box record without opening it</p>
-            </article>
-            <article>
-              <span class="status valuable">Details</span>
-              <h2>Photos and notes</h2>
-              <p>Keep useful context with each item</p>
-            </article>
-          </div>
-        </div>
-        <div class="label-sheet" aria-label="Printable QR label preview">
-          <div class="qr" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div>
-            <strong>Kitchen 03</strong>
-            <p>Scan to open this box in HomeInventory.</p>
-          </div>
-        </div>
+      <div class="hero-shot">
+        <img src="assets/screenshots/01_find_without_opening_1260x2736.png" alt="HomeInventory search screen showing the box that contains an item" width="1260" height="2736" />
       </div>
     </section>
 
-    <!-- Evidence-led problem section: these are public research patterns, not HomeInventory testimonials. -->
-    <section class="problem-section" aria-labelledby="problem-title">
+    <!-- Solutions entry: each card pairs a familiar user problem with one simple product response. -->
+    <section id="solutions" class="solutions section" aria-labelledby="solutions-title">
       <div class="section-heading">
-        <p class="eyebrow">The problem</p>
-        <h2 id="problem-title">A label tells you where a box goes. It does not tell you where one item is.</h2>
-        <p class="section-intro">
-          In public moving discussions, people describe using memory, notebooks, phone notes, spreadsheets,
-          and labels to keep track of boxes. The recurring failure is retrieval: the item is packed, but the
-          person still has to remember which box or search through several of them.
-        </p>
+        <p class="eyebrow">The problem, solved</p>
+        <h2 id="solutions-title">Packing is easy to start. Finding things later is the hard part.</h2>
+        <p class="section-intro">HomeInventory gives every box a clear record, so your future self does not have to rely on memory.</p>
       </div>
-      <div class="problem-grid">
-        <article>
-          <span class="problem-mark">01</span>
-          <h3>Memory is not a storage system</h3>
-          <p>One moving discussion asks whether people use “just remember,” then records a reply that trying to remember what is in each box “didn't work so well, or at all.”</p>
-          <a class="source-link" href="https://www.reddit.com/r/moving/comments/1uifdkx/how_do_you_keep_track_of_whats_in_your_boxes/" rel="noopener noreferrer">Read the Reddit discussion</a>
+      <div class="solution-grid">
+        <article class="solution-card">
+          <div class="solution-number">01</div>
+          <p class="problem-label">The problem</p>
+          <h3>“I know it is in a box. Which one?”</h3>
+          <div class="solution-divider" aria-hidden="true"></div>
+          <p class="answer-label">How HomeInventory helps</p>
+          <p>Search for the item and see the box it belongs to. No guessing and no opening boxes one by one.</p>
         </article>
-        <article>
-          <span class="problem-mark">02</span>
-          <h3>Room labels are too broad</h3>
-          <p>Another discussion describes boxes labeled “Kitchen” that contain items from multiple rooms. A destination label helps movers, but it is not an item-level inventory.</p>
-          <a class="source-link" href="https://www.reddit.com/r/moving/comments/1twkm56/do_you_label_boxes_by_room_or_by_content/" rel="noopener noreferrer">Read the Reddit discussion</a>
+        <article class="solution-card">
+          <div class="solution-number">02</div>
+          <p class="problem-label">The problem</p>
+          <h3>“Kitchen” on the label is not enough.</h3>
+          <div class="solution-divider" aria-hidden="true"></div>
+          <p class="answer-label">How HomeInventory helps</p>
+          <p>Add the actual items, photos, and notes inside each box. You can see what is packed before you move anything.</p>
         </article>
-        <article>
-          <span class="problem-mark">03</span>
-          <h3>The real question comes later</h3>
-          <p>Competitor reviews repeatedly praise item search because it identifies the box number, while other reviews report that losing the inventory data makes months of labeling useless.</p>
-          <a class="source-link" href="https://apps.apple.com/ca/app/movingboxes-home-inventory/id1265149542" rel="noopener noreferrer">Read the competitor reviews</a>
+        <article class="solution-card">
+          <div class="solution-number">03</div>
+          <p class="problem-label">The problem</p>
+          <h3>Everyone is packing, but no one has the same list.</h3>
+          <div class="solution-divider" aria-hidden="true"></div>
+          <p class="answer-label">How HomeInventory helps</p>
+          <p>Share one inventory with family, so everyone can pack, check, and find things from the same place.</p>
         </article>
       </div>
-      <p class="evidence-note"><strong>Evidence note:</strong> These patterns come from public discussions and competitor reviews. They are not presented as HomeInventory customer testimonials.</p>
     </section>
 
-    <section class="trust-strip" aria-label="Privacy and platform summary">
-      <p><strong>Local-first:</strong> inventory data and photos stay on your device unless you choose to export or share them.</p>
-      <p><strong>Built for iPhone:</strong> quick box lookup, QR scanning, StoreKit Pro unlock, and system sharing.</p>
+    <section class="promise-strip" aria-label="HomeInventory benefits">
+      <p><strong>Find it.</strong> Search by item, room, or note.</p>
+      <p><strong>See it.</strong> Keep photos and details with the box.</p>
+      <p><strong>Move on.</strong> Unpack what matters first.</p>
     </section>
 
-    <section id="features" class="section" aria-labelledby="features-title">
+    <!-- Screenshot gallery: uses the exact current App Store assets so the website reflects the real app. -->
+    <section id="screenshots" class="screenshots section" aria-labelledby="screenshots-title">
       <div class="section-heading">
-        <p class="eyebrow">Features</p>
-        <h2 id="features-title">Turn “where is it?” into a search.</h2>
+        <p class="eyebrow">See the app</p>
+        <h2 id="screenshots-title">A clearer way to pack, find, and unpack.</h2>
       </div>
-      <div class="feature-grid">
-        <article class="feature">
-          <span class="feature-icon">01</span>
-          <h3>Organize boxes by room</h3>
-          <p>Create moving boxes or storage boxes, assign rooms, mark packed status, and keep a clean list of what still needs attention.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon">02</span>
-          <h3>Add item photos and notes</h3>
-          <p>Record item names, quantities, categories, fragile flags, valuable flags, notes, and photos so each box has useful context.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon">03</span>
-          <h3>Print QR labels</h3>
-          <p>Generate QR labels for boxes and export printable label PDFs for Letter or A4 paper. Scan a label to open the matching box record.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon">04</span>
-          <h3>Search and filter fast</h3>
-          <p>Find boxes and items by name, room, category, or notes. Filter by room and packed status during a move or unpacking day.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon">05</span>
-          <h3>Export PDF or CSV</h3>
-          <p>Share or save your inventory as CSV or PDF, including useful summaries for moving, storage, insurance, or household records.</p>
-        </article>
-        <article class="feature">
-          <span class="feature-icon">06</span>
-          <h3>Track packing progress</h3>
-          <p>See total boxes, packed boxes, unpacked boxes, item counts, room summaries, fragile items, and valuable items from the dashboard.</p>
-        </article>
+      <div class="screenshot-grid">
+        <figure class="screenshot-card featured-shot">
+          <img src="assets/screenshots/01_find_without_opening_1260x2736.png" alt="Find an item and see which box contains it" loading="lazy" width="1260" height="2736" />
+          <figcaption><strong>Find it without opening boxes.</strong><span>Search an item and see where it is.</span></figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/02_record_box_in_seconds_1260x2736.png" alt="Record box contents with photos and notes" loading="lazy" width="1260" height="2736" />
+          <figcaption><strong>Record what is inside.</strong><span>Add photos and notes as you pack.</span></figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/03_print_stick_scan_1260x2736.png" alt="Print and scan labels for boxes" loading="lazy" width="1260" height="2736" />
+          <figcaption><strong>Give every box an identity.</strong><span>Print, stick, and find it later.</span></figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/04_share_boxes_with_family_1260x2736.png" alt="Share boxes with family" loading="lazy" width="1260" height="2736" />
+          <figcaption><strong>Keep everyone on the same page.</strong><span>Share boxes with family.</span></figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/05_private_by_default_1260x2736.png" alt="Private inventory stored on your device" loading="lazy" width="1260" height="2736" />
+          <figcaption><strong>Your home inventory stays private.</strong><span>Keep it on your device by default.</span></figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="assets/screenshots/06_unpack_what_matters_first_1260x2736.png" alt="See packed, fragile, and valuable items" loading="lazy" width="1260" height="2736" />
+          <figcaption><strong>Unpack what matters first.</strong><span>Know what needs your attention.</span></figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="section use-cases" aria-labelledby="use-cases-title">
+    <section class="workflow section" aria-labelledby="workflow-title">
       <div class="section-heading">
-        <p class="eyebrow">Use cases</p>
-        <h2 id="use-cases-title">A practical inventory app for high-intent box organization.</h2>
-      </div>
-      <div class="use-case-grid">
-        <article>
-          <h3>Moving box inventory</h3>
-          <p>Track every moving box before, during, and after the move so you can find kitchen items, office gear, fragile items, and essentials quickly.</p>
-        </article>
-        <article>
-          <h3>Storage box organizer</h3>
-          <p>Use HomeInventory for basement storage, garage shelves, seasonal decorations, archived documents, and long-term storage bins.</p>
-        </article>
-        <article>
-          <h3>Photo home inventory</h3>
-          <p>Attach photos and notes for valuable or fragile items when a plain packing list is not enough.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="workflow" class="section workflow" aria-labelledby="workflow-title">
-      <div class="section-heading">
-        <p class="eyebrow">Workflow</p>
-        <h2 id="workflow-title">From empty box to searchable inventory.</h2>
+        <p class="eyebrow">One simple habit</p>
+        <h2 id="workflow-title">Pack once. Find it whenever you need it.</h2>
       </div>
       <ol class="steps">
-        <li>
-          <span>1</span>
-          <div>
-            <h3>Create boxes</h3>
-            <p>Name each box, choose a room, and mark whether it is packed or still open.</p>
-          </div>
-        </li>
-        <li>
-          <span>2</span>
-          <div>
-            <h3>Add items</h3>
-            <p>Add names, quantities, photos, notes, fragile flags, and valuable flags.</p>
-          </div>
-        </li>
-        <li>
-          <span>3</span>
-          <div>
-            <h3>Print labels</h3>
-            <p>Export QR label PDFs, print them, and attach labels to your moving boxes or storage bins.</p>
-          </div>
-        </li>
-        <li>
-          <span>4</span>
-          <div>
-            <h3>Search later</h3>
-            <p>Scan the QR label or search by room, item name, category, or note when you need something.</p>
-          </div>
-        </li>
+        <li><span>1</span><div><h3>Create a box</h3><p>Give it a name and a room.</p></div></li>
+        <li><span>2</span><div><h3>Add what is inside</h3><p>Use names, photos, and notes.</p></div></li>
+        <li><span>3</span><div><h3>Find it later</h3><p>Search when you need something.</p></div></li>
       </ol>
     </section>
 
-    <section id="faq" class="section faq" aria-labelledby="faq-title">
+    <section id="faq" class="faq section" aria-labelledby="faq-title">
       <div class="section-heading">
         <p class="eyebrow">FAQ</p>
-        <h2 id="faq-title">Common questions about HomeInventory.</h2>
+        <h2 id="faq-title">Made for the boxes you already have.</h2>
       </div>
       <div class="faq-list">
-        <details>
-          <summary>Is HomeInventory only for moving?</summary>
-          <p>No. It is focused on moving box inventory, but it also works for storage boxes, garage bins, seasonal items, and home organization.</p>
-        </details>
-        <details>
-          <summary>Can I print QR labels for boxes?</summary>
-          <p>Yes. HomeInventory can generate box QR labels and export printable label PDFs for Letter or A4 paper.</p>
-        </details>
-        <details>
-          <summary>Where is my inventory data stored?</summary>
-          <p>Your inventory records and item photos are stored locally on your device. Data leaves the device only when you choose to export or share files.</p>
-        </details>
-        <details>
-          <summary>Can I export my box inventory?</summary>
-          <p>Yes. You can export inventory reports as CSV or PDF, and you can also export printable QR label PDFs.</p>
-        </details>
+        <details><summary>Is it only for moving?</summary><p>No. Use it for storage bins, garages, closets, seasonal items, and home organization too.</p></details>
+        <details><summary>Can I use it with my family?</summary><p>Yes. Share your boxes so your family can use the same inventory while packing and unpacking.</p></details>
+        <details><summary>Can I keep track of fragile or valuable items?</summary><p>Yes. Mark important items and keep their photos and notes with the box.</p></details>
+        <details><summary>What happens after the move?</summary><p>Your inventory remains useful for storage and everyday home organization, not just moving day.</p></details>
       </div>
     </section>
 
     <section class="final-cta" aria-labelledby="final-title">
       <img src="assets/app-icon.png" alt="" width="76" height="76" />
-      <div>
-        <h2 id="final-title">Know what is packed where.</h2>
-        <p>Use HomeInventory to organize moving boxes, print QR labels, and find items after packing.</p>
-      </div>
+      <div><h2 id="final-title">Know what is packed where.</h2><p>Download HomeInventory and make your next move easier to live with.</p></div>
       <a class="button primary" href="https://apps.apple.com/app/id6766885651">Download on the App Store</a>
     </section>
   </main>
