@@ -393,6 +393,12 @@ h3 {
   animation: float-soft 11s ease-in-out infinite;
 }
 
+/* Watermark Remover uses full App Store frames as product proof; preserve the complete screenshot. */
+body.theme-watermark .hero-shot img {
+  object-fit: contain;
+  transform: none;
+}
+
 .hero-note {
   padding: 20px 22px;
   border-radius: 22px;
