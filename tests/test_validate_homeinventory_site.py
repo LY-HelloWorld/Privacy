@@ -99,6 +99,51 @@ class HomeInventorySiteValidatorTests(unittest.TestCase):
         self.assertTrue(any("App Store" in error or "entity" in error for error in errors), errors)
 
     @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_visible_legacy_brand_is_reported(self):
+        """Legacy aliases may identify the entity in JSON-LD but must not appear in page copy."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            relative = next(iter(validator.PAGE_SPECS))
+            page = root / relative
+            page.parent.mkdir(parents=True)
+            page.write_text(
+                '<h1>Moving Boxes Organizer</h1><p>HomeInventory keeps boxes searchable.</p>'
+                '<script type="application/ld+json">'
+                '{"@type":"SoftwareApplication",'
+                f'"@id":"{validator.APP_ENTITY_ID}",'
+                '"name":"Moving Boxes Organizer",'
+                '"alternateName":["HomeInventory","Box Inventory"]}'
+                "</script>",
+                encoding="utf-8",
+            )
+            errors = validator.validate_brand_identity(root)
+
+        self.assertTrue(any("visible legacy product name: HomeInventory" in error for error in errors), errors)
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_incomplete_structured_brand_identity_is_reported(self):
+        """The shared app entity must use the public name while retaining both discovery aliases."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            relative = next(iter(validator.PAGE_SPECS))
+            page = root / relative
+            page.parent.mkdir(parents=True)
+            page.write_text(
+                '<h1>Moving Boxes Organizer</h1>'
+                '<script type="application/ld+json">'
+                '{"@type":"SoftwareApplication",'
+                f'"@id":"{validator.APP_ENTITY_ID}",'
+                '"name":"HomeInventory",'
+                '"alternateName":["HomeInventory"]}'
+                "</script>",
+                encoding="utf-8",
+            )
+            errors = validator.validate_brand_identity(root)
+
+        self.assertTrue(any("primary structured product name" in error for error in errors), errors)
+        self.assertTrue(any("structured product alias: Box Inventory" in error for error in errors), errors)
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
     def test_wrong_screenshot_dimensions_are_reported(self):
         """Changing intrinsic image dimensions must catch future screenshot stretching risks."""
         with tempfile.TemporaryDirectory() as directory:

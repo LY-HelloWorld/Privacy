@@ -19,7 +19,8 @@ SITE_BASE = f"{SITE_ORIGIN}{SITE_PREFIX}HomeInventory_web/"
 APP_ENTITY_ID = f"{SITE_BASE}#app"
 APP_STORE_ID = "6766885651"
 APP_STORE_URL = "https://apps.apple.com/us/app/moving-boxes-organizer/id6766885651"
-PRODUCT_NAME = "Moving Boxes Organizer by HomeInventory"
+PRIMARY_PRODUCT_NAME = "Moving Boxes Organizer"
+PRODUCT_ALIASES = ("HomeInventory", "Box Inventory")
 SUPPORT_EMAIL = "luoyi9932@gmail.com"
 PRIVACY_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html"
 TERMS_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/terms.html"
@@ -148,6 +149,64 @@ def contains_schema_type(value: object, expected_type: str) -> bool:
     return False
 
 
+def find_app_entities(value: object) -> list[dict[str, object]]:
+    """Return complete SoftwareApplication nodes so brand fields are checked together."""
+    entities: list[dict[str, object]] = []
+    if isinstance(value, dict):
+        schema_type = value.get("@type")
+        if schema_type == "SoftwareApplication" or (
+            isinstance(schema_type, list) and "SoftwareApplication" in schema_type
+        ):
+            entities.append(value)
+        for nested in value.values():
+            entities.extend(find_app_entities(nested))
+    elif isinstance(value, list):
+        for nested in value:
+            entities.extend(find_app_entities(nested))
+    return entities
+
+
+def validate_brand_identity(root: Path) -> list[str]:
+    """Keep one public product name while preserving discovery aliases only in JSON-LD."""
+    errors: list[str] = []
+    for relative in PAGE_SPECS:
+        path = root / relative
+        if not path.is_file():
+            continue
+        parser, _ = parse_page(path)
+        visible_copy = " ".join(parser.visible_parts)
+        if PRIMARY_PRODUCT_NAME not in visible_copy:
+            errors.append(
+                f"{relative} is missing the visible product identity: {PRIMARY_PRODUCT_NAME}"
+            )
+        for alias in PRODUCT_ALIASES:
+            if alias in visible_copy:
+                errors.append(f"{relative} exposes visible legacy product name: {alias}")
+
+        # Validate one complete shared entity rather than accepting brand fields from unrelated nodes.
+        app_entities: list[dict[str, object]] = []
+        for block in parser.json_ld_blocks:
+            try:
+                app_entities.extend(find_app_entities(json.loads(block)))
+            except json.JSONDecodeError:
+                continue
+        shared_entities = [entity for entity in app_entities if entity.get("@id") == APP_ENTITY_ID]
+        if not shared_entities:
+            errors.append(f"{relative} has no complete shared SoftwareApplication entity")
+            continue
+        entity = shared_entities[0]
+        if entity.get("name") != PRIMARY_PRODUCT_NAME:
+            errors.append(
+                f"{relative} must use the primary structured product name: {PRIMARY_PRODUCT_NAME}"
+            )
+        alternate_names = entity.get("alternateName")
+        aliases = alternate_names if isinstance(alternate_names, list) else [alternate_names]
+        for alias in PRODUCT_ALIASES:
+            if alias not in aliases:
+                errors.append(f"{relative} is missing structured product alias: {alias}")
+    return errors
+
+
 def validate_html_pages(root: Path) -> list[str]:
     """Validate page-level metadata, app handoff, identity, and restrained visible copy."""
     errors: list[str] = []
@@ -177,9 +236,6 @@ def validate_html_pages(root: Path) -> list[str]:
             errors.append(f"{relative} has the wrong App Store Smart App Banner identity")
         if APP_STORE_URL not in html:
             errors.append(f"{relative} is missing the exact App Store URL")
-        if PRODUCT_NAME not in " ".join(parser.visible_parts):
-            errors.append(f"{relative} is missing the visible product identity: {PRODUCT_NAME}")
-
         valid_json_values: list[object] = []
         if not parser.json_ld_blocks:
             errors.append(f"{relative} has no JSON-LD entity data")
@@ -326,6 +382,7 @@ def validate_site(root: Path) -> list[str]:
     for validator_function in (
         validate_required_pages,
         validate_html_pages,
+        validate_brand_identity,
         validate_screenshot_dimensions,
         validate_support_page,
         validate_sitemaps,
