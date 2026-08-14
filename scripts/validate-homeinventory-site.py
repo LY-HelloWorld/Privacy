@@ -20,7 +20,7 @@ APP_ENTITY_ID = f"{SITE_BASE}#app"
 APP_STORE_ID = "6766885651"
 APP_STORE_URL = "https://apps.apple.com/us/app/moving-boxes-organizer/id6766885651"
 PRIMARY_PRODUCT_NAME = "Moving Boxes Organizer"
-PRODUCT_ALIASES = ("HomeInventory", "Box Inventory")
+LEGACY_PRODUCT_NAMES = ("HomeInventory", "Box Inventory")
 SUPPORT_EMAIL = "luoyi9932@gmail.com"
 PRIVACY_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html"
 TERMS_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/terms.html"
@@ -45,6 +45,12 @@ FORBIDDEN_VISIBLE_TERMS = (
     "ranking",
     "best app",
 )
+LANDING_TRUST_FACTS = {
+    "local-by-default storage": "stay on your iphone by default",
+    "separate-account boundary": "no separate moving boxes organizer account",
+    "one-time Pro purchase": "optional one-time app store purchase",
+    "Shared Inventory boundary": "only when you choose to share non-sensitive boxes",
+}
 
 
 class PageParser(HTMLParser):
@@ -57,6 +63,7 @@ class PageParser(HTMLParser):
         self.json_ld_blocks: list[str] = []
         self.meta: dict[str, list[str]] = {}
         self.targets: list[str] = []
+        self.navigation_targets: list[str] = []
         self.images: list[dict[str, str]] = []
         self.visible_parts: list[str] = []
         self._hidden_depth = 0
@@ -77,6 +84,7 @@ class PageParser(HTMLParser):
                 self.canonicals.append(href)
         if tag == "a" and values.get("href"):
             self.targets.append(values["href"])
+            self.navigation_targets.append(values["href"])
         if tag == "script" and values.get("src"):
             self.targets.append(values["src"])
         if tag == "img":
@@ -167,7 +175,7 @@ def find_app_entities(value: object) -> list[dict[str, object]]:
 
 
 def validate_brand_identity(root: Path) -> list[str]:
-    """Keep one public product name while preserving discovery aliases only in JSON-LD."""
+    """Keep one canonical product name in both visible copy and structured data."""
     errors: list[str] = []
     for relative in PAGE_SPECS:
         path = root / relative
@@ -179,9 +187,11 @@ def validate_brand_identity(root: Path) -> list[str]:
             errors.append(
                 f"{relative} is missing the visible product identity: {PRIMARY_PRODUCT_NAME}"
             )
-        for alias in PRODUCT_ALIASES:
-            if alias in visible_copy:
-                errors.append(f"{relative} exposes visible legacy product name: {alias}")
+        for legacy_name in LEGACY_PRODUCT_NAMES:
+            if legacy_name in visible_copy:
+                errors.append(
+                    f"{relative} exposes visible legacy product name: {legacy_name}"
+                )
 
         # Validate one complete shared entity rather than accepting brand fields from unrelated nodes.
         app_entities: list[dict[str, object]] = []
@@ -201,9 +211,11 @@ def validate_brand_identity(root: Path) -> list[str]:
             )
         alternate_names = entity.get("alternateName")
         aliases = alternate_names if isinstance(alternate_names, list) else [alternate_names]
-        for alias in PRODUCT_ALIASES:
-            if alias not in aliases:
-                errors.append(f"{relative} is missing structured product alias: {alias}")
+        for legacy_name in LEGACY_PRODUCT_NAMES:
+            if legacy_name in aliases:
+                errors.append(
+                    f"{relative} exposes structured legacy product name: {legacy_name}"
+                )
     return errors
 
 
@@ -251,6 +263,12 @@ def validate_html_pages(root: Path) -> list[str]:
         for term in FORBIDDEN_VISIBLE_TERMS:
             if term in visible_copy:
                 errors.append(f"{relative} exposes forbidden process language: {term}")
+
+        # Machine-facing trust claims must also be visible to users on the canonical landing page.
+        if relative == "HomeInventory_web/index.html":
+            for fact_name, required_phrase in LANDING_TRUST_FACTS.items():
+                if required_phrase not in visible_copy:
+                    errors.append(f"{relative} is missing {fact_name}")
     return errors
 
 
@@ -354,7 +372,7 @@ def local_target(root: Path, source: Path, target: str) -> Path | None:
 
 
 def validate_internal_targets(root: Path) -> list[str]:
-    """Reject broken or repository-escaping links and image/style references."""
+    """Reject broken, repository-escaping, or file-preview-incompatible local links."""
     errors: list[str] = []
     resolved_root = root.resolve()
     for relative in REQUIRED_PAGES:
@@ -362,6 +380,16 @@ def validate_internal_targets(root: Path) -> list[str]:
         if not source.is_file():
             continue
         parser, _ = parse_page(source)
+        # A web server resolves directory routes, but file:// previews display a directory index.
+        for target in parser.navigation_targets:
+            parsed = urlparse(target)
+            if parsed.scheme or parsed.netloc or not parsed.path:
+                continue
+            unresolved = source.parent / unquote(parsed.path)
+            if parsed.path.endswith("/") or unresolved.is_dir():
+                errors.append(
+                    f"{relative} has directory-only navigation; link directly to index.html: {target}"
+                )
         for target in parser.targets:
             candidate = local_target(resolved_root, source, target)
             if candidate is None:

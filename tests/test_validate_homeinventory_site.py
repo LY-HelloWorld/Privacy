@@ -100,7 +100,7 @@ class HomeInventorySiteValidatorTests(unittest.TestCase):
 
     @unittest.skipIf(validator is None, "validator module is not implemented yet")
     def test_visible_legacy_brand_is_reported(self):
-        """Legacy aliases may identify the entity in JSON-LD but must not appear in page copy."""
+        """Legacy aliases must not appear in visible copy even when the canonical name is present."""
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             relative = next(iter(validator.PAGE_SPECS))
@@ -121,8 +121,8 @@ class HomeInventorySiteValidatorTests(unittest.TestCase):
         self.assertTrue(any("visible legacy product name: HomeInventory" in error for error in errors), errors)
 
     @unittest.skipIf(validator is None, "validator module is not implemented yet")
-    def test_incomplete_structured_brand_identity_is_reported(self):
-        """The shared app entity must use the public name while retaining both discovery aliases."""
+    def test_structured_legacy_alias_is_reported(self):
+        """Ambiguous aliases must not teach crawlers a second product name for the same App Store ID."""
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             relative = next(iter(validator.PAGE_SPECS))
@@ -133,15 +133,72 @@ class HomeInventorySiteValidatorTests(unittest.TestCase):
                 '<script type="application/ld+json">'
                 '{"@type":"SoftwareApplication",'
                 f'"@id":"{validator.APP_ENTITY_ID}",'
-                '"name":"HomeInventory",'
-                '"alternateName":["HomeInventory"]}'
+                '"name":"Moving Boxes Organizer",'
+                '"alternateName":["HomeInventory","Box Inventory"]}'
+                "</script>",
+                encoding="utf-8",
+            )
+            errors = validator.validate_brand_identity(root)
+
+        self.assertTrue(any("structured legacy product name: HomeInventory" in error for error in errors), errors)
+        self.assertTrue(any("structured legacy product name: Box Inventory" in error for error in errors), errors)
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_wrong_structured_primary_name_is_reported(self):
+        """The shared app entity must use the exact current App Store product name."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            relative = next(iter(validator.PAGE_SPECS))
+            page = root / relative
+            page.parent.mkdir(parents=True)
+            page.write_text(
+                '<h1>Moving Boxes Organizer</h1>'
+                '<script type="application/ld+json">'
+                '{"@type":"SoftwareApplication",'
+                f'"@id":"{validator.APP_ENTITY_ID}",'
+                '"name":"HomeInventory"}'
                 "</script>",
                 encoding="utf-8",
             )
             errors = validator.validate_brand_identity(root)
 
         self.assertTrue(any("primary structured product name" in error for error in errors), errors)
-        self.assertTrue(any("structured product alias: Box Inventory" in error for error in errors), errors)
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_landing_without_purchase_and_storage_facts_is_reported(self):
+        """A landing page must answer the privacy, account, sharing, and subscription filters it claims."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            relative = "HomeInventory_web/index.html"
+            page = root / relative
+            page.parent.mkdir(parents=True)
+            page.write_text(
+                '<h1>Moving Boxes Organizer</h1>'
+                '<p>Find items in moving boxes.</p>',
+                encoding="utf-8",
+            )
+            errors = validator.validate_html_pages(root)
+
+        self.assertTrue(any("local-by-default storage" in error for error in errors), errors)
+        self.assertTrue(any("separate-account boundary" in error for error in errors), errors)
+        self.assertTrue(any("one-time Pro purchase" in error for error in errors), errors)
+        self.assertTrue(any("Shared Inventory boundary" in error for error in errors), errors)
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_relative_directory_navigation_is_reported(self):
+        """Relative directory links must name index.html so local file previews open the page."""
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "HomeInventory_web" / "index.html"
+            destination = root / "HomeInventory_web" / "guide" / "index.html"
+            source.parent.mkdir(parents=True)
+            destination.parent.mkdir(parents=True)
+            source.write_text('<a href="guide/">Guide</a>', encoding="utf-8")
+            destination.write_text("<h1>Guide</h1>", encoding="utf-8")
+
+            errors = validator.validate_internal_targets(root)
+
+        self.assertTrue(any("directory-only navigation" in error for error in errors), errors)
 
     @unittest.skipIf(validator is None, "validator module is not implemented yet")
     def test_wrong_screenshot_dimensions_are_reported(self):
