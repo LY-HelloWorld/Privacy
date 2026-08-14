@@ -34,7 +34,11 @@
 
 .press-hero-asset img {
   width: min(210px, 72%);
+  height: auto;
   aspect-ratio: 1;
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
   border-radius: 28%;
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
 }

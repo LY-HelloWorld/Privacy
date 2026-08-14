@@ -114,6 +114,13 @@ class WorkProofCamSiteValidatorTests(unittest.TestCase):
                 errors = validate_press_kit(Path(directory))
             self.assertTrue(any("Product Hunt" in error for error in errors), errors)
 
+    def test_press_kit_hero_icon_preserves_its_square_shape(self):
+        """The grid hero must not stretch the square App Store icon to the card height."""
+        stylesheet = (ROOT / "workproofcam-web" / "press" / "press-kit.css").read_text(encoding="utf-8")
+        hero_rule = stylesheet.split(".press-hero-asset img {", 1)[1].split("}", 1)[0]
+        self.assertIn("height: auto;", hero_rule)
+        self.assertIn("object-fit: contain;", hero_rule)
+
 
 if __name__ == "__main__":
     unittest.main()
