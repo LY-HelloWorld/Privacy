@@ -98,29 +98,6 @@ class WorkProofCamSiteValidatorTests(unittest.TestCase):
         """The rendered identity and JSON-LD must connect the English name to Apple's label."""
         self.assertEqual([], validator.validate_publisher_identity(ROOT))
 
-    def test_committed_press_kit_is_valid(self):
-        """Missing bilingual pages, launch assets, or current entity facts must fail the public press-kit contract."""
-        validate_press_kit = getattr(validator, "validate_press_kit", None)
-        self.assertIsNotNone(validate_press_kit, "The WorkProofCam press-kit validator is missing")
-        if validate_press_kit is not None:
-            self.assertEqual([], validate_press_kit(ROOT))
-
-    def test_missing_product_hunt_gallery_is_reported(self):
-        """A press kit without five consistently sized Product Hunt images must be rejected."""
-        validate_press_kit = getattr(validator, "validate_press_kit", None)
-        self.assertIsNotNone(validate_press_kit, "The WorkProofCam press-kit validator is missing")
-        if validate_press_kit is not None:
-            with tempfile.TemporaryDirectory() as directory:
-                errors = validate_press_kit(Path(directory))
-            self.assertTrue(any("Product Hunt" in error for error in errors), errors)
-
-    def test_press_kit_hero_icon_preserves_its_square_shape(self):
-        """The grid hero must not stretch the square App Store icon to the card height."""
-        stylesheet = (ROOT / "workproofcam-web" / "press" / "press-kit.css").read_text(encoding="utf-8")
-        hero_rule = stylesheet.split(".press-hero-asset img {", 1)[1].split("}", 1)[0]
-        self.assertIn("height: auto;", hero_rule)
-        self.assertIn("object-fit: contain;", hero_rule)
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import struct
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter
@@ -25,8 +24,6 @@ PAGE_SPECS = {
     "workproofcam-web/before-after-work-proof/index.html": "https://ly-helloworld.github.io/Privacy/workproofcam-web/before-after-work-proof/",
     "workproofcam-web/photo-report-without-cloud/index.html": "https://ly-helloworld.github.io/Privacy/workproofcam-web/photo-report-without-cloud/",
     "workproofcam-web/sample-photo-report/index.html": "https://ly-helloworld.github.io/Privacy/workproofcam-web/sample-photo-report/",
-    "workproofcam-web/press/index.html": "https://ly-helloworld.github.io/Privacy/workproofcam-web/press/",
-    "workproofcam-web/press/pt-br/index.html": "https://ly-helloworld.github.io/Privacy/workproofcam-web/press/pt-br/",
     "workproofcam/support.html": "https://ly-helloworld.github.io/Privacy/workproofcam/support.html",
 }
 REQUIRED_PAGES = tuple(PAGE_SPECS)
@@ -207,56 +204,6 @@ def validate_publisher_identity(root: Path) -> list[str]:
     return errors
 
 
-def png_dimensions(path: Path) -> tuple[int, int] | None:
-    """Read PNG width and height without adding an image-library dependency to site validation."""
-    try:
-        with path.open("rb") as image:
-            header = image.read(24)
-    except OSError:
-        return None
-    # PNG stores big-endian dimensions at fixed offsets in the mandatory IHDR chunk.
-    if len(header) != 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
-        return None
-    return struct.unpack(">II", header[16:24])
-
-
-def validate_press_kit(root: Path) -> list[str]:
-    """Validate the bilingual public press pages and upload-ready Product Hunt artwork."""
-    errors: list[str] = []
-    press_pages = {
-        "workproofcam-web/press/index.html": ('lang="en"', "WorkProofCam Press Kit"),
-        "workproofcam-web/press/pt-br/index.html": ('lang="pt-BR"', "Kit de Imprensa WorkProofCam"),
-    }
-
-    for relative, required_text in press_pages.items():
-        path = root / relative
-        if not path.is_file():
-            errors.append(f"Missing press-kit page: {relative}")
-            continue
-        html = path.read_text(encoding="utf-8")
-        for text in (*required_text, '"softwareVersion": "1.1.4"', "Xuemei Huang", APP_STORE_ID):
-            if text not in html:
-                errors.append(f"{relative} is missing press-kit fact: {text}")
-
-    icon = root / "workproofcam-web/press/assets/app-icon-1024.png"
-    if png_dimensions(icon) != (1024, 1024):
-        errors.append("Press-kit icon must be a readable 1024x1024 PNG")
-
-    gallery = root / "workproofcam-web/press/assets/product-hunt"
-    expected_names = [f"workproofcam-product-hunt-{index:02d}.png" for index in range(1, 6)]
-    actual_names = sorted(path.name for path in gallery.glob("*.png")) if gallery.is_dir() else []
-    if actual_names != expected_names:
-        errors.append(
-            "Product Hunt gallery must contain exactly five numbered PNG files; "
-            f"found: {', '.join(actual_names) or 'none'}"
-        )
-    for name in expected_names:
-        path = gallery / name
-        if path.is_file() and png_dimensions(path) != (1270, 760):
-            errors.append(f"Product Hunt image must be 1270x760: {path.relative_to(root)}")
-    return errors
-
-
 def local_target(root: Path, source: Path, target: str) -> Path | None:
     parsed = urlparse(target)
     if parsed.scheme in {"mailto", "tel", "javascript", "data"}:
@@ -311,7 +258,6 @@ def validate_site(root: Path) -> list[str]:
         validate_html_pages,
         validate_sitemaps,
         validate_publisher_identity,
-        validate_press_kit,
         validate_internal_targets,
     ):
         errors.extend(validator_function(root))
