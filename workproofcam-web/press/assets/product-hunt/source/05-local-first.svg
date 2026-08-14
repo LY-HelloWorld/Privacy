@@ -1,0 +1,23 @@
+<!-- Product Hunt slide entry: close with the verified lightweight pricing and local-first boundaries. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1270" height="760" viewBox="0 0 1270 760" role="img" aria-labelledby="title desc">
+  <title id="title">Focused, local-first, and no account required</title>
+  <desc id="desc">Three real WorkProofCam screenshots with product boundaries and pricing.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b253b"/><stop offset="1" stop-color="#205f7e"/></linearGradient><filter id="shadow" x="-60%" y="-40%" width="220%" height="220%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#06131e" flood-opacity=".5"/></filter></defs>
+  <rect width="1270" height="760" rx="34" fill="url(#bg)"/>
+  <circle cx="1130" cy="80" r="280" fill="#eda53d" opacity=".13"/>
+  <image x="66" y="52" width="66" height="66" xlink:href="../../app-icon-1024.png"/>
+  <text x="151" y="95" fill="#ffffff" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="700">WorkProofCam</text>
+  <text x="64" y="206" fill="#8ed6f2" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">A FOCUSED IPHONE TOOL</text>
+  <text x="62" y="279" fill="#ffffff" font-family="Helvetica,Arial,sans-serif" font-size="53" font-weight="750"><tspan x="62">Local-first.</tspan><tspan x="62" dy="62">No account required.</tspan></text>
+  <text x="64" y="426" fill="#d7e8ef" font-family="Helvetica,Arial,sans-serif" font-size="23">Built for photo proof and PDF reports —</text><text x="64" y="458" fill="#d7e8ef" font-family="Helvetica,Arial,sans-serif" font-size="23">not cloud collaboration or team dispatch.</text>
+  <g font-family="Helvetica,Arial,sans-serif" font-weight="700">
+    <rect x="64" y="524" width="248" height="60" rx="30" fill="#ffffff"/><text x="188" y="562" text-anchor="middle" fill="#174364" font-size="21">Free download</text>
+    <rect x="328" y="524" width="334" height="60" rx="30" fill="#eda53d"/><text x="495" y="562" text-anchor="middle" fill="#173143" font-size="21">One-time Pro purchase</text>
+    <text x="64" y="640" fill="#a9cfdf" font-size="20">No subscription · App Store ID 6775852372</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="784" y="161" width="190" height="430" rx="38" fill="#091722"/><rect x="795" y="172" width="168" height="408" rx="29" fill="#fff"/><image x="802" y="180" width="154" height="392" preserveAspectRatio="xMidYMid slice" xlink:href="../../screens/screen-2.png"/>
+    <rect x="930" y="110" width="214" height="484" rx="42" fill="#091722"/><rect x="942" y="122" width="190" height="460" rx="32" fill="#fff"/><image x="949" y="130" width="176" height="444" preserveAspectRatio="xMidYMid slice" xlink:href="../../screens/screen-1.png"/>
+    <rect x="1092" y="188" width="156" height="354" rx="32" fill="#091722"/><rect x="1101" y="197" width="138" height="336" rx="24" fill="#fff"/><image x="1107" y="204" width="126" height="322" preserveAspectRatio="xMidYMid slice" xlink:href="../../screens/screen-3.png"/>
+  </g>
+</svg>

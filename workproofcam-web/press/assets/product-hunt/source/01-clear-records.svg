@@ -1,0 +1,25 @@
+<!-- Product Hunt slide entry: introduce the dispute-prevention problem without promising a legal outcome. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1270" height="760" viewBox="0 0 1270 760" role="img" aria-labelledby="title desc">
+  <title id="title">Clear job records before questions come later</title>
+  <desc id="desc">WorkProofCam Product Hunt cover with a real app screenshot.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c263d"/><stop offset="1" stop-color="#1f6385"/></linearGradient>
+    <radialGradient id="glow" cx="80%" cy="12%" r="75%"><stop stop-color="#eda53d" stop-opacity=".32"/><stop offset="1" stop-color="#eda53d" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-40%" y="-30%" width="180%" height="180%"><feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#06131e" flood-opacity=".55"/></filter>
+  </defs>
+  <rect width="1270" height="760" rx="34" fill="url(#bg)"/>
+  <rect width="1270" height="760" rx="34" fill="url(#glow)"/>
+  <circle cx="1064" cy="644" r="270" fill="#73b8d3" opacity=".08"/>
+  <image x="72" y="62" width="70" height="70" xlink:href="../../app-icon-1024.png"/>
+  <text x="160" y="105" fill="#ffffff" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700">WorkProofCam</text>
+  <text x="76" y="254" fill="#91d8f5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3">JOB-SITE PHOTO REPORTS FOR IPHONE</text>
+  <text x="72" y="330" fill="#ffffff" font-family="Helvetica,Arial,sans-serif" font-size="62" font-weight="750">
+    <tspan x="72" dy="0">Clear job records.</tspan><tspan x="72" dy="72">Before questions</tspan><tspan x="72" dy="72">come later.</tspan>
+  </text>
+  <text x="76" y="594" fill="#d5e8f0" font-family="Helvetica,Arial,sans-serif" font-size="27">Timestamp · Optional GPS · Notes · Before/After · PDF</text>
+  <rect x="76" y="634" width="316" height="54" rx="27" fill="#eda53d"/>
+  <text x="234" y="669" fill="#172b38" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="750">Free on the App Store</text>
+  <rect x="902" y="96" width="292" height="646" rx="54" fill="#07141f" opacity=".75" filter="url(#shadow)"/>
+  <rect x="917" y="111" width="262" height="616" rx="42" fill="#ffffff"/>
+  <image x="928" y="120" width="240" height="596" preserveAspectRatio="xMidYMid slice" xlink:href="../../screens/screen-1.png"/>
+</svg>

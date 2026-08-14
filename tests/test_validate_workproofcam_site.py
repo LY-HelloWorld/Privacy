@@ -98,6 +98,22 @@ class WorkProofCamSiteValidatorTests(unittest.TestCase):
         """The rendered identity and JSON-LD must connect the English name to Apple's label."""
         self.assertEqual([], validator.validate_publisher_identity(ROOT))
 
+    def test_committed_press_kit_is_valid(self):
+        """Missing bilingual pages, launch assets, or current entity facts must fail the public press-kit contract."""
+        validate_press_kit = getattr(validator, "validate_press_kit", None)
+        self.assertIsNotNone(validate_press_kit, "The WorkProofCam press-kit validator is missing")
+        if validate_press_kit is not None:
+            self.assertEqual([], validate_press_kit(ROOT))
+
+    def test_missing_product_hunt_gallery_is_reported(self):
+        """A press kit without five consistently sized Product Hunt images must be rejected."""
+        validate_press_kit = getattr(validator, "validate_press_kit", None)
+        self.assertIsNotNone(validate_press_kit, "The WorkProofCam press-kit validator is missing")
+        if validate_press_kit is not None:
+            with tempfile.TemporaryDirectory() as directory:
+                errors = validate_press_kit(Path(directory))
+            self.assertTrue(any("Product Hunt" in error for error in errors), errors)
+
 
 if __name__ == "__main__":
     unittest.main()
