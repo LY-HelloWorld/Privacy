@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Page entry: answer backup and recovery questions before a user deletes local vault originals. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Vault Backup and Restore | Photo Vault: Secure Folder</title>
+  <meta name="description" content="Learn how Photo Vault: Secure Folder creates an encrypted ZIP backup, restores vault files, and protects you from losing local photos, videos, and documents when an iPhone is replaced or reset.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/photo-vault-backup-restore/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Photo Vault Backup and Restore">
+  <meta property="og:description" content="How to export, verify, store, and restore an encrypted ZIP backup for Photo Vault: Secure Folder.">
+  <meta property="og:url" content="https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/photo-vault-backup-restore/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Photo Vault Backup and Restore",
+    "description": "How to export and restore an encrypted ZIP backup for Photo Vault: Secure Folder.",
+    "mainEntityOfPage": "https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/photo-vault-backup-restore/",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Photo Vault: Secure Folder",
+      "operatingSystem": "iOS",
+      "applicationCategory": "MobileApplication",
+      "sameAs": "https://apps.apple.com/app/id6760214794"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Photo Vault: Secure Folder",
+      "url": "https://ly-helloworld.github.io/Privacy/Privacy-Vault_web/"
+    }
+  }
+  </script>
+  <style>
+    :root { color-scheme: light; --ink: #132018; --muted: #526056; --line: #dfe7df; --surface: #f6f8f4; --accent: #176b4d; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: #fff; font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main, header, footer { width: min(900px, calc(100% - 36px)); margin: 0 auto; }
+    header { padding: 54px 0 28px; }
+    .eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; }
+    h1 { max-width: 760px; margin: 12px 0; font-size: clamp(36px, 7vw, 62px); line-height: 1.05; }
+    h2 { margin-top: 42px; font-size: 28px; line-height: 1.2; }
+    h3 { margin-top: 28px; font-size: 20px; }
+    p, li { color: var(--muted); }
+    strong { color: var(--ink); }
+    .lead, .callout { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    .callout { border-left: 5px solid var(--accent); }
+    a { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 14px; margin: 18px 0 6px; }
+    nav a, .button { display: inline-block; padding: 10px 16px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; }
+    nav a.secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+    footer { padding: 38px 0; border-top: 1px solid var(--line); margin-top: 50px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Photo Vault: Secure Folder</div>
+    <h1>Photo Vault Backup and Restore</h1>
+    <p class="lead">Photo Vault: Secure Folder stores vault content locally on your iPhone. No account is required, and the app does not operate a cloud vault or upload your vault media to our servers. When you need a backup, export an encrypted ZIP file that you control.</p>
+    <nav aria-label="Guide navigation">
+      <a href="../">App overview</a>
+      <a href="../photo-vault-new-iphone/">Move to a new iPhone</a>
+      <a class="secondary" href="../../Privacy_vault/support.html">Support</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>How to create a backup</h2>
+      <!-- Core backup boundary: the user owns the exported file and must verify it before deleting originals. -->
+      <ol>
+        <li>Open <strong>Photo Vault: Secure Folder</strong> and unlock the main vault.</li>
+        <li>Open <strong>Settings &gt; Data Management &gt; Export Backup</strong>.</li>
+        <li>Enter the backup password when prompted and save the encrypted ZIP to a location you control, such as Files, iCloud Drive, a Mac, a PC, or an external drive.</li>
+        <li>Before deleting originals from Photos or Files, restore a small test backup and confirm that representative photos, videos, and documents open correctly.</li>
+      </ol>
+      <p>The backup file is separate from the app's local vault. Keeping it outside the app protects you if the iPhone is lost, reset, or replaced, but the backup password must be kept safe.</p>
+    </section>
+    <section>
+      <h2>How to restore a backup</h2>
+      <ol>
+        <li>Install Photo Vault: Secure Folder on the iPhone where you want to restore the vault.</li>
+        <li>Open <strong>Settings &gt; Data Management &gt; Restore from Backup</strong>.</li>
+        <li>Select the encrypted ZIP file from Files or another location you control.</li>
+        <li>Enter the backup password and wait for the restore to finish.</li>
+        <li>Open several restored photos, videos, PDFs, and documents before removing the old vault or its backup.</li>
+      </ol>
+      <p>Restore is based on the encrypted ZIP you provide. The app team cannot recover a missing backup file or bypass its password.</p>
+    </section>
+    <section>
+      <h2>What happens if I forget my PIN?</h2>
+      <div class="callout"><strong>There is no remote PIN recovery.</strong> The vault is local and the app team cannot see your main PIN or unlock local vault content. Keep your PIN and backup password in a secure password manager or another safe location.</div>
+      <p>Uninstalling the app without a verified backup can permanently remove the only copy of the vault. Do not uninstall, reset, or replace the device until you have confirmed that your backup restores successfully.</p>
+    </section>
+    <section>
+      <h2>Best backup practice</h2>
+      <ul>
+        <li>Keep one encrypted ZIP in a user-controlled cloud drive or Files location.</li>
+        <li>Keep a second copy on a Mac, PC, or external drive for important files.</li>
+        <li>Test a small restore after major app or iOS updates.</li>
+        <li>Do not delete originals until the restored vault has been checked.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <nav aria-label="Footer navigation">
+      <a href="https://apps.apple.com/app/id6760214794">Download on the App Store</a>
+      <a href="../../Privacy_vault/privacy_policy.html">Privacy Policy</a>
+      <a href="../../Privacy_vault/terms_of_service.html">Terms of Service</a>
+    </nav>
+    <p>Photo Vault: Secure Folder is an iOS app for protecting private photos, videos, and documents with local vault storage.</p>
+  </footer>
+</body>
+</html>

@@ -26,25 +26,67 @@
   <link rel="apple-touch-icon" href="assets/app-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured product data: describes the app without exposing implementation details in the visible page copy. -->
+  <!-- Structured product data: keeps one canonical app identity tied to the exact App Store record. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": "https://ly-helloworld.github.io/Privacy/HomeInventory_web/#app",
     "name": "Moving Boxes Organizer",
-    "alternateName": ["HomeInventory", "Box Inventory"],
     "identifier": "6766885651",
     "operatingSystem": "iOS",
     "applicationCategory": "UtilitiesApplication",
     "downloadUrl": "https://apps.apple.com/us/app/moving-boxes-organizer/id6766885651",
+    "sameAs": "https://apps.apple.com/us/app/moving-boxes-organizer/id6766885651",
     "url": "https://ly-helloworld.github.io/Privacy/HomeInventory_web/",
     "image": "https://ly-helloworld.github.io/Privacy/HomeInventory_web/assets/app-icon.png",
-    "description": "Moving Boxes Organizer helps people remember what is in moving and storage boxes, find items quickly, and unpack what matters first.",
+    "description": "Moving Boxes Organizer is an iPhone app for recording moving and storage box contents with photos and notes, finding packed items, printing QR labels, and sharing non-sensitive inventory with invited people.",
     "publisher": {
       "@type": "Person",
       "name": "雪梅 黄"
     }
+  }
+  </script>
+  <!-- FAQ data mirrors the visible answers below so account, storage, sharing, and purchase facts stay attributable. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://ly-helloworld.github.io/Privacy/HomeInventory_web/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where are my inventory and photos stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your inventory and photos stay on your iPhone by default. Only non-sensitive boxes and photos placed in Shared Inventory are synchronized through your Apple iCloud account with people you invite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a Moving Boxes Organizer account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No separate Moving Boxes Organizer account is required. Shared Inventory uses your Apple iCloud account only when you choose to invite people."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Pro a subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Pro is an optional one-time App Store purchase with no subscription. Regional pricing is shown in the App Store."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I share boxes with my family?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Shared Inventory lets invited people view and edit the non-sensitive boxes you choose to share. Sensitive boxes stay in your private inventory."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -171,6 +213,28 @@
       </ol>
     </section>
 
+    <!-- Trust entry: answers download objections without competing with the product promise or screenshot story. -->
+    <section class="trust section" aria-labelledby="trust-title">
+      <div class="section-heading">
+        <p class="eyebrow">Clear from the start</p>
+        <h2 id="trust-title">Your boxes are personal. The choices stay yours.</h2>
+      </div>
+      <div class="trust-grid">
+        <article class="trust-item">
+          <h3>Local by default</h3>
+          <p>Your inventory and photos stay on your iPhone by default. Only when you choose to share non-sensitive boxes and photos are they added to Shared Inventory.</p>
+        </article>
+        <article class="trust-item">
+          <h3>No separate account</h3>
+          <p>No separate Moving Boxes Organizer account is required. Shared Inventory uses your Apple iCloud account only when you invite people.</p>
+        </article>
+        <article class="trust-item">
+          <h3>No subscription</h3>
+          <p>The free plan supports a small inventory. Pro is an optional one-time App Store purchase with no subscription. Regional pricing is shown in the App Store.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- Guide entry: lets visitors continue from the broad product promise to one specific packing problem. -->
     <section id="guides" class="guides section" aria-labelledby="guides-title">
       <div class="section-heading">
@@ -179,15 +243,15 @@
         <p class="section-intro">Use a simple method first, then decide whether keeping the records in Moving Boxes Organizer would make the job easier.</p>
       </div>
       <div class="related-guides">
-        <a class="guide-link-card" href="how-to-keep-track-of-moving-boxes/">
+        <a class="guide-link-card" href="how-to-keep-track-of-moving-boxes/index.html">
           <span>Record as you pack</span>
           <strong>How to keep track of what is inside moving boxes</strong>
         </a>
-        <a class="guide-link-card" href="find-items-without-opening-boxes/">
+        <a class="guide-link-card" href="find-items-without-opening-boxes/index.html">
           <span>Find one item</span>
           <strong>How to find an item without opening every box</strong>
         </a>
-        <a class="guide-link-card" href="qr-labels-for-storage-boxes/">
+        <a class="guide-link-card" href="qr-labels-for-storage-boxes/index.html">
           <span>Label for later</span>
           <strong>How to label storage boxes so you can find things later</strong>
         </a>
@@ -201,7 +265,10 @@
       </div>
       <div class="faq-list">
         <details><summary>Is it only for moving?</summary><p>No. Use it for storage bins, garages, closets, seasonal items, and home organization too.</p></details>
-        <details><summary>Can I use it with my family?</summary><p>Yes. Share your boxes so your family can use the same inventory while packing and unpacking.</p></details>
+        <details><summary>Where are my inventory and photos stored?</summary><p>Your inventory and photos stay on your iPhone by default. Only non-sensitive boxes and photos placed in Shared Inventory are synchronized through your Apple iCloud account with people you invite.</p></details>
+        <details><summary>Do I need a Moving Boxes Organizer account?</summary><p>No separate Moving Boxes Organizer account is required. Shared Inventory uses your Apple iCloud account only when you choose to invite people.</p></details>
+        <details><summary>Is Pro a subscription?</summary><p>No. Pro is an optional one-time App Store purchase with no subscription. Regional pricing is shown in the App Store.</p></details>
+        <details><summary>Can I share boxes with my family?</summary><p>Yes. Shared Inventory lets invited people view and edit the non-sensitive boxes you choose to share. Sensitive boxes stay in your private inventory.</p></details>
         <details><summary>Can I keep track of fragile or valuable items?</summary><p>Yes. Mark important items and keep their photos and notes with the box.</p></details>
         <details><summary>What happens after the move?</summary><p>Your inventory remains useful for storage and everyday home organization, not just moving day.</p></details>
       </div>
@@ -218,7 +285,7 @@
     <p>Moving Boxes Organizer</p>
     <nav aria-label="Footer links">
       <a href="https://ly-helloworld.github.io/Privacy/">App Pages</a>
-      <a href="support/">Support</a>
+      <a href="support/index.html">Support</a>
       <a href="https://ly-helloworld.github.io/Privacy/home-inventory/privacy.html">Privacy</a>
       <a href="https://ly-helloworld.github.io/Privacy/home-inventory/terms.html">Terms</a>
     </nav>
