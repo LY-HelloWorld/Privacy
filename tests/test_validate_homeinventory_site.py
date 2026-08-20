@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -48,6 +49,27 @@ class HomeInventorySiteValidatorTests(unittest.TestCase):
             any("how-to-keep-track-of-moving-boxes/index.html" in error for error in errors),
             errors,
         )
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_voice_page_is_required(self):
+        """The voice-entry answer must remain a crawlable part of the public product site."""
+        self.assertIn(
+            "HomeInventory_web/add-items-to-moving-boxes-by-voice/index.html",
+            validator.REQUIRED_PAGES,
+        )
+
+    @unittest.skipIf(validator is None, "validator module is not implemented yet")
+    def test_voice_page_exposes_faq_and_product_identity(self):
+        """The voice page must expose a product entity and answer the main privacy boundary."""
+        errors = validator.validate_html_pages(ROOT)
+        errors.extend(validator.validate_brand_identity(ROOT))
+        self.assertEqual([], errors)
+        parser, _ = validator.parse_page(
+            ROOT / "HomeInventory_web/add-items-to-moving-boxes-by-voice/index.html"
+        )
+        json_values = [json.loads(block) for block in parser.json_ld_blocks]
+        self.assertTrue(any(validator.contains_schema_type(value, "FAQPage") for value in json_values))
+        self.assertIn("on-device speech recognition", " ".join(parser.visible_parts).lower())
 
     @unittest.skipIf(validator is None, "validator module is not implemented yet")
     def test_missing_support_page_is_reported(self):

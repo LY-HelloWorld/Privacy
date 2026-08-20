@@ -27,6 +27,7 @@ TERMS_URL = "https://ly-helloworld.github.io/Privacy/home-inventory/terms.html"
 
 PAGE_SPECS = {
     "HomeInventory_web/index.html": SITE_BASE,
+    "HomeInventory_web/add-items-to-moving-boxes-by-voice/index.html": f"{SITE_BASE}add-items-to-moving-boxes-by-voice/",
     "HomeInventory_web/how-to-keep-track-of-moving-boxes/index.html": f"{SITE_BASE}how-to-keep-track-of-moving-boxes/",
     "HomeInventory_web/find-items-without-opening-boxes/index.html": f"{SITE_BASE}find-items-without-opening-boxes/",
     "HomeInventory_web/qr-labels-for-storage-boxes/index.html": f"{SITE_BASE}qr-labels-for-storage-boxes/",
