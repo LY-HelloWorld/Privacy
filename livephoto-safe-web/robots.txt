@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ly-helloworld.github.io/Privacy/livephoto-safe-web/sitemap.xml
