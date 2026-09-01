@@ -6,3 +6,4 @@ Allow: /
 
 Sitemap: https://ly-helloworld.github.io/Privacy/core-sitemap.xml
 Sitemap: https://ly-helloworld.github.io/Privacy/sitemap.xml
+Sitemap: https://ly-helloworld.github.io/Privacy/livephoto-safe-web/sitemap.xml

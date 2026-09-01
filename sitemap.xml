@@ -527,4 +527,52 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/protect-live-photos-before-sharing/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/remove-location-metadata-before-sharing/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/blur-faces-in-live-photos/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/mute-live-photo-audio-before-sharing/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/share-kids-photos-without-showing-faces/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/share-marketplace-photos-without-location-data/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ly-helloworld.github.io/Privacy/livephoto-safe-web/hide-personal-information-in-id-photos/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
