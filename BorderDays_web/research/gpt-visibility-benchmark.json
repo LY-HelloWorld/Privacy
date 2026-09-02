@@ -1,0 +1,52 @@
+{
+  "target_entity_id": "6803141319",
+  "target_name": "StayCount: Schengen & Tax",
+  "classification": "UNKNOWN",
+  "note": "Observation fields remain null until a human-reviewed real response is collected.",
+  "prompts": [
+    {
+      "prompt_id": "private-schengen-01",
+      "prompt": "What private iPhone app can track Schengen 90/180 days without location tracking?",
+      "market": "US",
+      "locale": "en-US",
+      "session_mode": "new_session",
+      "timestamp": null,
+      "raw_response": null,
+      "response_hash": null,
+      "entity_resolution": null
+    },
+    {
+      "prompt_id": "future-trip-01",
+      "prompt": "Recommend an iPhone app that can check a future Schengen trip before I book it.",
+      "market": "US",
+      "locale": "en-US",
+      "session_mode": "new_session",
+      "timestamp": null,
+      "raw_response": null,
+      "response_hash": null,
+      "entity_resolution": null
+    },
+    {
+      "prompt_id": "presence-ledger-01",
+      "prompt": "What app can keep one travel-day ledger for Schengen, US substantial presence, and UK residence checks?",
+      "market": "US",
+      "locale": "en-US",
+      "session_mode": "new_session",
+      "timestamp": null,
+      "raw_response": null,
+      "response_hash": null,
+      "entity_resolution": null
+    },
+    {
+      "prompt_id": "reentry-01",
+      "prompt": "Which iPhone app explains when I may be able to re-enter Schengen from my previous stays?",
+      "market": "GB",
+      "locale": "en-GB",
+      "session_mode": "new_session",
+      "timestamp": null,
+      "raw_response": null,
+      "response_hash": null,
+      "entity_resolution": null
+    }
+  ]
+}
