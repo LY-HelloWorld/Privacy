@@ -32,33 +32,67 @@
       --heading-font: "Avenir Next", "Helvetica Neue", sans-serif;
     }
 
-    .bead-preview {
-      min-height: 430px;
-      padding: 34px;
-      display: grid;
-      place-items: center;
-      background:
-        linear-gradient(rgba(255,255,255,.72), rgba(255,255,255,.72)),
-        repeating-linear-gradient(0deg, transparent 0 31px, rgba(54,44,38,.07) 31px 32px),
-        repeating-linear-gradient(90deg, transparent 0 31px, rgba(54,44,38,.07) 31px 32px);
+    .hero-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .icon-stage {
-      width: min(290px, 78vw);
-      aspect-ratio: 1;
-      padding: 26px;
-      border-radius: 42px;
-      background: rgba(255,255,255,.76);
-      box-shadow: 0 24px 60px rgba(65,49,40,.16);
-      transform: rotate(2deg);
+    .hero-identity .app-icon {
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+      border-radius: 16px;
     }
 
-    .icon-stage img { border-radius: 28%; }
+    .hero-identity strong,
+    .hero-identity span { display: block; }
+    .hero-identity strong { font-size: 15px; }
+    .hero-identity span { color: var(--muted); font-size: 13px; }
+
+    .screenshot-gallery {
+      min-width: 0;
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+      background: color-mix(in srgb, var(--accent-soft) 42%, var(--surface-strong));
+    }
+
+    .screenshot-gallery figure {
+      min-width: 0;
+      flex: 1 1 0;
+      margin: 0;
+    }
+
+    .screenshot-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 18px 34px rgba(65,49,40,.18);
+    }
+
+    .screenshot-gallery figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+
     .privacy-band { margin-top: 24px; }
 
     @media (max-width: 760px) {
-      .bead-preview { min-height: 300px; padding: 28px; }
-      .icon-stage { width: 210px; padding: 18px; border-radius: 32px; }
+      .screenshot-gallery {
+        padding: 28px 22px;
+        align-items: flex-start;
+        gap: 10px;
+        overflow-x: auto;
+      }
+
+      .screenshot-gallery figure { flex: 0 0 132px; }
     }
   </style>
   <script type="application/ld+json">
@@ -94,7 +128,14 @@
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-panel">
         <article class="card hero-copy">
-          <p class="eyebrow">Fuse bead pattern maker for iPhone and iPad</p>
+          <div class="hero-identity">
+            <img class="app-icon" src="assets/app-icon.png" alt="BeadCraft Local app icon" width="1024" height="1024">
+            <div>
+              <strong>BeadCraft Local</strong>
+              <span>Fuse bead pattern maker for iPhone and iPad</span>
+            </div>
+          </div>
+          <p class="eyebrow">From photo to pegboard</p>
           <h1 id="hero-title">Turn an image into a pattern you can actually build.</h1>
           <p class="lede">Convert photos, illustrations, pixel art, and logos into clear fuse bead grids. Review the palette and quantities, follow your progress, and export a printable plan.</p>
           <div class="button-row" aria-label="Primary actions">
@@ -110,10 +151,19 @@
           </ul>
         </article>
 
-        <aside class="card bead-preview" aria-label="BeadCraft Local app icon">
-          <div class="icon-stage">
-            <img src="assets/app-icon.png" alt="BeadCraft Local app icon" width="1024" height="1024">
-          </div>
+        <aside class="card screenshot-gallery" aria-label="BeadCraft Local app screenshots">
+          <figure>
+            <img src="assets/screenshot-patterns.jpg" alt="BeadCraft Local converting photos into bead patterns" width="1260" height="2736">
+            <figcaption>Photo to pattern</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshot-customize.jpg" alt="BeadCraft Local pattern customization screen" width="1260" height="2736">
+            <figcaption>Customize</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshot-export.jpg" alt="BeadCraft Local printable PDF export screen" width="1260" height="2736">
+            <figcaption>Export</figcaption>
+          </figure>
         </aside>
       </div>
     </section>
