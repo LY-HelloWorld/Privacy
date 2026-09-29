@@ -1,0 +1,40 @@
+{
+  "appId": "6810713521",
+  "appName": "Quick Content: Paste Keyboard",
+  "releaseState": "WAITING_FOR_REVIEW",
+  "iconUrl": "",
+  "screenshots": [
+    {
+      "locale": "en-US",
+      "file": "en-US-1.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/de/b9/d7deb961-f653-eddf-a8dd-3c77013aaa2b/01-replies.png/1320x2868bb.png",
+      "width": 1320,
+      "height": 2868,
+      "displayType": "APP_IPHONE_67"
+    },
+    {
+      "locale": "en-US",
+      "file": "en-US-2.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/dc/76/57dc7653-b11b-dae0-0c15-f76edcfa7863/02-details.png/1320x2868bb.png",
+      "width": 1320,
+      "height": 2868,
+      "displayType": "APP_IPHONE_67"
+    },
+    {
+      "locale": "en-US",
+      "file": "en-US-3.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/65/b1/8365b107-0cc3-1991-1b86-5f4eeb2e515c/03-template.png/1320x2868bb.png",
+      "width": 1320,
+      "height": 2868,
+      "displayType": "APP_IPHONE_67"
+    },
+    {
+      "locale": "en-US",
+      "file": "en-US-4.png",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/7f/e1/2d7fe1ef-29c9-af6e-39fd-23890d3939bf/04-categories.png/1320x2868bb.png",
+      "width": 1320,
+      "height": 2868,
+      "displayType": "APP_IPHONE_67"
+    }
+  ]
+}

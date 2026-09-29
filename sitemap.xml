@@ -648,35 +648,23 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Quick Content Keyboard discovery entry: publish the product hub and every public support document. -->
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/support.html</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/privacy.html</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/terms.html</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/content.html</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+  <!-- Quick Content Keyboard: bilingual product, audience, guide, support and legal pages. -->
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/index.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/customer-support-replies.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/customer-support-replies-zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/appointment-quote-replies.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/appointment-quote-replies-zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/freelancer-enquiry-replies.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/freelancer-enquiry-replies-zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/saved-replies-iphone.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/saved-replies-iphone-zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/reusable-contact-details.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/reusable-contact-details-zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/text-replacement-vs-snippet-keyboard.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/text-replacement-vs-snippet-keyboard-zh.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/support.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/privacy.html</loc><lastmod>2026-09-29</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/terms.html</loc><lastmod>2026-09-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ly-helloworld.github.io/Privacy/quick-content-keyboard/content.html</loc><lastmod>2026-09-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>
