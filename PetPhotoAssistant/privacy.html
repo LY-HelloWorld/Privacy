@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Pet Photo Assistant</title>
+  <meta name="description" content="Privacy Policy for Pet Photo Assistant, a local-first pet photography app." />
+  <style>
+    :root { color-scheme: light; --ivory:#fffaf0; --cocoa:#4c382f; --coral:#dc755f; --sage:#83977a; --oatmeal:#eadfce; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--cocoa); background:var(--ivory); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.65; }
+    main, nav { width:min(100% - 2rem, 48rem); margin-inline:auto; }
+    nav { padding:1.25rem 0; border-bottom:1px solid var(--oatmeal); display:flex; flex-wrap:wrap; gap:.75rem 1.25rem; }
+    a { color:#8b493c; overflow-wrap:anywhere; }
+    h1 { font-size:clamp(2rem,8vw,3rem); line-height:1.1; margin-bottom:.75rem; }
+    h2 { margin-top:2rem; font-size:1.2rem; }
+    main { padding:2rem 0 4rem; }
+    .meta { color:#725f55; font-size:.9rem; }
+    .notice { padding:1rem; border:1px solid var(--oatmeal); border-left:4px solid var(--sage); border-radius:.75rem; background:#fffdf8; }
+    li + li { margin-top:.45rem; }
+  </style>
+</head>
+<body>
+  <nav aria-label="Legal documents">
+    <a href="privacy.html" aria-current="page">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="content.html">Content Policy</a>
+  </nav>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: <time datetime="2026-10-01">October 1, 2026</time> · App: <strong>Pet Photo Assistant</strong> · Bundle ID: <strong>com.luoyi.PetPhotoAssistant</strong></p>
+
+    <p>This Privacy Policy explains how <strong>Pet Photo Assistant Team</strong> ("we," "us," or "our") handles information when you use <strong>Pet Photo Assistant</strong> (the "App").</p>
+
+    <p class="notice"><strong>Local-first design.</strong> The current App does not require an account, does not use a developer-operated server, and does not send your camera frames, pet photos, or custom recording to us. Camera analysis, pet recognition, pose estimation, photo scoring, and ranking occur on your device.</p>
+
+    <h2>1. Information the App Processes on Your Device</h2>
+    <p>The App may process the following information locally to provide its features:</p>
+    <ul>
+      <li><strong>Camera frames:</strong> Live frames from the rear camera are analyzed to recognize cats or dogs, estimate animal pose and orientation, and assess conditions such as sharpness, motion, and composition.</li>
+      <li><strong>Captured photos:</strong> During a capture session, the App temporarily holds burst photos in the App process, analyzes and ranks them, and presents them for your review.</li>
+      <li><strong>Selected photos:</strong> Only photos you actively select and save are added to the system Photos library.</li>
+      <li><strong>Custom attention sound:</strong> If you choose to record one, the App stores a custom audio recording of up to eight seconds in the App's local Application Support storage.</li>
+    </ul>
+    <p>This local processing does not mean that we, as the developer, collect or receive the content.</p>
+
+    <h2>2. Camera Access and On-Device Analysis</h2>
+    <p>The App requests Camera permission to show a live preview, detect a pet, assist with timing, and take photos. It uses Apple's AVFoundation, Vision, and Core Image frameworks on the device. The current App does not upload camera frames, analysis results, or captured photos to a developer-operated service.</p>
+    <p>Pet recognition and pose estimation concern cats and dogs. The App does not use human facial recognition, create faceprints, identify people, or create biometric profiles. Recognition and scoring are approximate and may be affected by lighting, motion, breed, coat, camera angle, and device capabilities.</p>
+
+    <h2>3. Microphone Access and Custom Audio</h2>
+    <p>The App requests Microphone permission only when you choose to record a custom sound intended to attract a pet's attention. The recording is limited to approximately eight seconds and is stored in the App's local Application Support directory. The App marks the recording directory as excluded from device backup.</p>
+    <p>You can replace or delete the custom recording in the App. Uninstalling the App normally removes its sandboxed local storage. The current App does not transmit the recording to us or provide a feature for publishing or sharing it.</p>
+
+    <h2>4. Photos Library Access</h2>
+    <p>The App requests add-only Photos permission when you choose to save selected photos. Add-only permission allows the App to add new items without reading your existing photo library. Photos that you do not save remain associated with the current App session and are not intentionally written to persistent photo storage by the App.</p>
+    <p>After a photo is saved to the Photos library, it is managed by iOS and the Photos app. If you have iCloud Photos or another system service enabled, Apple may synchronize the saved photo according to your device and Apple Account settings. The App does not initiate or control that synchronization.</p>
+
+    <h2>5. Information We Do Not Collect</h2>
+    <p>The current App does not collect account registration information, names, email addresses, contact lists, precise location, advertising identifiers, payment information, camera frames, pet photos, custom recordings, or pet-analysis results through services operated by us.</p>
+    <p>The App does not include third-party advertising, cross-app tracking, or developer-operated usage measurement or crash-reporting services. We do not sell or rent personal information.</p>
+
+    <h2>6. Apple and System Services</h2>
+    <p>The App relies on Apple-provided frameworks and system interfaces, including Camera, Microphone, Photos, and links that open in your browser. Apple may process device, diagnostic, App Store, iCloud, or other service information under Apple's own terms and privacy policies. Those Apple-controlled activities are separate from information collected by us.</p>
+
+    <h2>7. Retention and Deletion</h2>
+    <ul>
+      <li><strong>Unsaved captures:</strong> These are retained only for the active App session and may be released when the review flow is replaced, the App is closed, or the operating system ends the process.</li>
+      <li><strong>Custom recording:</strong> It remains in the App's local storage until you replace or delete it, uninstall the App, or remove the App's data through iOS controls.</li>
+      <li><strong>Saved photos:</strong> Manage and delete these through the Photos app. Deleting the App does not delete photos already saved to the system Photos library.</li>
+    </ul>
+    <p>Because the current App does not send this content to our servers, we generally cannot access, restore, or remotely delete content that exists only on your device.</p>
+
+    <h2>8. Your Choices and Permissions</h2>
+    <p>You can decline Camera, Microphone, or Photos permission, although the related feature will not work. You can review or change permissions in iOS Settings. You control whether to record a sound, start an automatic or manual burst, select photos, and save them.</p>
+
+    <h2>9. Security</h2>
+    <p>The App uses the iOS app sandbox and local Apple frameworks to limit access to its files and processing. No device, software, or storage method can be guaranteed completely secure. Protect your device with an appropriate passcode and review images before saving them.</p>
+
+    <h2>10. Children's Privacy</h2>
+    <p>The App is a general-audience photography utility and is not directed to children under 13 or the minimum age required in their region. We do not knowingly collect personal information from children through a developer-operated server for this App. Adults should supervise a child's use of camera and microphone features and ensure that any photographed person has provided appropriate consent.</p>
+
+    <h2>11. Regional Privacy Rights</h2>
+    <p>Privacy laws in the European Economic Area, United Kingdom, California, China, and other regions may provide rights such as access, correction, deletion, portability, restriction, objection, or withdrawal of consent. For information stored only on your device, use the App, Photos, and iOS controls to manage or delete it. You may contact us with privacy questions using the address below.</p>
+
+    <h2>12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy when App functionality or applicable requirements change. We will post the revised policy on this page and update the effective date.</p>
+
+    <h2>13. Contact</h2>
+    <p>For privacy questions, contact <strong>Pet Photo Assistant Team</strong> at <a href="mailto:luoyi9932@gmail.com">luoyi9932@gmail.com</a>. You may also use the support contact shown on the App Store product page, if available.</p>
+  </main>
+</body>
+</html>
