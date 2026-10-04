@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="pet-photo-site-version" content="2026-10-04-en-v1">
+  <title>Pet Photo Assistant — Clearer Pet Photos on iPhone</title>
+  <meta name="description" content="Take clearer pet photos on iPhone with attention sounds, automatic cat and dog capture, burst shooting, Best Shot picks, and private on-device analysis.">
+  <link rel="canonical" href="https://ly-helloworld.github.io/Privacy/PetPhotoAssistant_web/">
+  <meta name="apple-itunes-app" content="app-id=6818453564">
+  <meta name="theme-color" content="#fff8ee">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pet Photo Assistant — Clearer Pet Photos on iPhone">
+  <meta property="og:description" content="Get their attention, catch a sharper moment, and spend less time sorting pet photos.">
+  <meta property="og:url" content="https://ly-helloworld.github.io/Privacy/PetPhotoAssistant_web/">
+  <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9e/42/d9/9e42d9b9-bbb9-2abb-1a64-5d5623e7dc77/AppIcon-1x_U007ephone-0-1-85-220-0.png/1024x1024ia.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pet Photo Assistant — Clearer Pet Photos on iPhone">
+  <meta name="twitter:description" content="A private, on-device pet camera for attention, timing, burst capture, and easier photo selection.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pet Photo Assistant",
+    "alternateName": "Pet Photo: Dog & Cat Camera",
+    "applicationCategory": "PhotographyApplication",
+    "operatingSystem": "iOS 17 or later",
+    "description": "An iPhone pet camera that uses attention sounds, cat-and-dog-optimized Smart Shoot, ten-photo bursts, Best Shot picks, blur filtering, and private on-device analysis to help pet owners capture clearer moments.",
+    "url": "https://ly-helloworld.github.io/Privacy/PetPhotoAssistant_web/",
+    "downloadUrl": "https://apps.apple.com/app/id6818453564",
+    "privacyPolicy": "https://ly-helloworld.github.io/Privacy/PetPhotoAssistant/privacy.html",
+    "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9e/42/d9/9e42d9b9-bbb9-2abb-1a64-5d5623e7dc77/AppIcon-1x_U007ephone-0-1-85-220-0.png/1024x1024ia.png",
+    "featureList": [
+      "Built-in and custom attention sounds",
+      "Smart Shoot optimized for cats and dogs",
+      "Automatic and manual ten-photo bursts",
+      "Best Shot, Top 3, blur filtering, and quality scores",
+      "On-device photo analysis with no account required"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can I get my pet to look at the camera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Try a short sound your pet already notices. Pet Photo Assistant includes a squeaky toy, bell, clicker, and treat-bag sound, and lets you record a familiar sound such as their name. Play the sound only when you are ready to photograph so it stays useful."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an iPhone automatically take a photo when my pet looks toward the camera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pet Photo Assistant's Smart Shoot watches for a detected cat or dog, a usable front-facing pose, adequate sharpness, and a stable frame before starting a ten-photo burst. It estimates a good moment; it does not track exact eye gaze."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I avoid blurry pet photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use good light, keep a comfortable distance, and let Smart Shoot wait for a steadier frame. After a burst, the app scores sharpness and pose, recommends the strongest photos, and can keep blurred shots out of the recommended group."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Pet Photo Assistant upload my photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Detection, pose checks, sharpness scoring, burst ranking, and blur filtering run on your iPhone. No account is required, and photos are added to your Photos library only after you choose what to save."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with pets other than cats and dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pet owners can use the attention sounds and manual ten-photo burst with other animals. Automatic recognition, pose-aware Smart Shoot, and smart ranking are optimized for cats and dogs, so automatic results for other species are not promised."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { color-scheme: light; --cream: #fff8ee; --paper: #fffdf9; --cocoa: #3e2a21; --muted: #725f54; --coral: #f36f4e; --coral-dark: #cf4e32; --sage: #72906f; --sage-soft: #edf4e9; --oat: #f4e5d1; --line: rgba(62, 42, 33, 0.13); --shadow: 0 22px 60px rgba(79, 49, 31, 0.12); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; overflow-wrap: anywhere; background: var(--paper); color: var(--cocoa); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif; line-height: 1.6; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .nav { position: absolute; z-index: 2; inset: 0 0 auto; padding: 22px 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; }
+    .brand img { width: 46px; height: 46px; border-radius: 12px; box-shadow: 0 9px 24px rgba(62, 42, 33, 0.16); }
+    .nav-link { color: var(--muted); font-size: 14px; font-weight: 700; text-decoration: none; }
+    .hero { min-height: 760px; overflow: hidden; padding: 130px 0 80px; background: radial-gradient(circle at 88% 18%, rgba(243, 111, 78, 0.16), transparent 31%), radial-gradient(circle at 12% 70%, rgba(114, 144, 111, 0.14), transparent 30%), linear-gradient(145deg, var(--cream), #fffdf9 52%, #f8f1e6); border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); gap: 72px; align-items: center; }
+    .eyebrow { margin: 0 0 18px; color: var(--coral-dark); font-size: 13px; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1, h2, h3 { margin-top: 0; letter-spacing: -0.035em; line-height: 1.05; }
+    h1 { max-width: 720px; margin-bottom: 24px; font-size: clamp(48px, 7vw, 82px); }
+    h2 { margin-bottom: 18px; font-size: clamp(34px, 5vw, 54px); }
+    h3 { margin-bottom: 10px; font-size: 23px; }
+    .lede { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(19px, 2.4vw, 24px); }
+    .capability-note { display: inline-flex; gap: 9px; align-items: center; margin-top: 22px; color: #526a50; font-weight: 750; }
+    .capability-note::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 5px var(--sage-soft); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .cta { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; padding: 0 24px; border-radius: 15px; background: var(--coral); color: white; font-weight: 820; text-decoration: none; box-shadow: 0 13px 28px rgba(243, 111, 78, 0.24); transition: transform 160ms ease, background 160ms ease; }
+    .cta:hover { background: var(--coral-dark); transform: translateY(-2px); }
+    .cta.secondary { background: white; color: var(--cocoa); border: 1px solid var(--line); box-shadow: none; }
+    .hero-proof { position: relative; max-width: 430px; justify-self: end; }
+    .hero-proof::before { content: ""; position: absolute; z-index: 0; inset: 8% -8% -4% 10%; border-radius: 46px; background: var(--oat); transform: rotate(4deg); }
+    .hero-proof img { position: relative; z-index: 1; width: 100%; max-height: 620px; object-fit: contain; filter: drop-shadow(0 25px 35px rgba(75, 46, 29, 0.18)); }
+    section { padding: 96px 0; border-bottom: 1px solid var(--line); }
+    .section-intro { max-width: 760px; margin-bottom: 42px; }
+    .section-intro p { margin: 0; color: var(--muted); font-size: 19px; }
+    .problem-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .card { padding: 26px; border: 1px solid var(--line); border-radius: 24px; background: white; box-shadow: 0 10px 26px rgba(62, 42, 33, 0.04); }
+    .card-number { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 20px; border-radius: 14px; background: var(--cream); color: var(--coral-dark); font-weight: 900; }
+    .card p { margin: 0; color: var(--muted); }
+    .workflow { background: #fbf6ef; }
+    .workflow-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .step { padding: 24px 0 0; border-top: 3px solid var(--oat); }
+    .step strong { display: block; margin-bottom: 10px; color: var(--coral-dark); font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .step p { margin: 0; color: var(--muted); }
+    .screenshots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 54px; align-items: start; }
+    .screenshots figure { margin: 0; }
+    .screenshots img { width: 100%; height: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .screenshots figcaption { margin-top: 13px; color: var(--muted); font-size: 14px; text-align: center; }
+    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .audience-card { padding: 34px; border-radius: 28px; }
+    .audience-card.general { background: var(--cream); }
+    .audience-card.smart { background: var(--sage-soft); }
+    .audience-card p { margin: 0; color: var(--muted); font-size: 18px; }
+    .privacy { background: var(--cocoa); color: white; }
+    .privacy-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: center; }
+    .privacy p { color: rgba(255, 255, 255, 0.74); font-size: 19px; }
+    .trust-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .trust-list li { padding: 18px 20px 18px 52px; position: relative; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 18px; background: rgba(255, 255, 255, 0.05); }
+    .trust-list li::before { content: "✓"; position: absolute; left: 20px; color: #a8d1a2; font-weight: 900; }
+    .faq-list { display: grid; gap: 14px; max-width: 900px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: white; }
+    summary { cursor: pointer; padding: 22px 54px 22px 22px; position: relative; font-size: 19px; font-weight: 820; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 22px; top: 17px; color: var(--coral-dark); font-size: 28px; font-weight: 500; }
+    details[open] summary::after { content: "–"; }
+    details p { margin: 0; padding: 0 22px 22px; color: var(--muted); }
+    .final-cta { text-align: center; background: linear-gradient(135deg, #fff7ea, #f6eee2); }
+    .final-cta p { max-width: 660px; margin: 0 auto; color: var(--muted); font-size: 19px; }
+    .final-cta .cta-row { justify-content: center; }
+    footer { padding: 28px 0; color: var(--muted); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer nav { display: flex; gap: 18px; }
+    footer a { color: var(--muted); }
+    @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr 0.75fr; gap: 36px; } .problem-grid, .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .screenshots { grid-template-columns: repeat(2, minmax(0, 1fr)); } .privacy-grid { gap: 36px; } }
+    @media (max-width: 760px) { .wrap { width: min(100% - 28px, 620px); } .nav { position: static; padding: 16px 0; background: var(--cream); } .nav-link { display: none; } .hero { min-height: auto; padding: 58px 0 56px; } .hero-grid, .problem-grid, .workflow-grid, .audience-grid, .privacy-grid { grid-template-columns: 1fr; } .hero-proof { max-width: 360px; justify-self: center; margin-top: 14px; } h1 { font-size: clamp(44px, 14vw, 62px); } section { padding: 68px 0; } .screenshots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .screenshots img { border-radius: 16px; } .cta { width: 100%; } .footer-inner { display: block; } footer nav { margin-top: 10px; } }
+    @media (max-width: 430px) { .screenshots { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .cta { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Pet Photo Assistant home"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9e/42/d9/9e42d9b9-bbb9-2abb-1a64-5d5623e7dc77/AppIcon-1x_U007ephone-0-1-85-220-0.png/1024x1024ia.png" alt="Pet Photo Assistant app icon" width="1024" height="1024"><span>Pet Photo Assistant</span></a>
+      <a class="nav-link" href="#questions">Pet photo questions</a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">A pet camera for iPhone</p><h1>Better pet photos—even when they won't sit still.</h1><p class="lede">Get their attention, catch a sharper moment, and spend less time sorting through near-duplicate shots.</p><p class="capability-note">Made for pet owners. Smart Shoot is optimized for cats and dogs.</p><div class="cta-row"><a class="cta" href="https://apps.apple.com/app/id6818453564">View on the App Store</a><a class="cta secondary" href="#how-it-works">See how it works</a></div></div><div class="hero-proof"><img src="assets/asc-app-store-preview-1.png" alt="Pet Photo Assistant camera using an attention sound and preparing to capture a dog" width="1320" height="2868"></div></div></section>
+    <section aria-labelledby="problems-title"><div class="wrap"><div class="section-intro"><p class="eyebrow">The real problem</p><h2 id="problems-title">Pet photos are hard for predictable reasons</h2><p>The moment rarely waits for you. Pet Photo Assistant is designed around the small failures that turn a great expression into another missed photo.</p></div><div class="problem-grid">
+      <article class="card"><span class="card-number">01</span><h3>They look away</h3><p>Your pet turns just as you press the shutter. A short, familiar sound can bring their attention back toward the phone.</p></article>
+      <article class="card"><span class="card-number">02</span><h3>They keep moving</h3><p>Fast motion and an unsteady frame create soft photos. Smart Shoot waits instead of forcing the moment.</p></article>
+      <article class="card"><span class="card-number">03</span><h3>Bursts create clutter</h3><p>Ten similar photos should not mean ten difficult decisions. Best Shot and Top 3 bring the strongest moments forward.</p></article>
+      <article class="card"><span class="card-number">04</span><h3>Privacy matters</h3><p>Your pet photos are personal. The analysis happens on your iPhone rather than being sent to a developer server.</p></article>
+    </div></div></section>
+    <section class="workflow" id="how-it-works" aria-labelledby="workflow-title"><div class="wrap"><div class="section-intro"><p class="eyebrow">One focused workflow</p><h2 id="workflow-title">A calmer path from attention to Best Shot</h2><p>Stay in the camera instead of juggling a sound app, the shutter, and a long camera roll.</p></div><div class="workflow-grid">
+      <article class="step"><strong>Step 1</strong><h3>Get their attention</h3><p>Play a squeaky toy, bell, clicker, or treat-bag sound—or record a familiar sound of your own.</p></article>
+      <article class="step"><strong>Step 2</strong><h3>Wait for a usable moment</h3><p>For a detected cat or dog, Smart Shoot checks the pose, frame stability, and sharpness before firing.</p></article>
+      <article class="step"><strong>Step 3</strong><h3>Capture ten photos</h3><p>Start an automatic burst, or use the manual burst button whenever you want full control.</p></article>
+      <article class="step"><strong>Step 4</strong><h3>Choose with less guesswork</h3><p>Review Best Shot, Top 3, blur filtering, and quality scores, then save only the photos you select.</p></article>
+    </div><div class="screenshots" aria-label="App Store screenshots">
+      <figure><img src="assets/asc-app-store-preview-1.png" alt="Attention sounds and Smart Shoot controls in Pet Photo Assistant" loading="lazy" width="1320" height="2868"><figcaption>Bring their attention back to the camera.</figcaption></figure>
+      <figure><img src="assets/asc-app-store-preview-2.png" alt="Smart Shoot checking pet detection, pose, and frame stability" loading="lazy" width="1320" height="2868"><figcaption>Wait for a sharper, steadier moment.</figcaption></figure>
+      <figure><img src="assets/asc-app-store-preview-3.png" alt="Best Shot and Top 3 recommendations after a pet photo burst" loading="lazy" width="1320" height="2868"><figcaption>See the strongest moment first.</figcaption></figure>
+      <figure><img src="assets/asc-app-store-preview-4.png" alt="Blur filtering in a ten-photo pet burst" loading="lazy" width="1320" height="2868"><figcaption>Keep blurred shots out of the recommended group.</figcaption></figure>
+    </div></div></section>
+    <section aria-labelledby="audience-title"><div class="wrap"><div class="section-intro"><p class="eyebrow">Honest about the fit</p><h2 id="audience-title">Made for pet owners. Smart Shoot is optimized for cats and dogs.</h2><p>The app offers a useful camera workflow beyond one kind of animal, while keeping automatic claims grounded in what the current recognition system supports.</p></div><div class="audience-grid"><article class="audience-card general"><h3>For pets of many kinds</h3><p>Use built-in or custom attention sounds and the manual ten-photo burst when photographing any pet that will not pose on cue.</p></article><article class="audience-card smart"><h3>Automatic help for cats and dogs</h3><p>Automatic recognition, front-facing pose estimation, Smart Shoot timing, and smart ranking are optimized for cats and dogs. Results for other species are not promised.</p></article></div></div></section>
+    <section class="privacy" aria-labelledby="privacy-title"><div class="wrap privacy-grid"><div><p class="eyebrow">Private by design</p><h2 id="privacy-title">Your pet photos stay on your iPhone</h2><p>No account, no developer photo upload, and no advertising SDK. You decide which photos are added to your Photos library.</p><div class="cta-row"><a class="cta secondary" href="https://ly-helloworld.github.io/Privacy/PetPhotoAssistant/privacy.html">Read the Privacy Policy</a></div></div><ul class="trust-list"><li>Cat and dog detection and pose checks run on device.</li><li>Sharpness scoring, blur filtering, and burst ranking run on device.</li><li>Custom attention recordings remain local to the app.</li><li>Photos are saved only after you choose them.</li></ul></div></section>
+    <section id="questions" aria-labelledby="faq-title"><div class="wrap"><div class="section-intro"><p class="eyebrow">Straight answers</p><h2 id="faq-title">Frequently asked questions</h2></div><div class="faq-list">
+      <details><summary>How can I get my pet to look at the camera?</summary><p>Try a short sound your pet already notices. Pet Photo Assistant includes a squeaky toy, bell, clicker, and treat-bag sound, and lets you record a familiar sound such as their name. Play the sound only when you are ready to photograph so it stays useful.</p></details>
+      <details><summary>Can an iPhone automatically take a photo when my pet looks toward the camera?</summary><p>Pet Photo Assistant's Smart Shoot watches for a detected cat or dog, a usable front-facing pose, adequate sharpness, and a stable frame before starting a ten-photo burst. It estimates a good moment; it does not track exact eye gaze.</p></details>
+      <details><summary>How do I avoid blurry pet photos?</summary><p>Use good light, keep a comfortable distance, and let Smart Shoot wait for a steadier frame. After a burst, the app scores sharpness and pose, recommends the strongest photos, and can keep blurred shots out of the recommended group.</p></details>
+      <details><summary>Does Pet Photo Assistant upload my photos?</summary><p>No. Detection, pose checks, sharpness scoring, burst ranking, and blur filtering run on your iPhone. No account is required, and photos are added to your Photos library only after you choose what to save.</p></details>
+      <details><summary>Does it work with pets other than cats and dogs?</summary><p>Pet owners can use the attention sounds and manual ten-photo burst with other animals. Automatic recognition, pose-aware Smart Shoot, and smart ranking are optimized for cats and dogs, so automatic results for other species are not promised.</p></details>
+    </div></div></section>
+    <section class="final-cta" aria-labelledby="download-title"><div class="wrap"><p class="eyebrow">Ready when they are</p><h2 id="download-title">Spend less time chasing the shutter.</h2><p>Keep the sound, camera, burst, and photo selection in one private iPhone workflow.</p><div class="cta-row"><a class="cta" href="https://apps.apple.com/app/id6818453564">View Pet Photo Assistant on the App Store</a></div></div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>&copy; 2026 Pet Photo Assistant. All rights reserved.</span><nav aria-label="Legal links"><a href="https://ly-helloworld.github.io/Privacy/PetPhotoAssistant/privacy.html">Privacy Policy</a><a href="https://ly-helloworld.github.io/Privacy/PetPhotoAssistant/terms.html">Terms of Use</a></nav></div></footer>
+</body>
+</html>
