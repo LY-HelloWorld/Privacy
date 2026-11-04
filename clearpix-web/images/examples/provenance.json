@@ -1,0 +1,65 @@
+[
+  {
+    "name": "portrait",
+    "model": "gpt-image-2",
+    "base_url": "https://claude.zcheap.ai",
+    "api_success": true,
+    "original_dimensions": [
+      1536,
+      1024
+    ],
+    "png_dimensions": [
+      1536,
+      1024
+    ],
+    "web_dimensions": [
+      1200,
+      800
+    ],
+    "source_sha256": "6e72a1636bd0d239eb1fa4768c21115953645e7f4b3b50101aa2ccdd8a9e7451",
+    "prompt": "Photorealistic editorial photograph for an educational iPhone photo sharpening guide. A fictional adult woman around forty, natural expression, shoulder-length brown hair, subtle freckles, wearing a teal linen shirt, seated outdoors in a softly lit garden. Head and shoulders composition, face near center, ample shoulders and background visible, realistic pores and fine hair, gentle daylight. Landscape 3:2 photograph. Single sharp natural photograph, not a before/after panel. No writing, no logos, no watermark, no phone UI, no exaggerated beauty retouch. This will be labeled AI-generated illustrative sample, not an actual app output.",
+    "method": "AI-generated reference; deterministic synthetic degradation. Neither side is a ClearPix app output."
+  },
+  {
+    "name": "lowlight",
+    "model": "gpt-image-2",
+    "base_url": "https://claude.zcheap.ai",
+    "api_success": true,
+    "original_dimensions": [
+      1536,
+      1024
+    ],
+    "png_dimensions": [
+      1536,
+      1024
+    ],
+    "web_dimensions": [
+      1200,
+      800
+    ],
+    "source_sha256": "6eee0574dbc0d30ba2c3d622873d862e795f2f4a66a721a990966d4e53605933",
+    "prompt": "Photorealistic editorial lifestyle photograph for an educational low-light photo guide. Fictional adult man with glasses seated beside a warm reading lamp in a quiet living room at dusk, navy sweater, book and houseplant in background. Natural low light with visible but readable shadow detail and realistic skin texture, warm lamp contrasting cool blue window. Medium portrait composition, face clearly visible, landscape 3:2 frame. Single clean detailed photograph, not a before/after panel. No writing, no logos, no watermark, no phone UI. This is an AI-generated illustrative scene, not an app output.",
+    "method": "AI-generated reference; deterministic synthetic degradation. Neither side is a ClearPix app output."
+  },
+  {
+    "name": "family",
+    "model": "gpt-image-2",
+    "base_url": "https://claude.zcheap.ai",
+    "api_success": true,
+    "original_dimensions": [
+      1536,
+      1024
+    ],
+    "png_dimensions": [
+      1536,
+      1024
+    ],
+    "web_dimensions": [
+      1200,
+      800
+    ],
+    "source_sha256": "ac6ef16e32fa29f19c38b44438e0420803fec5520923012013af86a1da87d356",
+    "prompt": "A realistic fictional black-and-white family photograph in the style of a well-preserved 1960s photographic print: two adult parents and an adult daughter standing in a modest garden, relaxed expressions, faces clearly visible and naturally detailed, clothing appropriate to the period, tasteful soft film texture. Full photographic frame, landscape 3:2, no surrounding table or hands, no torn edges or deep scratches. Single photograph, not before/after. No text, names, logos or watermark. For an educational old-photo clarity guide, visibly labeled AI-generated fictional scene in the webpage; not a real historical family or restoration result.",
+    "method": "AI-generated reference; deterministic synthetic degradation. Neither side is a ClearPix app output."
+  }
+]

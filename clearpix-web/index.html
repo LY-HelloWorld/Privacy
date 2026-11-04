@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Download ClearPix for iPhone to fix blurry photos, reduce grain, sharpen detail, and compare before saving. Photos are processed privately on device with AI.">
+        content="A favourite photo came out blurry or grainy? ClearPix helps sharpen portraits, clean up low-light pictures, and enhance old memories on iPhone.">
     <meta name="keywords"
         content="ClearPix, AI photo enhancer, unblur photo, fix blurry photos, photo enhancer app, image upscaler, sharpen photo">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://ly-helloworld.github.io/Privacy/clearpix-web/">
     <meta property="og:title" content="ClearPix - Fix Blurry Photos on iPhone">
     <meta property="og:description"
-        content="Repair soft photos, reduce grain, and compare the result before saving. Download ClearPix on the App Store.">
+        content="A favourite photo came out blurry or grainy? ClearPix helps sharpen portraits, clean up low-light pictures, and enhance old memories on iPhone.">
     <meta property="og:image" content="https://ly-helloworld.github.io/Privacy/clearpix-web/app-icon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ClearPix - Fix Blurry Photos on iPhone">
@@ -34,17 +34,21 @@
             "url": "https://ly-helloworld.github.io/Privacy/clearpix-web/",
             "image": "https://ly-helloworld.github.io/Privacy/clearpix-web/app-icon.png",
             "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "iOS 13.0 or later",
+            "operatingSystem": "iOS 16.0 or later",
             "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
             },
             "downloadUrl": "https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305",
-            "description": "ClearPix is an iPhone photo repair app for sharper, clearer images. Unblur soft shots, reduce grain, and compare before and after before you export."
+            "description": "A favourite photo came out blurry or grainy? ClearPix helps sharpen portraits, clean up low-light pictures, and enhance old memories on iPhone."
         }
     </script>
     <style>
+        /* The free offer is visible near the download action to set expectations before install. */
+        .trial-note { color:var(--muted); font-size:.85rem; line-height:1.6; margin-top:1rem; }
+        /* Guide previews keep each topic visually distinct without changing card navigation. */
+        .workflow-card img { display:block; width:100%; height:auto; border-radius:10px; margin-bottom:1rem; }
         /* Visual entry: these tokens keep the page close to the current iPhone photo utility, not a generic AI splash page. */
         :root {
             --paper: #f6f7f2;
@@ -702,7 +706,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="brand-lockup" href="#top" aria-label="ClearPix home">
-                <img src="app-icon.png" alt="ClearPix app icon" width="42" height="42">
+                <img src="images/app-icon-192.webp" alt="ClearPix app icon" width="42" height="42">
                 <span class="brand-text">
                     <span class="brand-name">ClearPix</span>
                     <span class="brand-note">Photo Repair for iPhone</span>
@@ -711,9 +715,9 @@
             <nav class="nav-links" aria-label="Page navigation">
                 <a href="https://ly-helloworld.github.io/Privacy/">App Pages</a>
                 <a href="#workflow">How it works</a>
-                <a href="https://ly-helloworld.github.io/Privacy/support">Support</a>
+                <a href="https://ly-helloworld.github.io/Privacy/support.html">Support</a>
                 <a class="nav-cta app-store-link"
-                    href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4">App Store</a>
+                    href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4&amp;ct=cp_home">App Store</a>
             </nav>
         </div>
     </header>
@@ -721,18 +725,12 @@
     <main id="top">
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-copy">
-                <span class="product-kicker">Photo clarity for iPhone</span>
-                <h1 id="hero-title">
-                    <span>Fix blurry photos</span>
-                    <span>before you</span>
-                    <span>share them.</span>
-                </h1>
-                <p class="hero-subtitle">ClearPix repairs soft photos and low-light grain on your iPhone. Compare
-                    before and after, then save the version that looks ready.
-                </p>
+                <span class="product-kicker">AI photo enhancer for iPhone</span>
+                <h1 id="hero-title"><span>A favourite photo.</span><span>A little too blurry.</span><span>Worth another look.</span></h1>
+                <p class="hero-subtitle">The group shot where everyone smiled. The evening photo that came out grainy. The old family picture you wish looked clearer. ClearPix helps bring the detail forward, right on your iPhone.</p>
                 <div class="cta-row">
                     <a class="app-store-cta app-store-link"
-                        href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4"
+                        href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4&amp;ct=cp_home"
                         aria-label="Download ClearPix on the App Store">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path fill="currentColor"
@@ -740,49 +738,50 @@
                         </svg>
                         Download on the App Store
                     </a>
-                    <a class="secondary-link" href="#workflow">View the workflow</a>
+                    <a class="secondary-link" href="#workflow">See how it helps</a>
                 </div>
+                <p class="trial-note">Bring the photo you already have. See it more clearly.</p>
                 <div class="product-meta" aria-label="ClearPix highlights">
                     <div class="meta-item">
                         <strong>No cloud photo upload</strong>
-                        <span>Designed for private on-device processing.</span>
+                        <span>Personal pictures stay in a local workflow.</span>
                     </div>
                     <div class="meta-item">
-                        <strong>Before and after</strong>
-                        <span>Check the result before saving.</span>
+                        <strong>You choose the keeper</strong>
+                        <span>Slide between both versions before you save.</span>
                     </div>
                     <div class="meta-item">
-                        <strong>Free download</strong>
-                        <span>Available for iOS 13.0 or later.</span>
+                        <strong>A few taps, then share</strong>
+                        <span>Take a favourite photo back to the family chat.</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Core product evidence: real app screenshots stay in the first viewport so visitors see the current product immediately. -->
+            <!-- Product preview: published promotional artwork illustrates the app; it is not an independent performance benchmark. -->
             <div class="hero-media" aria-label="ClearPix App Store screenshots">
                 <div>
                     <div class="screenshot-board">
                         <div class="phone-frame featured">
-                            <img src="screenshot-home.png" alt="ClearPix main photo repair screen" loading="eager">
+                            <img src="images/screenshot-home-640.webp" srcset="images/screenshot-home-320.webp 320w, images/screenshot-home-640.webp 640w" sizes="(max-width: 760px) 70vw, 320px" width="1260" height="2736" decoding="async" alt="ClearPix App Store promotional artwork for photo enhancement" loading="eager" fetchpriority="high">
                         </div>
                         <div class="side-gallery" aria-label="ClearPix workflow previews">
                             <figure class="side-shot">
                                 <div class="phone-frame">
-                                    <img src="screenshot-unblur.png" alt="ClearPix unblur workflow screenshot"
-                                        loading="eager">
+                                    <img src="images/screenshot-unblur-640.webp" srcset="images/screenshot-unblur-320.webp 320w, images/screenshot-unblur-640.webp 640w" sizes="(max-width: 760px) 70vw, 320px" width="1260" height="2736" decoding="async" alt="ClearPix App Store artwork illustrating photo sharpening"
+                                        loading="lazy">
                                 </div>
                                 <figcaption class="shot-caption">Repair soft photos</figcaption>
                             </figure>
                             <figure class="side-shot">
                                 <div class="phone-frame">
-                                    <img src="screenshot-compare.png" alt="ClearPix before and after comparison"
+                                    <img src="images/screenshot-compare-640.webp" srcset="images/screenshot-compare-320.webp 320w, images/screenshot-compare-640.webp 640w" sizes="(max-width: 760px) 70vw, 320px" width="1260" height="2736" decoding="async" alt="ClearPix App Store artwork illustrating a comparison view"
                                         loading="lazy">
                                 </div>
                                 <figcaption class="shot-caption">Compare before saving</figcaption>
                             </figure>
                         </div>
                     </div>
-                    <div class="result-note">Built for a short photo flow: choose, repair, compare, export.</div>
+                    <div class="result-note">Choose. Enhance. Compare. Save.</div>
                 </div>
             </div>
         </section>
@@ -790,25 +789,24 @@
         <section class="content-band" id="workflow" aria-labelledby="workflow-title">
             <div class="section-inner">
                 <div class="section-heading">
-                    <h2 id="workflow-title">A practical repair path for everyday photos.</h2>
-                    <p>ClearPix keeps the path short for people who just want a cleaner photo: pick one image, repair
-                        the detail, review the result, and save it.</p>
+                    <h2 id="workflow-title">You already know which photo you want to fix.</h2>
+                    <p>Open the picture that matters to you. ClearPix brings enhancement and comparison together so you can spend less time editing and get back to enjoying it.</p>
                 </div>
                 <div class="workflow-grid">
                     <article class="workflow-card">
                         <span class="step-number">1</span>
-                        <h3>Choose one photo</h3>
-                        <p>Start from your library or camera and keep the task focused on the image you want to fix.</p>
+                        <h3>Start with the moment</h3>
+                        <p>Find the smile, the evening, or the memory you want to see more clearly.</p>
                     </article>
                     <article class="workflow-card">
                         <span class="step-number">2</span>
-                        <h3>Repair clarity</h3>
-                        <p>Use a light, standard, or stronger pass for blur, grain, and lost detail.</p>
+                        <h3>Bring the details forward</h3>
+                        <p>Let AI help with soft faces, distracting grain, and low-detail copies.</p>
                     </article>
                     <article class="workflow-card">
                         <span class="step-number">3</span>
-                        <h3>Review the result</h3>
-                        <p>Compare before and after, then save the cleaner export when it looks right.</p>
+                        <h3>Share the version you love</h3>
+                        <p>Compare both versions, save your favourite, and send it to someone who remembers the moment.</p>
                     </article>
                 </div>
             </div>
@@ -818,32 +816,31 @@
             <div class="section-inner proof-layout">
                 <div>
                     <div class="section-heading">
-                        <h2 id="proof-title">Made for blurry, noisy, real-world shots.</h2>
-                        <p>ClearPix works best when the user arrives with a specific photo problem, not when they need a
-                            full editing suite.</p>
+                        <h2 id="proof-title">The photo was almost perfect.</h2>
+                        <p>A little softness or poor lighting can get between you and a picture you love. Choose the problem that sounds familiar.</p>
                     </div>
                     <div class="use-case-list">
                         <article class="use-case">
-                            <h3>Soft portraits and family photos</h3>
-                            <p>Recover clearer edges before sharing or archiving the image.</p>
+                            <h3>Everyone smiled. The camera missed the focus.</h3>
+                            <p>Bring clearer faces and edges to a group shot worth keeping.</p>
                         </article>
                         <article class="use-case">
-                            <h3>Low-light indoor photos</h3>
-                            <p>Reduce visible grain and make dark pictures easier to keep.</p>
+                            <h3>The evening felt warm. The photo looks rough.</h3>
+                            <p>Clean up grain and bring more of your friends, family, and surroundings into view.</p>
                         </article>
                         <article class="use-case">
-                            <h3>Old screenshots or saved images</h3>
-                            <p>Sharpen low-detail files so they are easier to read and reuse.</p>
+                            <h3>You found the memory. The file is tiny.</h3>
+                            <p>Give old phone pictures and saved copies a clearer second look.</p>
                         </article>
                     </div>
                 </div>
                 <div class="compare-preview" aria-label="ClearPix result preview screenshots">
                     <figure>
-                        <img src="screenshot-unblur.png" alt="ClearPix unblur mode screenshot" loading="lazy">
+                        <img src="images/screenshot-unblur-640.webp" srcset="images/screenshot-unblur-320.webp 320w, images/screenshot-unblur-640.webp 640w" sizes="(max-width: 760px) 70vw, 320px" width="1260" height="2736" decoding="async" alt="ClearPix unblur mode screenshot" loading="lazy">
                         <figcaption>Choose the photo problem.</figcaption>
                     </figure>
                     <figure>
-                        <img src="screenshot-compare.png" alt="ClearPix comparison mode screenshot" loading="lazy">
+                        <img src="images/screenshot-compare-640.webp" srcset="images/screenshot-compare-320.webp 320w, images/screenshot-compare-640.webp 640w" sizes="(max-width: 760px) 70vw, 320px" width="1260" height="2736" decoding="async" alt="ClearPix comparison mode screenshot" loading="lazy">
                         <figcaption>Check the final version.</figcaption>
                     </figure>
                 </div>
@@ -853,41 +850,39 @@
         <section class="question-band" aria-labelledby="question-title">
             <div class="section-inner">
                 <div class="section-heading">
-                    <h2 id="question-title">Start with the photo problem you actually have.</h2>
-                    <p>ClearPix has a focused path for common questions - from a blurry snapshot to an old family photo you want to keep recognizable.</p>
+                    <h2 id="question-title">Which picture brought you here?</h2>
+                    <p>Find the moment you want to keep, then see how ClearPix can help you make more of it.</p>
                 </div>
+                <!-- Guide discovery: each card addresses a separate task, not a synonym-only page. -->
                 <div class="workflow-grid">
-                    <a class="workflow-card" href="fix-blurry-photos/">
-                        <h3>How do I fix a blurry photo?</h3>
-                        <p>Sharpen soft faces and details, then compare before saving.</p>
-                    </a>
-                    <a class="workflow-card" href="restore-old-family-photos/">
-                        <h3>How do I restore an old family photo?</h3>
-                        <p>Improve faded, scratched, and low-resolution memories without losing sight of the original.</p>
-                    </a>
-                    <a class="workflow-card" href="private-offline-photo-enhancer/">
-                        <h3>Can I enhance a photo privately?</h3>
-                        <p>Learn how on-device processing works and why photos do not need a cloud upload.</p>
-                    </a>
-                    <a class="workflow-card" href="one-time-photo-enhancer/">
-                        <h3>Is there a photo enhancer without a subscription?</h3>
-                        <p>See the current one-time lifetime Pro option and the focused repair workflow.</p>
-                    </a>
+                    <a class="workflow-card" href="fix-blurry-photos/"><img src="images/unblur-portrait-share.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async"><h3>Fix blurry photos</h3><p>Bring the smiles in a soft portrait or group photo into clearer view.</p></a>
+                    <a class="workflow-card" href="reduce-photo-noise-iphone/"><img src="images/low-light-photo-share.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async"><h3>Reduce grain &amp; noise</h3><p>Keep the mood of an evening picture while cleaning up distracting grain.</p></a>
+                    <a class="workflow-card" href="upscale-photo-iphone/"><img src="images/upscale-explained-share.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async"><h3>Upscale a small photo</h3><p>Make a low-resolution favourite easier to enjoy beyond its thumbnail.</p></a>
+                    <a class="workflow-card" href="batch-photo-enhancer-iphone/"><img src="images/batch-queue-share.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async"><h3>Batch enhance photos</h3><p>Work through photos from the same trip or album with fewer repeated actions.</p></a>
+                    <a class="workflow-card" href="restore-old-family-photos/"><img src="images/old-family-photo-share.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async"><h3>Enhance old family photos</h3><p>Take a familiar face from an old print back to the family conversation.</p></a>
+                    <a class="workflow-card" href="private-offline-photo-enhancer/"><img src="images/on-device-workflow-share.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async"><h3>Enhance without uploading</h3><p>Improve a personal picture on your iPhone, even away from Wi-Fi.</p></a>
+
                 </div>
             </div>
         </section>
 
+        <!-- Example discovery: educational synthetic scenes are identified before visitors open them. -->
+        <section class="question-band" aria-labelledby="examples-title"><div class="section-inner"><div class="section-heading"><h2 id="examples-title">Your moments deserve a clearer look.</h2><p>A familiar smile, a late evening, an old family portrait. Start with the picture you want to keep.</p></div><div class="workflow-grid">
+<a class="workflow-card" href="fix-blurry-photos/#illustrative-example"><img src="images/examples/portrait-reference.webp" alt="Fictional AI-generated educational scene" width="1200" height="800" loading="lazy"><h3>Sharper portraits, familiar smiles</h3><p>See how to bring a favourite picture into clearer view.</p></a>
+<a class="workflow-card" href="reduce-photo-noise-iphone/#illustrative-example"><img src="images/examples/lowlight-reference.webp" alt="Fictional AI-generated educational scene" width="1200" height="800" loading="lazy"><h3>Cleaner evening photos</h3><p>See how to bring a favourite picture into clearer view.</p></a>
+<a class="workflow-card" href="restore-old-family-photos/#illustrative-example"><img src="images/examples/family-reference.webp" alt="Fictional AI-generated educational scene" width="1200" height="800" loading="lazy"><h3>Family memories with clearer detail</h3><p>See how to bring a favourite picture into clearer view.</p></a>
+</div></div></section>
         <section class="download-band" aria-labelledby="download-title">
             <div class="download-panel">
                 <div class="download-lockup">
-                    <img src="app-icon.png" alt="" width="68" height="68">
+                    <img src="images/app-icon-192.webp" alt="" width="68" height="68">
                     <div>
-                        <h2 id="download-title">Get ClearPix on the App Store.</h2>
-                        <p>Install the current iOS app and repair photos directly on your iPhone.</p>
+                        <h2 id="download-title">That photo is still worth keeping.</h2>
+                        <p>Bring your favourite photo. Enhance the detail, compare the difference, and save a version you love.</p>
                     </div>
                 </div>
                 <a class="app-store-cta app-store-link"
-                    href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4"
+                    href="https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305?uo=4&amp;ct=cp_home"
                     aria-label="Open the ClearPix App Store listing">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
@@ -902,10 +897,10 @@
     <footer>
         <span>&copy; 2026 ClearPix Studio. All rights reserved.</span>
         <div class="footer-links">
-            <a href="https://ly-helloworld.github.io/Privacy/">App Pages</a>
-            <a href="https://ly-helloworld.github.io/Privacy/privacy">Privacy Policy</a>
-            <a href="https://ly-helloworld.github.io/Privacy/terms">Terms of Use</a>
-            <a href="https://ly-helloworld.github.io/Privacy/support">Support</a>
+            <a href="one-time-photo-enhancer/">Pro options</a>
+            <a href="https://ly-helloworld.github.io/Privacy/privacy.html">Privacy Policy</a>
+            <a href="https://ly-helloworld.github.io/Privacy/terms.html">Terms of Use</a>
+            <a href="https://ly-helloworld.github.io/Privacy/support.html">Support</a>
         </div>
     </footer>
 
@@ -914,6 +909,7 @@
         (() => {
             const appStoreUrl = new URL("https://apps.apple.com/us/app/clearpix-ai-photo-enhancer/id6760017305");
             appStoreUrl.searchParams.set("uo", "4");
+            appStoreUrl.searchParams.set("ct", "cp_home");
 
             const inbound = new URLSearchParams(window.location.search);
             const campaignParts = ["utm_source", "utm_campaign", "utm_term", "utm_content"]

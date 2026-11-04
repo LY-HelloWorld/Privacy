@@ -1,0 +1,103 @@
+{
+  "verified_listing": {
+    "app_id": "6760017305",
+    "version": "1.2.2",
+    "name": "Fix Blurry Photos: ClearPix",
+    "lookup_url": "https://itunes.apple.com/lookup?id=6760017305&country=us",
+    "checked": "2026-11-04"
+  },
+  "assets": [
+    {
+      "page": "fix-blurry-photos",
+      "asset": "unblur-portrait.webp",
+      "source": "AIPhoto/tmp/asc_upload_1_1_6/en-US/iphone_6_9/02_clearpix_second_screenshot_1260x2736.png",
+      "source_dimensions": [
+        1260,
+        2736
+      ],
+      "final_dimensions": [
+        630,
+        1368
+      ],
+      "type": "Published App Store promotional creative; not an independent benchmark"
+    },
+    {
+      "page": "restore-old-family-photos",
+      "asset": "old-family-photo.webp",
+      "source": "AIPhoto/tmp/asc_upload_1_1_6/en-US/iphone_6_9/01_clearpix_first_screenshot_1260x2736.png",
+      "source_dimensions": [
+        1260,
+        2736
+      ],
+      "final_dimensions": [
+        630,
+        1368
+      ],
+      "type": "Published App Store promotional creative; not an independent benchmark"
+    },
+    {
+      "page": "reduce-photo-noise-iphone",
+      "asset": "low-light-photo.webp",
+      "source": "AIPhoto/tmp/asc_upload_1_1_6/en-US/iphone_6_9/03_clearpix_third_screenshot_1260x2736.png",
+      "source_dimensions": [
+        1260,
+        2736
+      ],
+      "final_dimensions": [
+        630,
+        1368
+      ],
+      "type": "Published App Store promotional creative; not an independent benchmark"
+    },
+    {
+      "page": "upscale-photo-iphone",
+      "asset": "upscale-explained.svg",
+      "type": "Original editable explanatory diagram; not an app screenshot",
+      "final_dimensions": [
+        1200,
+        800
+      ]
+    },
+    {
+      "page": "batch-photo-enhancer-iphone",
+      "asset": "batch-queue.svg",
+      "type": "Original editable explanatory diagram; not an app screenshot",
+      "final_dimensions": [
+        1200,
+        800
+      ]
+    },
+    {
+      "page": "private-offline-photo-enhancer",
+      "asset": "on-device-workflow.svg",
+      "type": "Original editable explanatory diagram; not an app screenshot",
+      "final_dimensions": [
+        1200,
+        800
+      ]
+    },
+    {
+      "page": "one-time-photo-enhancer",
+      "asset": "free-vs-pro.svg",
+      "type": "Original editable explanatory diagram; not an app screenshot",
+      "final_dimensions": [
+        1200,
+        800
+      ]
+    }
+  ],
+  "responsive_diagrams": {
+    "desktop": "1200\u00d7800 SVG",
+    "mobile": "600\u00d7900 SVG",
+    "count": 4
+  },
+  "social_previews": {
+    "dimensions": [
+      1200,
+      630
+    ],
+    "format": "JPEG",
+    "count": 7
+  },
+  "creation_method": "Reused published App Store artwork plus original code-authored diagrams and layouts. No image-generation API used."
+}
